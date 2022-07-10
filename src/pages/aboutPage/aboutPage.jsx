@@ -6,11 +6,12 @@ import { useMediaQuery } from 'react-responsive';
 
 
 const AboutPage =(props,ref)=> {
+
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 1224px)'});
 	const classes = useStyles();
 
-	return (
+	return (	
 		<div ref={ref} className={isDesktopOrLaptop?classes.aboutPageDesktop:classes.aboutPageMobile} >
 			<div className={classes.profileBg}>
 				<img className={classes.profileImg} src={profile} alt="profile" />
@@ -20,9 +21,12 @@ const AboutPage =(props,ref)=> {
 					{'Hello, I am Samer Alkhodary, and I am a Software Engineer.'}
 				</Typography>
 				<di className={classes.padding} />
+				
 				<Typography fontFamily={'Merriweather'} variant="h5">
-					{'I have a master\'s degree in Computer Engineering from Lund University. I love programming and coming up with new project ideas to implement whether they were an online multiplayer game, an app or implementing encryption schemes and security protocols.'}
+				
+					I have a master&apos;s degree in Computer Engineering from Lund University. In my master&apos;s thesis I studied the impact of the BFF design pattern in a microservices environment, and this the <a href="https://fileadmin.cs.lth.se/cs/Education/Examensarbete/Popsci/220608_09Alkhodary.pdf"> popular summary</a> .
 				</Typography>
+				
 			</div>
 		</div>
 	);

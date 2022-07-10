@@ -2,11 +2,11 @@ import React from 'react';
 import { Typography } from '@mui/material';
 import useStyles from './style.js';
 import hero from '../../res/hero.png';
-
 const HeroPage = (props,ref)=> {
+	
 	const classes = useStyles();
 	return (
-		<div ref={ref} className={classes.container}>
+		<div ref={ref} className={classes.container} style={{height: '100vh'}} >
 			<img className={classes.hero} src={hero} alt="programming" />
 			<Typography variant="h4" className={classes.h1}>
 				{'Let’s build your mobile application with style'}
