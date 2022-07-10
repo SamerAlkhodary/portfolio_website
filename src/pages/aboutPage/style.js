@@ -3,8 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // eslint-disable-next-line no-unused-vars
 const useStyles = makeStyles((theme) => ({
 	aboutPageMobile: {
-		paddingTop:'20%',
-
+		paddingTop:'15%',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'space-around',
 		alignContent: 'center',
 		backgroundColor: '#FFF0DB',
-		height: '1000px',
+		height: '100vh',
 	},
 	textTitle: {
 		fontFamily: 'Merriweather',

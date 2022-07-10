@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import  Typography  from '@mui/material/Typography';
 import useStyles from './style.js';
 import profile from '../../res/profile.jpg';
 import { useMediaQuery } from 'react-responsive';
@@ -17,6 +17,7 @@ const AboutPage =(props,ref)=> {
 				<img className={classes.profileImg} src={profile} alt="profile" />
 			</div>
 			<div className={isDesktopOrLaptop?classes.textsDesktop:classes.textsMobile}>
+				
 				<Typography fontFamily={'Merriweather'} fontWeight={'bold'} variant="h5">
 					{'Hello, I am Samer Alkhodary, and I am a Software Engineer.'}
 				</Typography>
