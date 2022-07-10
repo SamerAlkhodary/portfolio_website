@@ -9,8 +9,10 @@ import useStyles from './style';
 import Menu from '../menu/menu';
 import { isMobile } from 'react-device-detect';
 import Logo from '../../res/logo.svg';
+
 // eslint-disable-next-line react/prop-types
 function CustomAppBar({refs,heroRef}) {
+
 	const [isDrawerOpen, setDrawerOpen] = useState(false);
 	const menuItems = ['About', 'Projects', 'contact'];
 
@@ -86,7 +88,7 @@ function CustomAppBar({refs,heroRef}) {
 
 	return (
 		<>
-			<Slide apear={false} direction="down" in={scrollPosition >= 900}>
+			<Slide apear={false} direction="down" in={scrollPosition >= window.innerHeight}>
 				<AppBar position="fixed" className={classes.appBar}>
 					<Toolbar>
             

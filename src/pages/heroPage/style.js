@@ -4,7 +4,8 @@ const useStyles = makeStyles(() => ({
 	
 	container: {
 		width: '100%',
-		height: '1000px',
+		height:'100%',
+		backgroundColor:'black',
 	},
 	hero: {
 		width: '100%',

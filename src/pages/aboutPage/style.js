@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 // eslint-disable-next-line no-unused-vars
 const useStyles = makeStyles((theme) => ({
 	aboutPageMobile: {
-		paddingTop: '20%',
-		width: '100%',
+		paddingTop:'20%',
+
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
@@ -14,8 +14,6 @@ const useStyles = makeStyles((theme) => ({
 		height: '1000px',
 	},
 	aboutPageDesktop: {
-		padding: '10%',
-		width: '100%',
 		display: 'flex',
 		flexDirection: 'row',
 		alignItems: 'center',
@@ -61,9 +59,8 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'space-aound',
 	},
 	textsDesktop: {
-		marginTop: '5%',
 		width: '40%',
-		height: '50%',
+		height: '30%',
 		maxWidth: '900px',
 		textAlign: 'left',
 		display: 'flex',
