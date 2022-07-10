@@ -24,7 +24,7 @@ const AboutPage =(props,ref)=> {
 				
 				<Typography fontFamily={'Merriweather'} variant="h5">
 				
-					I have a master&apos;s degree in Computer Engineering from Lund University. In my master&apos;s thesis I studied the impact of the BFF design pattern in a microservices environment, and this the <a href="https://fileadmin.cs.lth.se/cs/Education/Examensarbete/Popsci/220608_09Alkhodary.pdf"> popular summary</a> .
+					I have a master&apos;s degree in Computer Engineering from Lund University. In my master&apos;s thesis I studied the impact of the BFF design pattern in a microservices environment, and this the <a style={{color:'#a87267'}}href="https://fileadmin.cs.lth.se/cs/Education/Examensarbete/Popsci/220608_09Alkhodary.pdf"> popular summary</a> .
 				</Typography>
 				
 			</div>

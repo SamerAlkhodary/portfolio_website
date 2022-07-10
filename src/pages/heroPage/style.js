@@ -47,14 +47,14 @@ const useStyles = makeStyles(() => ({
 		borderRadius: 15,
 		border: 0,
 		fontFamily: '1em Merriweather',
-		backgroundColor: '#E4BFB7',
+		backgroundColor: '#a87267',
 		'&:hover': {
-			backgroundColor: '#54BAB9',
+			backgroundColor: '#E4BFB7',
 			boxShadow: 'none',
 		},
 		'&:active': {
 			boxShadow: 'none',
-			backgroundColor: '#54BAB9',
+			backgroundColor: '#E4BFB7',
 		},
 	},
 	appBar: {
