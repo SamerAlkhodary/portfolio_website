@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
 		alignContent: 'space-between',
 		justifyContent:'space-around',
 		backgroundColor: '#FFF0DB',
-		height: '800px',
+		height: '900px',
 	},
 	aboutPageDesktop: {
 		display: 'flex',
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'space-around',
 		alignContent: 'center',
 		backgroundColor: '#FFF0DB',
-		height: '1000px',
+		height: '900px',
 	},
 	textTitle: {
 		fontFamily: 'Merriweather',

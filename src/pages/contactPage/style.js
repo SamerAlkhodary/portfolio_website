@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
 	contactPage:{
 		backgroundColor:'#FFF0DB',
-		height:'1000px'
+		height:'800px',
 	},
 	containerMobile: {
 		height: '80%',
@@ -12,14 +12,14 @@ const useStyles = makeStyles(() => ({
 		display:'flex',
 		flexDirection:'column',
 		justifyContent: 'space-around',
+		paddingTop:'5em'
 
 	},
 	containerDesktop: {
 		height: '50%',
-		paddingTop:'10%',
-
 		width: '100%',
 		display:'flex',
+		paddingTop:'5em',
 		flexDirection:'row',
 		justifyContent: 'space-around'
 
