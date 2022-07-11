@@ -12,7 +12,7 @@ function Menu({onClose, itemPressed, customRefs}) {
 	const renderItem=(text,Icon,ref)=>{
 		return (
 			<List style={{paddingTop:30}}>
-				<ListItem button key='About Us' onClick={()=>{itemPressed(ref);onClose();}}>
+				<ListItem button key='About' onClick={()=>{itemPressed(ref);onClose();}}>
 					<div className={classes.iconTextRow}>
 						<Icon className={classes.icon}/>
 			
@@ -34,7 +34,7 @@ function Menu({onClose, itemPressed, customRefs}) {
 			title:'Projects',icon:CodeIcon,desitnation:customRefs[1]
 		},
 		{
-			title:'contact',icon:EmailIcon,desitnation:customRefs[2]
+			title:'contact',icon:EmailIcon,desitnation:customRefs[1]
 		}];
 	return (
 		<div className={classes.menu}>

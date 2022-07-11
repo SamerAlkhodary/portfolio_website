@@ -40,9 +40,7 @@ function CustomAppBar({refs,heroRef}) {
 			return(
 				<div className={classes.row}>
 					<IconButton onClick={()=>{itemPressed(heroRef);}}>
-						<IconButton onClick={()=>{itemPressed(heroRef);}}>
-							<img style={{ height: 35, width: 35 }} src={Logo}alt={'logo'}/>
-						</IconButton>
+						<img style={{ height: 35, width: 35 }} src={Logo}alt={'logo'}/>
 					</IconButton>
          
 					<IconButton
@@ -71,12 +69,12 @@ function CustomAppBar({refs,heroRef}) {
 							{menuItems[0]}
 						</Typography>
 					</IconButton>
-					<IconButton>
+					<IconButton  onClick={()=>{itemPressed(refs[1]);}}>
 						<Typography fontWeight={'bold'} className={classes.menuButton}>
 							{menuItems[1]}
 						</Typography>
 					</IconButton>
-					<IconButton>
+					<IconButton onClick={()=>{itemPressed(refs[1]);}}>
 						<Typography fontWeight={'bold'} className={classes.menuButton}>
 							{menuItems[2]}
 						</Typography>

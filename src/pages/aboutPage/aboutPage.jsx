@@ -8,14 +8,16 @@ import { useMediaQuery } from 'react-responsive';
 const AboutPage =(props,ref)=> {
 
 	const isDesktopOrLaptop = useMediaQuery({
-		query: '(min-width: 1224px)'});
+		query: '(min-width: 900px)'});
 	const classes = useStyles();
 
 	return (	
 		<div ref={ref} className={isDesktopOrLaptop?classes.aboutPageDesktop:classes.aboutPageMobile} >
+			
 			<div className={classes.profileBg}>
 				<img className={classes.profileImg} src={profile} alt="profile" />
 			</div>
+	
 			<div className={isDesktopOrLaptop?classes.textsDesktop:classes.textsMobile}>
 				
 				<Typography fontFamily={'Merriweather'} fontWeight={'bold'} variant="h5">
@@ -23,13 +25,14 @@ const AboutPage =(props,ref)=> {
 				</Typography>
 				<di className={classes.padding} />
 				
-				<Typography fontFamily={'Merriweather'} variant="h5">
+				<Typography fontFamily={'Merriweather'} variant="h6">
 				
 					I have a master&apos;s degree in Computer Engineering from Lund University. In my master&apos;s thesis I studied the impact of the BFF design pattern in a microservices environment, and this the <a style={{color:'#a87267'}}href="https://fileadmin.cs.lth.se/cs/Education/Examensarbete/Popsci/220608_09Alkhodary.pdf"> popular summary</a> .
 				</Typography>
 				
 			</div>
 		</div>
+
 	);
 };
 export default React.forwardRef(AboutPage);

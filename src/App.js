@@ -24,7 +24,7 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<body className={classes.page}>
 				<HeroPage ref={heroRef}/>
-				<CustomAppBar refs={[aboutRef]} heroRef={heroRef} className={classes.appBar} />
+				<CustomAppBar refs={[aboutRef,contactRef]} heroRef={heroRef} className={classes.appBar} />
 				<AboutPage ref={aboutRef}  />
 				<ContactPage ref={contactRef} > </ContactPage>
 			</body>
