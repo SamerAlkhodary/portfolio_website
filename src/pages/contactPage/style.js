@@ -39,7 +39,7 @@ const useStyles = makeStyles(() => ({
 		display:'flex',
 		flexDirection:'column',
 		justifyContent:'space-around',
-		width:'80%',
+		width:'100%',
 		height:'30%',
 
 	},
@@ -47,6 +47,12 @@ const useStyles = makeStyles(() => ({
 	textInput:{
 		height:'300px'
     
+	},
+	contactIcon:{
+		objectFit:'fit',
+		width:'1.5em',
+		height: '1.2em',
+
 	},
 	businessCard:{
 		width: '20em',

@@ -1,9 +1,12 @@
-import { Button, Typography } from '@mui/material';
+import { Button, IconButton, Typography } from '@mui/material';
 import React from 'react';
 import useStyles from './style.js';
 import { useMediaQuery } from 'react-responsive';
 import StyledTextField from '../../components/styledTextField.js/styledTextField.js';
 import logo from '../../res/logo.svg';
+import gmail from '../../res/gmail.png';
+import phone from '../../res/phone.png';
+import linkedin from '../../res/linkedin.png';
 
 const ContactPage = (props,ref)=> {
 	
@@ -55,6 +58,17 @@ const ContactPage = (props,ref)=> {
 							</Typography>
 						</div>
 					
+					</div>
+					<div style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly',paddingTop:'1em'}}>
+						<IconButton>
+							<img className={classes.contactIcon} src={gmail}></img>
+						</IconButton>
+						<IconButton>
+							<img  className={classes.contactIcon} src={linkedin}></img>
+						</IconButton>
+						<IconButton>
+							<img  className={classes.contactIcon} src={phone}></img>
+						</IconButton>
 					</div>
 				
 
