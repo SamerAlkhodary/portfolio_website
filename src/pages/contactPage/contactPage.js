@@ -1,8 +1,8 @@
 import { Button, Typography } from '@mui/material';
-import  TextField from '@mui/material/TextField';
 import React from 'react';
 import useStyles from './style.js';
 import { useMediaQuery } from 'react-responsive';
+import StyledTextField from '../../components/styledTextField.js/styledTextField.js';
 
 const ContactPage = (props,ref)=> {
 	
@@ -15,25 +15,26 @@ const ContactPage = (props,ref)=> {
 				{'GET IN TOUCH'}
 			</Typography>
 			<div className= {isDesktopOrLaptop?classes.formDesktop:classes.formMobile}>
-				<TextField 
-			
-					label='Your name' 
-					variant='outlined' 
+		
+
+				<StyledTextField
+					label="Your Name"
 					margin='dense'
 				/>
-				<TextField 
-					
+
+				<StyledTextField
 					label="Your email address"
 					margin='dense'
 				/>
-				<TextField
-					
+				<StyledTextField
 					label={'Your email'} 
 					margin='dense' 
 					className={classes.textInput} 
 					multiline='true'
 					rows={5}
 				/>
+
+				
 				<Button variant='filled' 
 					
 					style={{backgroundColor:'#E4BFB7'}}
