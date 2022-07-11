@@ -6,8 +6,8 @@ const HeroPage = (props,ref)=> {
 	
 	const classes = useStyles();
 	return (
-		<div ref={ref} className={classes.container} style={{height: '100vh'}} >
-			<img className={classes.hero} src={hero} alt="programming" />
+		<div ref={ref} className={classes.container} style={{height: '100vh',backgroundImage:hero}} >
+			<img className={classes.hero} src={hero} alt="programming"/>
 			<Typography variant="h4" fontFamily={'Merriweather'} className={classes.h1}>
 				{'Let’s build your mobile application with style'}
 			</Typography>
@@ -20,6 +20,7 @@ const HeroPage = (props,ref)=> {
 			<button variant="contained"  className={classes.button}>
 				<Typography fontFamily={'Merriweather'} fontSize={15} fontWeight={'bold'}>{'LEARN MORE'}</Typography>
 			</button>
+			
 		</div>
      
 
