@@ -90,7 +90,7 @@ function CustomAppBar({refs,heroRef}) {
 
 	return (
 		<>
-			<Slide apear={false} direction="down" in={scrollPosition >= window.innerHeight}>
+			<Slide apear={false} direction="down" in={scrollPosition >=0 }>
 				<AppBar position="fixed" className={classes.appBar}>
 					<Toolbar>
             

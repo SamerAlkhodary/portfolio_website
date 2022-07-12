@@ -27,14 +27,16 @@ const useStyles = makeStyles(() => ({
 		height: '5%',
 	},
 
-	aboutPage: {
-		width: '100%',
-		position: 'absolute',
-		top: 900,
-
-		backgroundColor: 'white',
-		height: '1000px',
-	},
+	texts:{ height:'80%',
+		minWidth:'20em',
+		maxWidth:'50em', 
+		width:'40%',top:'3em',
+		left:'10%',
+		position:'absolute',
+		display:'flex',
+		gap:'5em',
+		flexDirection:'column',
+		justifyContent:'center'}
 }));
 
 export default useStyles;
