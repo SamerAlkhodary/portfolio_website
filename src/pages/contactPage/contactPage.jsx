@@ -1,13 +1,11 @@
-import { Button, IconButton, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import React from 'react';
 import useStyles from './style.js';
 import { useMediaQuery } from 'react-responsive';
 import StyledTextField from '../../components/styledTextField.js/styledTextField.js';
 import logo from '../../res/logo.svg';
-import gmail from '../../res/gmail.png';
-import phone from '../../res/phone.png';
-import linkedin from '../../res/linkedin.png';
-
+import EmailIcon from '@mui/icons-material/Email';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 const ContactPage = (props,ref)=> {
 	
 	const classes = useStyles();
@@ -47,8 +45,7 @@ const ContactPage = (props,ref)=> {
 				<div className={classes.businessCard}>
 					
 					<div className={classes.row}>
-						<img src={logo} className={classes.logo}>
-						</img>
+						
 						<div className={classes.column}>
 							<Typography variant='h6' fontFamily={'Merriweather'}>
 								{'Samer Alkhdodary'}
@@ -57,18 +54,24 @@ const ContactPage = (props,ref)=> {
 								{'Software Engineer'}
 							</Typography>
 						</div>
+						<img src={logo} className={classes.logo}>
+						</img>
 					
 					</div>
-					<div style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly',paddingTop:'1em'}}>
-						<IconButton>
-							<img className={classes.contactIcon} src={gmail}></img>
-						</IconButton>
-						<IconButton>
-							<img  className={classes.contactIcon} src={linkedin}></img>
-						</IconButton>
-						<IconButton>
-							<img  className={classes.contactIcon} src={phone}></img>
-						</IconButton>
+					<div style={{display:'flex',flexDirection:' column',justifyContent:'space-evenly',alignItems:'start',paddingTop:'1em'}}>
+						<div style={{display:'flex',flex:1,flexDirection:'row',justifyContent:'space-between',gap:'1em'}}>
+							<EmailIcon/>
+							<Typography>
+								{'samerAlkhodary93@gmail.com'}
+							</Typography>
+						</div>
+						<div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',gap:'1em'}}>
+							<LocalPhoneIcon/>
+							<Typography>
+								{'+46735147500'}
+							</Typography>
+						</div>
+						
 					</div>
 				
 

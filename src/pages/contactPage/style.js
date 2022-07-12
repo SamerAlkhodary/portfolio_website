@@ -11,7 +11,7 @@ const useStyles = makeStyles(() => ({
 		padding: '10%',
 		display:'flex',
 		flexDirection:'column',
-		justifyContent: 'space-around',
+		justifyContent: 'space-between',
 		paddingTop:'5em'
 
 	},

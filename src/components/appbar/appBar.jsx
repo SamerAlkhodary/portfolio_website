@@ -7,11 +7,13 @@ import Slide from '@material-ui/core/Slide';
 import React, { useCallback, useEffect, useState } from 'react';
 import useStyles from './style';
 import Menu from '../menu/menu';
-import { isMobile } from 'react-device-detect';
+import { useMediaQuery } from 'react-responsive';
 import Logo from '../../res/logo.svg';
 
 // eslint-disable-next-line react/prop-types
 function CustomAppBar({refs,heroRef}) {
+	const isDesktopOrLaptop = useMediaQuery({
+		query: '(min-width: 900px)'});
 
 	const [isDrawerOpen, setDrawerOpen] = useState(false);
 	const menuItems = ['About', 'Projects', 'contact'];
@@ -36,7 +38,34 @@ function CustomAppBar({refs,heroRef}) {
 	}, [window]);
   
 	const appBarItems= useCallback(()=>{
-		if(isMobile){
+		if(isDesktopOrLaptop){
+			return(
+				<div className={classes.itemRow}>
+					<div  className={classes.logoItem}>
+						<IconButton onClick={()=>{itemPressed(heroRef);}}>
+							<img style={{ height: 50, width: 50 }} src={Logo}alt={'logo'}/>
+						</IconButton>
+					</div>
+					<div className={classes.pagesRow}>
+						<IconButton  onClick={()=>{itemPressed(refs[0]);}}>
+							<Typography fontWeight={'bold'} className={classes.menuButton}>
+								{menuItems[0]}
+							</Typography>
+						</IconButton>
+						<IconButton  onClick={()=>{itemPressed(refs[1]);}}>
+							<Typography fontWeight={'bold'} className={classes.menuButton}>
+								{menuItems[1]}
+							</Typography>
+						</IconButton>
+						<IconButton onClick={()=>{itemPressed(refs[1]);}}>
+							<Typography fontWeight={'bold'} className={classes.menuButton}>
+								{menuItems[2]}
+							</Typography>
+						</IconButton>
+					</div>
+				</div>
+			);
+		}else{
 			return(
 				<div className={classes.row}>
 					<IconButton onClick={()=>{itemPressed(heroRef);}}>
@@ -56,33 +85,8 @@ function CustomAppBar({refs,heroRef}) {
 					</IconButton>
 				</div>
 			);
-
-		}else{
-      
-			return(
-				<div className={classes.itemRow}>
-					<IconButton onClick={()=>{itemPressed(heroRef);}}>
-						<img style={{ height: 50, width: 50 }} src={Logo}alt={'logo'}/>
-					</IconButton>
-					<IconButton  onClick={()=>{itemPressed(refs[0]);}}>
-						<Typography fontWeight={'bold'} className={classes.menuButton}>
-							{menuItems[0]}
-						</Typography>
-					</IconButton>
-					<IconButton  onClick={()=>{itemPressed(refs[1]);}}>
-						<Typography fontWeight={'bold'} className={classes.menuButton}>
-							{menuItems[1]}
-						</Typography>
-					</IconButton>
-					<IconButton onClick={()=>{itemPressed(refs[1]);}}>
-						<Typography fontWeight={'bold'} className={classes.menuButton}>
-							{menuItems[2]}
-						</Typography>
-					</IconButton>
-				</div>
-			);
 		}
-	},[isMobile]);
+	},[isDesktopOrLaptop]);
 
 	return (
 		<>

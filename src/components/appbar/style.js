@@ -4,8 +4,21 @@ const useStyles = makeStyles(() => ({
 	itemRow:{
 		display:'flex',
 		flexDirection: 'row',
-		justifyContent: 'space-around',
+		justifyContent: 'space-between',
 		flex:1,
+	},
+	logoItem:{
+		flex:1,
+		display:'flex',
+		justifyContent:'start'
+
+	},
+	pagesRow:{
+		flex:1,
+		flexDirection:'row',
+		display:'flex',
+		justifyContent:'space-around'
+
 	},
 	appBar: {
 		backgroundColor: '#E4D5B7',
