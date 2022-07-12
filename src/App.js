@@ -22,12 +22,12 @@ function App() {
 	});
 	return (
 		<ThemeProvider theme={theme}>
-			<body className={classes.page}>
+			<div className={classes.page}>
 				<HeroPage ref={heroRef}/>
 				<CustomAppBar refs={[aboutRef,contactRef]} heroRef={heroRef} className={classes.appBar} />
 				<AboutPage ref={aboutRef}  />
 				<ContactPage ref={contactRef} > </ContactPage>
-			</body>
+			</div>
 		</ThemeProvider>
 
 

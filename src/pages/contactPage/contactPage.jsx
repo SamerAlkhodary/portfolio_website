@@ -32,7 +32,7 @@ const ContactPage = (props,ref)=> {
 					<StyledTextField
 						label={'Your email'} 
 						margin='dense' 
-						multiline='true'
+						multiline={true}
 						rows={5}
 					/>
 					<Button variant='filled' 

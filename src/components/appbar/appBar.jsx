@@ -90,7 +90,7 @@ function CustomAppBar({refs,heroRef}) {
 
 	return (
 		<>
-			<Slide apear={false} direction="down" in={scrollPosition >=0 }>
+			<Slide apear={'false'} direction="down" in={scrollPosition >= window.innerHeight }>
 				<AppBar position="fixed" className={classes.appBar}>
 					<Toolbar>
             
@@ -100,6 +100,7 @@ function CustomAppBar({refs,heroRef}) {
 			</Slide>
 
 			<SwipeableDrawer
+				onOpen={()=>{}}
 				swipeAreaWidth={0}
 				elevation={20}
 				anchor="right"

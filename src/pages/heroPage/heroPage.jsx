@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import useStyles from './style.js';
 import hero from '../../res/hero.png';
+import { Button } from '@mui/material';
 const HeroPage = (props,ref)=> {
 	
 	const classes = useStyles();
@@ -17,6 +18,15 @@ const HeroPage = (props,ref)=> {
           
 					{'  Programming and design services to build the best application for your customers'}
 				</Typography>
+				<Button  variant='filled' className={classes.button} style={{backgroundColor:'#a87267'}}>
+					<Typography 
+						fontFamily={'Merriweather'} 
+						color='white' 
+						fontSize={15} 
+						fontWeight={'bold'}>
+						{'LEARN MORE'}
+					</Typography>
+				</Button>
 
 				
 			</div>

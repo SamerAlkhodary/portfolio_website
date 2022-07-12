@@ -23,7 +23,7 @@ const AboutPage =(props,ref)=> {
 				<Typography fontFamily={'Merriweather'} fontWeight={'bold'} variant="h5">
 					{'Hello, I am Samer Alkhodary, and I am a Software Engineer.'}
 				</Typography>
-				<di className={classes.padding} />
+				<div className={classes.padding} />
 				
 				<Typography fontFamily={'Merriweather'} variant="h6">
 				
