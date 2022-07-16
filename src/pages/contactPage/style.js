@@ -3,30 +3,26 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
 	contactPage:{
 		backgroundColor:'#FFF0DB',
-		height:'800px',
+		height: '600px'
 	},
 	containerMobile: {
-		height: '80%',
 		width: '80%',
 		padding: '10%',
+		height:'80%',
 		display:'flex',
 		flexDirection:'column',
-		justifyContent: 'space-between',
-		paddingTop:'5em'
-
+		justifyContent: 'space-between'
 	},
 	containerDesktop: {
 		height: '50%',
 		width: '100%',
 		display:'flex',
-		paddingTop:'5em',
 		flexDirection:'row',
-		justifyContent: 'space-around'
-
+		justifyContent: 'space-around',
+		alignItems:'start',
 	},
 	title:{
 		textAlign:'start',
-		paddingBottom:'10%'
 		
 	},
 	formDesktop:{

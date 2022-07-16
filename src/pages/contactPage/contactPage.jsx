@@ -3,9 +3,7 @@ import React from 'react';
 import useStyles from './style.js';
 import { useMediaQuery } from 'react-responsive';
 import StyledTextField from '../../components/styledTextField.js/styledTextField.js';
-import logo from '../../res/logo.svg';
-import EmailIcon from '@mui/icons-material/Email';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import { Card } from './items';
 const ContactPage = (props,ref)=> {
 	
 	const classes = useStyles();
@@ -42,40 +40,8 @@ const ContactPage = (props,ref)=> {
 						</Typography>
 					</Button>
 				</div>
-				<div className={classes.businessCard}>
-					
-					<div className={classes.row}>
-						
-						<div className={classes.column}>
-							<Typography variant='h6' fontFamily={'Merriweather'}>
-								{'Samer Alkhdodary'}
-							</Typography>
-							<Typography variant='subtitle1'  fontFamily={'Merriweather-light'}>
-								{'Software Engineer'}
-							</Typography>
-						</div>
-						<img src={logo} className={classes.logo}>
-						</img>
-					
-					</div>
-					<div style={{display:'flex',flexDirection:' column',justifyContent:'space-evenly',alignItems:'start',paddingTop:'1em'}}>
-						<div style={{display:'flex',flex:1,flexDirection:'row',justifyContent:'space-between',gap:'1em'}}>
-							<EmailIcon/>
-							<Typography>
-								{'samerAlkhodary93@gmail.com'}
-							</Typography>
-						</div>
-						<div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',gap:'1em'}}>
-							<LocalPhoneIcon/>
-							<Typography>
-								{'+46735147500'}
-							</Typography>
-						</div>
-						
-					</div>
-				
-
-				</div>
+				<Card cardStyle={classes.businessCard}/>
+	
 			</div>
 		</div>
      

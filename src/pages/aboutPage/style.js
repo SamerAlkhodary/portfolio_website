@@ -13,13 +13,13 @@ const useStyles = makeStyles((theme) => ({
 		height: '900px',
 	},
 	aboutPageDesktop: {
+		paddingTop:'15em',
+		paddingBottom:'15em',
 		display: 'flex',
 		flexDirection: 'row',
-		alignItems: 'center',
 		justifyContent: 'space-around',
 		alignContent: 'center',
 		backgroundColor: '#FFF0DB',
-		height: '900px',
 	},
 	textTitle: {
 		fontFamily: 'Merriweather',
@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'space-aound',
 	},
 	textsDesktop: {
+		alignSelf:'center',
 		width: '40%',
 		height: '30%',
 		maxWidth: '900px',
