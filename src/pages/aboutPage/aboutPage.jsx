@@ -11,9 +11,10 @@ const AboutPage =(props,ref)=> {
 		query: '(min-width: 900px)'});
 	const classes = useStyles();
 
-	return (	
-		<div ref={ref} className={isDesktopOrLaptop?classes.aboutPageDesktop:classes.aboutPageMobile} >
-			
+	return (
+	
+		<div ref={ref} className={isDesktopOrLaptop?classes.aboutContainerDesktop:classes.aboutContainerMobile} >
+		
 			<div className={classes.profileBg}>
 				<img className={classes.profileImg} src={profile} alt="profile" />
 			</div>

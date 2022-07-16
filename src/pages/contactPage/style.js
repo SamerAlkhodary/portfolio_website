@@ -2,19 +2,20 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
 	contactPage:{
+		paddingTop:'2em',
+
 		backgroundColor:'#FFF0DB',
-		height: '600px'
 	},
 	containerMobile: {
-		width: '80%',
-		padding: '10%',
-		height:'80%',
+		height: '800px',
+		width: '100%',
+		alignItems:'center',
 		display:'flex',
 		flexDirection:'column',
-		justifyContent: 'space-between'
+		justifyContent: 'space-around',
 	},
 	containerDesktop: {
-		height: '50%',
+		height: '500px',
 		width: '100%',
 		display:'flex',
 		flexDirection:'row',
@@ -35,8 +36,8 @@ const useStyles = makeStyles(() => ({
 		display:'flex',
 		flexDirection:'column',
 		justifyContent:'space-around',
-		width:'100%',
-		height:'30%',
+		width:'80%',
+		height:'50%',
 
 	},
 	

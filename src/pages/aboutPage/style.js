@@ -2,24 +2,24 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // eslint-disable-next-line no-unused-vars
 const useStyles = makeStyles((theme) => ({
-	aboutPageMobile: {
-		paddingTop:'15%',
+	aboutContainerMobile: {
+		backgroundColor: '#FFF0DB',
+		paddingTop:'10em',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
 		alignContent: 'space-between',
-		justifyContent:'space-around',
-		backgroundColor: '#FFF0DB',
-		height: '900px',
+		justifyContent:'space-between',
+		height: '800px',
 	},
-	aboutPageDesktop: {
-		paddingTop:'15em',
-		paddingBottom:'15em',
+	aboutContainerDesktop: {
+		backgroundColor: '#FFF0DB',
+		paddingTop:'10em',
+		paddingBottom:'13em',
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'space-around',
 		alignContent: 'center',
-		backgroundColor: '#FFF0DB',
 	},
 	textTitle: {
 		fontFamily: 'Merriweather',
@@ -37,8 +37,8 @@ const useStyles = makeStyles((theme) => ({
 		objectFit: 'cover',
 	},
 	profileBg: {
-		height: '50%',
-		width: '40%',
+		height: '45%',
+		width: '35%',
 		padding:10,
 		maxWidth: '350px',
 		maxHeight: '350px',
