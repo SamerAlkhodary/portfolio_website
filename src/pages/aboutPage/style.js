@@ -3,22 +3,35 @@ import { makeStyles } from '@material-ui/core/styles';
 // eslint-disable-next-line no-unused-vars
 const useStyles = makeStyles((theme) => ({
 	aboutContainerMobile: {
-		backgroundColor: '#FFF0DB',
-		paddingTop:'10em',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
 		alignContent: 'space-between',
 		justifyContent:'space-between',
-		height: '800px',
+		height: '900px',
 	},
-	aboutContainerDesktop: {
+	mainContainer:{
+		width:'80%',
+		alignSelf:'center',
+	},
+	page:{
 		backgroundColor: '#FFF0DB',
 		paddingTop:'10em',
-		paddingBottom:'13em',
+		display:'flex',
+		flexDirection:'column'
+	},
+	title:{
+		alignSelf:'start',
+		paddingBottom: '2em',
+		textAlign:'start',
+	},
+
+	aboutContainerDesktop: {
+		paddingBottom:'10em',
 		display: 'flex',
+		gap:'3em',
 		flexDirection: 'row',
-		justifyContent: 'space-around',
+		justifyContent: 'space-between',
 		alignContent: 'center',
 	},
 	textTitle: {
@@ -49,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	textsMobile: {
-		width: '80%',
+		width: '100%',
 		height: '50%',
 		maxWidth: '900px',
 		textAlign: 'left',
@@ -58,8 +71,9 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'space-aound',
 	},
 	textsDesktop: {
+		gap:'1em',
 		alignSelf:'center',
-		width: '40%',
+		width: '50%',
 		height: '30%',
 		maxWidth: '900px',
 		textAlign: 'left',

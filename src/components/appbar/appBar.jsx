@@ -57,7 +57,7 @@ function CustomAppBar({refs,heroRef}) {
 								{menuItems[1]}
 							</Typography>
 						</IconButton>
-						<IconButton onClick={()=>{itemPressed(refs[1]);}}>
+						<IconButton onClick={()=>{itemPressed(refs[2]);}}>
 							<Typography fontWeight={'bold'} className={classes.menuButton}>
 								{menuItems[2]}
 							</Typography>

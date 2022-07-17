@@ -34,7 +34,7 @@ function Menu({onClose, itemPressed, customRefs}) {
 			title:'Projects',icon:CodeIcon,desitnation:customRefs[1]
 		},
 		{
-			title:'contact',icon:EmailIcon,desitnation:customRefs[1]
+			title:'contact',icon:EmailIcon,desitnation:customRefs[2]
 		}];
 	return (
 		<div className={classes.menu}>
