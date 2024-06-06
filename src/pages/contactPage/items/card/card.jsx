@@ -15,11 +15,9 @@ const Card =({cardStyle})=>{
             
 				<div className={classes.column}>
 					<Typography variant='h6' fontFamily={'Merriweather'}>
-						{'Samer Alkhdodary'}
+						{'PALMYRA ÉPÍTŐ'}
 					</Typography>
-					<Typography variant='subtitle1'  fontFamily={'Merriweather-light'}>
-						{'Software Engineer'}
-					</Typography>
+					
 				</div>
 				<img src={logo} className={classes.logo}>
 				</img>
@@ -29,13 +27,13 @@ const Card =({cardStyle})=>{
 				<div className={classes.cardContent}>
 					<EmailIcon/>
 					<Typography>
-						{'samerAlkhodary93@gmail.com'}
+						{'palmyraepito@gmail.com'}
 					</Typography>
 				</div>
 				<div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',gap:'1em'}}>
 					<LocalPhoneIcon/>
 					<Typography>
-						{'+46735147500'}
+						{'+3630201334'}
 					</Typography>
 				</div>
             

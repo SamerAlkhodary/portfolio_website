@@ -8,7 +8,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import useStyles from './style';
 import Menu from '../menu/menu';
 import { useMediaQuery } from 'react-responsive';
-import Logo from '../../res/logo.svg';
+import Logo from '../../res/vertical_logo.svg';
 
 // eslint-disable-next-line react/prop-types
 function CustomAppBar({refs,heroRef}) {
@@ -16,7 +16,8 @@ function CustomAppBar({refs,heroRef}) {
 		query: '(min-width: 900px)'});
 
 	const [isDrawerOpen, setDrawerOpen] = useState(false);
-	const menuItems = ['About', 'Projects', 'contact'];
+
+	const menuItems = ['About', 'Services', 'Contact'];
 
 	const classes = useStyles();
 	const itemPressed =(ref)=>{
@@ -26,7 +27,8 @@ function CustomAppBar({refs,heroRef}) {
 	};
 	const [scrollPosition, setScrollPosition] = useState(0);
 	const handleScroll = () => {
-		const position = window.pageYOffset;
+		const position = window.scrollY;
+		console.log(window.scrollY);
 		setScrollPosition(position);
 	};
 	useEffect(() => {
@@ -36,29 +38,29 @@ function CustomAppBar({refs,heroRef}) {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, [window]);
-  
+	
 	const appBarItems= useCallback(()=>{
 		if(isDesktopOrLaptop){
 			return(
 				<div className={classes.itemRow}>
 					<div  className={classes.logoItem}>
 						<IconButton onClick={()=>{itemPressed(heroRef);}}>
-							<img style={{ height: 50, width: 50 }} src={Logo}alt={'logo'}/>
+							<img style={{ height: 50, width: 300 }} src={Logo}alt={'logo'}/>	
 						</IconButton>
 					</div>
 					<div className={classes.pagesRow}>
 						<IconButton  onClick={()=>{itemPressed(refs[0]);}}>
-							<Typography fontWeight={'bold'} className={classes.menuButton}>
+							<Typography fontFamily={'Merriweather'} fontWeight={'bold'} className={ classes.menuButton} fontSize={'1.1em'}>
 								{menuItems[0]}
 							</Typography>
 						</IconButton>
 						<IconButton  onClick={()=>{itemPressed(refs[1]);}}>
-							<Typography fontWeight={'bold'} className={classes.menuButton}>
+							<Typography fontFamily={'Merriweather'} fontWeight={'bold'} className={classes.menuButton}fontSize={'1.1em'}>
 								{menuItems[1]}
 							</Typography>
 						</IconButton>
 						<IconButton onClick={()=>{itemPressed(refs[2]);}}>
-							<Typography fontWeight={'bold'} className={classes.menuButton}>
+							<Typography fontFamily={'Merriweather'} fontWeight={'bold'} className={classes.menuButton}fontSize={'1.1em'}>
 								{menuItems[2]}
 							</Typography>
 						</IconButton>
@@ -69,11 +71,10 @@ function CustomAppBar({refs,heroRef}) {
 			return(
 				<div className={classes.row}>
 					<IconButton onClick={()=>{itemPressed(heroRef);}}>
-						<img style={{ height: 35, width: 35 }} src={Logo}alt={'logo'}/>
+						<img style={{ height: 50, width: 250 }} src={Logo}alt={'logo'}/>	
 					</IconButton>
          
 					<IconButton
-						className={classes.menuButton}
 						onClick={() => {
 							setDrawerOpen(true);
 						}}
@@ -81,19 +82,18 @@ function CustomAppBar({refs,heroRef}) {
 						color="inherit"
 						aria-label="menu"
 					>
-						<MenuIcon fontSize='10' className={classes.menuIcon} />
+						<MenuIcon fontSize='10' style={{color:'#EEC283'}} />
 					</IconButton>
 				</div>
 			);
 		}
-	},[isDesktopOrLaptop]);
+	},[isDesktopOrLaptop,scrollPosition]);
 
 	return (
 		<>
-			<Slide apear={'false'} direction="down" in={scrollPosition >= window.innerHeight }>
-				<AppBar position="fixed" className={classes.appBar}>
-					<Toolbar>
-            
+			<Slide apear={'false'} direction="down" in={scrollPosition >= 0 }>
+				<AppBar position="fixed" className={classes.appBarHero} elevation={0}>
+					<Toolbar style={{padding:0}}>
 						{appBarItems()}
 					</Toolbar>
 				</AppBar>

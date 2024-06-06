@@ -10,7 +10,8 @@ const useStyles = makeStyles(() => ({
 	logoItem:{
 		flex:1,
 		display:'flex',
-		justifyContent:'start'
+		justifyContent:'start',
+		padding:0,
 
 	},
 	pagesRow:{
@@ -20,9 +21,18 @@ const useStyles = makeStyles(() => ({
 		justifyContent:'space-around'
 
 	},
-	appBar: {
-		backgroundColor: '#E4D5B7',
-		opacity: 1,
+	appBarHero: {
+		backgroundColor: '#242424',
+		padding:0,
+		boxShadow: '0px',
+		paddingLeft:'10%',
+	},
+	appBarRest: {
+		paddingLeft:'10%',
+
+		backgroundColor: 'white',
+		boxShadow: '0px',
+		padding:0,
 	},
 	row: {
 		justifyContent: 'space-between',
@@ -31,16 +41,16 @@ const useStyles = makeStyles(() => ({
 		flex:1,
 	},
 	logo: {
-		color: 'black', 
+		color: 'white', 
 	},
 	menuIcon: {
 		color: 'black',
 		
 	},
 	menuButton: {
-		color: 'black',
-        
+		color: '#EEC283'        
 	},
+	
 }));
 
 export default useStyles;

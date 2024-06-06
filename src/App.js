@@ -1,16 +1,15 @@
-import { HeroPage,AboutPage,ContactPage } from './pages';
+import { HeroPage,AboutPage,ContactPage, ServicesPage } from './pages';
 import React, {createRef} from 'react';
 import useStyles from './style.js';
 import{CustomAppBar} from './components';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
-import ProjectsPage from './pages/projectsPage/projectsPage';
 
 function App() {
 	const classes = useStyles();
 	const heroRef= createRef();
 	const aboutRef=createRef();
 	const contactRef=createRef();
-	const projectsRef=createRef();
+	const servicesRef=createRef();
 
 	const theme = createTheme({
 		typography: {
@@ -25,10 +24,10 @@ function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<div className={classes.page}>
+				<CustomAppBar refs={[aboutRef,servicesRef,contactRef]} heroRef={heroRef} className={classes.appBar} />
 				<HeroPage ref={heroRef}/>
-				<CustomAppBar refs={[aboutRef,projectsRef,contactRef]} heroRef={heroRef} className={classes.appBar} />
 				<AboutPage ref={aboutRef}  />
-				<ProjectsPage ref={projectsRef}/>
+				<ServicesPage ref={servicesRef}/>
 				<ContactPage ref={contactRef} > </ContactPage>
 			</div>
 		</ThemeProvider>

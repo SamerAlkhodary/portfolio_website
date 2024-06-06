@@ -6,12 +6,12 @@ const useStyles = makeStyles(() => ({
 		display: 'flex',
 		flexDirection: 'column',
 		flex: 1,
-		backgroundColor: '#FFF0DB',
+		backgroundColor: '#242424',
 		position:'relative',
 	},
 	arrowIcon:{
 		
-		color:'black'
+		color:'#EEC283'
 	},
 	close:{   
 		position:'absolute',
@@ -21,13 +21,13 @@ const useStyles = makeStyles(() => ({
 		height:'5%',
 
 	},icon:{
-		color:'black',
+		color:'#EEC283',
 		paddingRight: 10
 	},
 	item:{
 		textAlign:'center',
 		padding: '10%',
-		color:'black',
+		color:'white',
 		fontSize:20,
 
 	},

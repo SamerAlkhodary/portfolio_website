@@ -1,7 +1,6 @@
 import React from 'react';
 import  Typography  from '@mui/material/Typography';
 import useStyles from './style.js';
-import profile from '../../res/profile.jpg';
 import { useMediaQuery } from 'react-responsive';
 
 
@@ -12,27 +11,22 @@ const AboutPage =(props,ref)=> {
 	const classes = useStyles();
 
 	return (
-		<div ref={ref} className={classes.page}>
+		<div ref={ref} className={classes.page} >
 			<div className={classes.mainContainer}>
 				<Typography className={classes.title} variant='h4' fontFamily={'Merriweather'} fontWeight='bold'>
-				Profile
+				About us
 				</Typography>
+				<div className={classes.padding} />
+
 				<div className={isDesktopOrLaptop?classes.aboutContainerDesktop:classes.aboutContainerMobile} >
-					<div className={classes.profileBg}>
-						<img className={classes.profileImg} src={profile} alt="profile" />
-					</div>
-	
+				
 					<div className={isDesktopOrLaptop?classes.textsDesktop:classes.textsMobile}>
 				
-						<Typography fontFamily={'Merriweather'} fontWeight={'bold'} variant="h5">
-							{'Hello, I am Samer Alkhodary, and I am a Software Engineer.'}
+						<Typography fontFamily={'Merriweather'} variant="h7">
+							{'Transform your living spaces with our expert renovation services! As a premier general contractor, we enhance apartments and houses, ensuring customer satisfaction and timely completion. From major overhauls to minor upgrades, our comprehensive construction services are tailored to meet your needs.'}
 						</Typography>
-						<div className={classes.padding} />
 				
-						<Typography fontFamily={'Merriweather'} variant="h6">
-				
-					I have a master&apos;s degree in Computer Engineering from Lund University. In my master&apos;s thesis I studied the impact of the BFF design pattern in a microservices environment, and this the <a style={{color:'#a87267'}}href="https://fileadmin.cs.lth.se/cs/Education/Examensarbete/Popsci/220608_09Alkhodary.pdf"> popular summary</a> .
-						</Typography>
+						
 				
 					</div>
 				</div>

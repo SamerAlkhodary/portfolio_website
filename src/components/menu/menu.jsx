@@ -12,11 +12,11 @@ function Menu({onClose, itemPressed, customRefs}) {
 	const renderItem=(text,Icon,ref)=>{
 		return (
 			<List style={{paddingTop:30}}>
-				<ListItem button key='About' onClick={()=>{itemPressed(ref);onClose();}}>
+				<ListItem key='About' onClick={()=>{itemPressed(ref);onClose();}}>
 					<div className={classes.iconTextRow}>
 						<Icon className={classes.icon}/>
 			
-						<ListItemText primary={text} />
+						<ListItemText primary={text} style={{color:'#EEC283'}} />
 					</div>
 					<ArrowForwardIosIcon className={classes.arrowIcon}></ArrowForwardIosIcon>
 				</ListItem>
@@ -31,7 +31,7 @@ function Menu({onClose, itemPressed, customRefs}) {
 			title:'About',icon:AccountCircleIcon,desitnation:customRefs[0]
 		},
 		{
-			title:'Projects',icon:CodeIcon,desitnation:customRefs[1]
+			title:'Services',icon:CodeIcon,desitnation:customRefs[1]
 		},
 		{
 			title:'contact',icon:EmailIcon,desitnation:customRefs[2]

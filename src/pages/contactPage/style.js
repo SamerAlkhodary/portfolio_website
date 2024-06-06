@@ -4,7 +4,7 @@ const useStyles = makeStyles(() => ({
 	contactPage:{
 		paddingTop:'2em',
 
-		backgroundColor:'#FFF0DB',
+		backgroundColor:'white',
 	},
 	containerMobile: {
 		height: '800px',
@@ -56,7 +56,7 @@ const useStyles = makeStyles(() => ({
 		padding: '1em',
 		height:'10em',
 		alignSelf:'center',
-		backgroundImage:'linear-gradient(to bottom right, #FFF0DB, rgba(228,191,183,0.7))',
+		backgroundImage:'linear-gradient(to bottom right, #EEC283, rgba(228,191,183,0.7))',
 		backdropFilter: 'blur(10px)',
 		boxShadow: '10px 10px 10px rgba(30,30,30,0.4)',
 		borderRadius:'0.5em',
