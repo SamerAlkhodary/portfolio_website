@@ -1,9 +1,10 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import useStyles from './style.js';
-import hero from '../../res/hero.jpg';
+import hero from '../../res/hero.webp';
 import { Button } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
+import Consts from '../../consts.js';
 
 const HeroPage = (props,ref)=> {
 	const isDesktopOrLaptop = useMediaQuery({
@@ -13,7 +14,7 @@ const HeroPage = (props,ref)=> {
 		<div ref={ref} className={classes.container} style={{height: '100vh'}} >
 			<img className={classes.hero} src={hero} alt="programming"/>
 			<div className={isDesktopOrLaptop?classes.textsDesktop:classes.textsMobile}>
-				<Typography variant="h4" fontFamily={'Merriweather'} className={classes.h1}>
+				<Typography variant="h4" paragraph fontFamily={'Merriweather'} className={classes.h1}>
 					{'We build your home, you fill them with memories'}
 				</Typography>
 
@@ -24,7 +25,7 @@ const HeroPage = (props,ref)=> {
 				<Button  variant='filled' className={classes.button} style={{backgroundColor:'#EEC283'}}>
 					<Typography 
 						fontFamily={'Merriweather'} 
-						color='white' 
+						color= {Consts.theme.secondary}
 						fontSize={15} 
 						fontWeight={'bold'}>
 						{'LEARN MORE'}

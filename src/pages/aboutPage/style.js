@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	page:{
 		backgroundColor: Consts.theme.secondary,
-		paddingTop:'10em',
+		paddingTop:'5em',
 		display:'flex',
 		flexDirection:'column'
 	},

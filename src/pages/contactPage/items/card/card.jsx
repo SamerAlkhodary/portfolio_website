@@ -4,6 +4,7 @@ import React from 'react';
 import {Typography } from '@mui/material';
 import logo from '../../../../res/logo.svg';
 import useStyles from './style.js';
+import Consts from '../../../../consts.js';
 
 const Card =({cardStyle})=>{
 	const classes = useStyles();
@@ -14,8 +15,8 @@ const Card =({cardStyle})=>{
 			<div className={classes.row}>
             
 				<div className={classes.column}>
-					<Typography variant='h6' fontFamily={'Merriweather'}>
-						{'PALMYRA ÉPÍTŐ'}
+					<Typography variant='h7' fontFamily={'Merriweather'}color={Consts.theme.secondary} fontWeight={'bold'}>
+						{'PALMYRA ÉPÍTŐ KFT.'}
 					</Typography>
 					
 				</div>
@@ -25,14 +26,14 @@ const Card =({cardStyle})=>{
 			</div>
 			<div className={classes.cardBody}>
 				<div className={classes.cardContent}>
-					<EmailIcon/>
-					<Typography>
+					<EmailIcon color={Consts.theme.secondary}/>
+					<Typography  color={Consts.theme.secondary}>
 						{'palmyraepito@gmail.com'}
 					</Typography>
 				</div>
 				<div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',gap:'1em'}}>
-					<LocalPhoneIcon/>
-					<Typography>
+					<LocalPhoneIcon  color={Consts.theme.secondary}/>
+					<Typography color={Consts.theme.secondary}>
 						{'+3630201334'}
 					</Typography>
 				</div>

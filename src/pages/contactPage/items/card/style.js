@@ -27,7 +27,8 @@ const useStyles = makeStyles(() => ({
 		display:'flex',
 		flexDirection:'row',
 		gap:'1em',
-		alignItems:'center'
+		alignItems:'center',
+		justifyContent:'space-around'
 
 	},
 	column:{
