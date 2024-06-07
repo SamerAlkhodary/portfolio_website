@@ -16,7 +16,7 @@ const ContactPage = (props,ref)=> {
 			
 				<div className= {isDesktopOrLaptop?classes.formDesktop:classes.formMobile}>
 					<Typography  fontWeight='bold' className={classes.title}variant='h4' fontFamily={'Merriweather'}>
-						{'GET IN TOUCH'}
+						{'Get in touch'}
 					</Typography>
 					<StyledTextField
 						label="Your Name"

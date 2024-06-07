@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
+import Consts from '../../consts';
 
 const useStyles = makeStyles(() => ({
 	contactPage:{
-		paddingTop:'2em',
-
+		paddingTop:'5em',
 		backgroundColor:'white',
 	},
 	containerMobile: {
@@ -24,6 +24,7 @@ const useStyles = makeStyles(() => ({
 	},
 	title:{
 		textAlign:'start',
+		color: Consts.theme.secondary
 		
 	},
 	formDesktop:{

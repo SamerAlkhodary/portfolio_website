@@ -44,7 +44,7 @@ function CustomAppBar({refs,heroRef}) {
 			return(
 				<div className={classes.itemRow}>
 					<div  className={classes.logoItem}>
-						<IconButton onClick={()=>{itemPressed(heroRef);}}>
+						<IconButton onClick={()=>{itemPressed(heroRef);}} style={{paddingLeft:0}}>
 							<img style={{ height: 50, width: 300 }} src={Logo}alt={'logo'}/>	
 						</IconButton>
 					</div>
@@ -70,7 +70,7 @@ function CustomAppBar({refs,heroRef}) {
 		}else{
 			return(
 				<div className={classes.row}>
-					<IconButton onClick={()=>{itemPressed(heroRef);}}>
+					<IconButton onClick={()=>{itemPressed(heroRef);}} style={{paddingLeft:0}}>
 						<img style={{ height: 50, width: 250 }} src={Logo}alt={'logo'}/>	
 					</IconButton>
          

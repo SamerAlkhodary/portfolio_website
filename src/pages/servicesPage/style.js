@@ -4,7 +4,7 @@ import Consts from '../../consts';
 const useStyles = makeStyles(() => ({
 	servicesPage:{
 		backgroundColor:Consts.theme.accent,
-		paddingTop: '7em',
+		paddingTop: '5em',
 		paddingBottom:'6em',
 		display:'flex',
 		flexDirection:'column'

@@ -27,13 +27,7 @@ const useStyles = makeStyles(() => ({
 		boxShadow: '0px',
 		paddingLeft:'10%',
 	},
-	appBarRest: {
-		paddingLeft:'10%',
 
-		backgroundColor: 'white',
-		boxShadow: '0px',
-		padding:0,
-	},
 	row: {
 		justifyContent: 'space-between',
 		display:'flex',
@@ -45,7 +39,6 @@ const useStyles = makeStyles(() => ({
 	},
 	menuIcon: {
 		color: 'black',
-		
 	},
 	menuButton: {
 		color: '#EEC283'        
