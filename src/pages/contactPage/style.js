@@ -3,20 +3,28 @@ import Consts from '../../consts';
 
 const useStyles = makeStyles(() => ({
 	contactPage:{
-		paddingTop:'5em',
-		backgroundColor:'white',
+		paddingTop:'2em',
+		backgroundColor: Consts.theme.secondary,
+		display:'flex',
+		flexDirection:'column',
+		gap:'2em',
+
+		alignItems:'center',
+
+
 	},
 	containerMobile: {
-		height: '800px',
 		width: '100%',
+		gap:'5em',
+		paddingBottom:'3em',
 		alignItems:'center',
 		display:'flex',
 		flexDirection:'column',
 		justifyContent: 'space-around',
 	},
 	containerDesktop: {
-		height: '500px',
 		width: '100%',
+		paddingBottom:'3em',
 		display:'flex',
 		flexDirection:'row',
 		justifyContent: 'space-around',
@@ -24,18 +32,20 @@ const useStyles = makeStyles(() => ({
 	},
 	title:{
 		textAlign:'start',
-		color: Consts.theme.secondary
+		color: Consts.theme.primary
 		
 	},
 	formDesktop:{
 		display:'flex',
 		flexDirection:'column',
 		width:'35%',
+		gap:'1em',
 		height:'30%',
 	},
 	formMobile:{
 		display:'flex',
 		flexDirection:'column',
+		gap:'1em',
 		justifyContent:'space-around',
 		width:'80%',
 		height:'50%',

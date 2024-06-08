@@ -14,7 +14,7 @@ const AboutPage =(props,ref)=> {
 		<div ref={ref} className={classes.page} >
 			<div className={classes.mainContainer}>
 				<Typography className={classes.title} variant='h4' fontFamily={'Merriweather'} fontWeight='bold'>
-				About us
+				About
 				</Typography>
 				<div className={classes.padding} />
 

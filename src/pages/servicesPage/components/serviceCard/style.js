@@ -3,23 +3,24 @@ import Consts from '../../../../consts';
 
 const useStyles = makeStyles(() => ({
 	cardDesktop:{
-		backgroundColor:Consts.theme.primary,
-		margin: '1em',
-		border: '1px solid green',
-		borderRadius: 10,
-
-		width: '20%',
+		backgroundColor:Consts.theme.secondary,
+		position:'relative',
+		width: '30%',
 	},
 	cardMobile:{
-		backgroundColor:Consts.theme.primary,
-		margin: '1em',
-		border: '1px solid green',
-		borderRadius: 10
+		backgroundColor:Consts.theme.secondary,
+		position:'relative',
+		height: '17em'
 	},
 	txt:{
-		textAlign:'center',
-		width: '100%',
-		color: Consts.theme.secondary
+		display:'flex',
+		left:'50%',
+		right:'50%',
+		top:'50%',
+		bottom: '50%',
+		position:'absolute',
+		justifyContent:'center',
+		color: Consts.theme.primary
 	},
 	
 	

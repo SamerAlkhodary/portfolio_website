@@ -14,11 +14,11 @@ const HeroPage = (props,ref)=> {
 		<div ref={ref} className={classes.container} style={{height: '100vh'}} >
 			<img className={classes.hero} src={hero} alt="programming"/>
 			<div className={isDesktopOrLaptop?classes.textsDesktop:classes.textsMobile}>
-				<Typography variant="h4" paragraph fontFamily={'Merriweather'} className={classes.h1}>
+				<Typography variant={isDesktopOrLaptop?'h4':'h5'} paragraph fontFamily={'Merriweather'} className={classes.h1}>
 					{'We build your home, you fill them with memories'}
 				</Typography>
 
-				<Typography variant="h5" paragraph className={classes.h2} fontFamily={'Merriweather'}>
+				<Typography  variant={isDesktopOrLaptop?'h5':'h6'} paragraph className={classes.h2} fontFamily={'Merriweather'}>
           
 					{'Construction and renovation services to give you the home you deserve'}
 				</Typography>
@@ -26,7 +26,7 @@ const HeroPage = (props,ref)=> {
 					<Typography 
 						fontFamily={'Merriweather'} 
 						color= {Consts.theme.secondary}
-						fontSize={15} 
+						fontSize={'1em'}
 						fontWeight={'bold'}>
 						{'LEARN MORE'}
 					</Typography>

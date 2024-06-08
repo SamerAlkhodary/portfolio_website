@@ -4,6 +4,7 @@ import useStyles from './style.js';
 import { useMediaQuery } from 'react-responsive';
 import StyledTextField from '../../components/styledTextField.js/styledTextField.js';
 import { Card } from './items';
+import Consts from '../../consts.js';
 const ContactPage = (props,ref)=> {
 	
 	const classes = useStyles();
@@ -11,32 +12,53 @@ const ContactPage = (props,ref)=> {
 		query: '(min-width: 900px)'});
 	return (
 		<div ref={ref} className={classes.contactPage}>
-			
+			<Typography  fontWeight='bold' className={classes.title}variant='h4' fontFamily={'Merriweather'}>
+				{'Get in touch'}
+			</Typography>
 			<div  className={isDesktopOrLaptop?classes.containerDesktop:classes.containerMobile} >
-			
+				
 				<div className= {isDesktopOrLaptop?classes.formDesktop:classes.formMobile}>
-					<Typography  fontWeight='bold' className={classes.title}variant='h4' fontFamily={'Merriweather'}>
-						{'Get in touch'}
-					</Typography>
+					
 					<StyledTextField
-						label="Your Name"
+						InputProps={{
+							style:{
+								color:'white'
+							}
+						}}
+						variant='standard'
+						placeholder="Your Name"
 						margin='dense'
 					/>
 
 					<StyledTextField
-						label="Your email address"
+						InputProps={{
+							style:{
+								color:'white',
+							}
+						}}
+						
+						variant='standard'
+						placeholder="Your email address"
 						margin='dense'
+
 					/>
 					<StyledTextField
-						label={'Your email'} 
-						margin='dense' 
+						InputProps={{
+							style:{
+								color:'white',
+							}
+						}}
+						variant='standard'
+						placeholder={'Message'} 
 						multiline={true}
-						rows={5}
+						margin='dense'
+
+						rows={4}
 					/>
 					<Button variant='filled' 
 						style={{backgroundColor:'#EEC283'}}>
-						<Typography fontFamily={'Merriweather'} fontSize={15} fontWeight={'bold'}>
-							{'SEND'}
+						<Typography fontFamily={'Merriweather'} fontSize={15} fontWeight={'bold'} color={Consts.theme.primary}>
+							{'Send'}
 						</Typography>
 					</Button>
 				</div>

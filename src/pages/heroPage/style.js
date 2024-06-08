@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import Consts from '../../consts';
 
 const useStyles = makeStyles(() => ({
 	
@@ -23,8 +24,9 @@ const useStyles = makeStyles(() => ({
 	},
 	button: {
 		backgroundColor: '#a87267',
-		width:'50%',
-		height: '5%',
+		width:'12em',
+		color: Consts.theme.secondary,
+		
 	},
 
 	textsDesktop:{ height:'80%',
@@ -41,12 +43,12 @@ const useStyles = makeStyles(() => ({
 	textsMobile:{ 
 		height:'80%',
 		top:'3em',
-		width: '80%',
+		width: '75%',
 		maxWidth:'50em', 
-		paddingLeft:'10%',
+		left:'10%',
 		position:'absolute',
 		display:'flex',
-		gap:'5em',
+		gap:'3em',
 		flexDirection:'column',
 		justifyContent:'center'}
 }));

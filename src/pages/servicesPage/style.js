@@ -3,7 +3,7 @@ import Consts from '../../consts';
 
 const useStyles = makeStyles(() => ({
 	servicesPage:{
-		backgroundColor:Consts.theme.accent,
+		backgroundColor:Consts.theme.secondary,
 		paddingTop: '5em',
 		paddingBottom:'6em',
 		display:'flex',
@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
 	title:{
 		alignSelf:'center',
 		paddingBottom: '1em',
-		color: Consts.theme.secondary,
+		color: Consts.theme.primary,
 		textAlign:'center',
 	}
 
