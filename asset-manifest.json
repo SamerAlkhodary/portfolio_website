@@ -1,18 +1,21 @@
 {
   "files": {
     "main.css": "/portfolio_website/static/css/main.2403a8fd.css",
-    "main.js": "/portfolio_website/static/js/main.7c38de1a.js",
+    "main.js": "/portfolio_website/static/js/main.cb3cd4be.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio_website/static/js/787.1ed0c42c.chunk.js",
+    "static/media/extension.webp": "/portfolio_website/static/media/extension.45c7a9c9ab0a14aa0a92.webp",
     "static/media/hero.webp": "/portfolio_website/static/media/hero.f5f88ecd9ece66e0d1a9.webp",
+    "static/media/construction.webp": "/portfolio_website/static/media/construction.23e2b918fed0d43c8595.webp",
+    "static/media/renovation.webp": "/portfolio_website/static/media/renovation.2b96e27e158dd9aea6ac.webp",
     "static/media/logo.svg": "/portfolio_website/static/media/logo.1681f0822d46697020e603c8eb18d301.svg",
     "static/media/vertical_logo.svg": "/portfolio_website/static/media/vertical_logo.b04db9608a73a690d8aca4067ea2b29d.svg",
     "index.html": "/portfolio_website/index.html",
     "main.2403a8fd.css.map": "/portfolio_website/static/css/main.2403a8fd.css.map",
-    "main.7c38de1a.js.map": "/portfolio_website/static/js/main.7c38de1a.js.map",
+    "main.cb3cd4be.js.map": "/portfolio_website/static/js/main.cb3cd4be.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio_website/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2403a8fd.css",
-    "static/js/main.7c38de1a.js"
+    "static/js/main.cb3cd4be.js"
   ]
 }
