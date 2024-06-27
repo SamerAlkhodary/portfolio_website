@@ -2,12 +2,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
 	menu: {
-		width: '200px',
-		display: 'flex',
-		flexDirection: 'column',
-		flex: 1,
-		backgroundColor: '#242424',
-		position:'relative',
+	},
+	menuItem:{
+		color:'#EEC283',
+		textAlign:'center'
 	},
 	arrowIcon:{
 		

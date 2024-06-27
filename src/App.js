@@ -1,10 +1,12 @@
 import { HeroPage,AboutPage,ContactPage, ServicesPage } from './pages';
 import React, {createRef} from 'react';
 import useStyles from './style.js';
-import{CustomAppBar} from './components';
+import{CustomAppBar, Menu} from './components';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
+
 function App() {
+
 	const classes = useStyles();
 	const heroRef= createRef();
 	const aboutRef=createRef();
@@ -23,13 +25,15 @@ function App() {
 	});
 	return (
 		<ThemeProvider theme={theme}>
-			<div className={classes.page}>
-				<CustomAppBar refs={[aboutRef,servicesRef,contactRef]} heroRef={heroRef} className={classes.appBar} />
+			<CustomAppBar refs={[aboutRef,servicesRef,contactRef]} heroRef={heroRef} className={classes.appBar} />
+			<Menu  customRefs={[aboutRef,servicesRef,contactRef]} itemPressed={()=>{}}/>
+			<div className={classes.body}>
 				<HeroPage ref={heroRef}/>
-				<AboutPage ref={aboutRef}  />
+				<AboutPage ref={aboutRef} />
 				<ServicesPage ref={servicesRef}/>
-				<ContactPage ref={contactRef} > </ContactPage>
-			</div>
+				<ContactPage ref={contactRef} />
+			</div>	
+				
 		</ThemeProvider>
 
 
