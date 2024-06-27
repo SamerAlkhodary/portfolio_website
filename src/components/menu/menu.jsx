@@ -35,6 +35,7 @@ function Menu({ customRefs}) {
 		alignItems:'center',
 		flexDirection: 'column',
 		justifyContent:'center',
+		gap:'2em',
 		pointerEvents:'auto',
 		backgroundColor: '#242424',
 		display: 'flex',
@@ -51,7 +52,7 @@ function Menu({ customRefs}) {
 	const renderItem=(text,Icon,ref)=>{
 		return (
 			<ListItem key={text} onClick={()=>{itemPressed(ref);setShow(false);}}>
-				<ListItemText primary={text} className={classes.menuItem} />
+				<ListItemText primary={text} classes={{primary:classes.menuItem}}  />
 			</ListItem>      
 
 		);

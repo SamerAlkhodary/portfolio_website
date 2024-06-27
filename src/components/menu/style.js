@@ -5,7 +5,8 @@ const useStyles = makeStyles(() => ({
 	},
 	menuItem:{
 		color:'#EEC283',
-		textAlign:'center'
+		fontWeight: 'bold',
+		textAlign:'center',
 	},
 	arrowIcon:{
 		
