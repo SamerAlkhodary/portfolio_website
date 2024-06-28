@@ -1,7 +1,6 @@
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar } from '@material-ui/core';
 import Slide from '@material-ui/core/Slide';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -10,6 +9,7 @@ import { useMediaQuery } from 'react-responsive';
 import Logo from '../../res/vertical_logo.svg';
 import {useAtom} from 'jotai';
 import { showMenuAtom } from '../../atoms';
+import Hamburger from 'hamburger-react';
 
 // eslint-disable-next-line react/prop-types
 function CustomAppBar({refs,heroRef}) {
@@ -74,17 +74,12 @@ function CustomAppBar({refs,heroRef}) {
 			return(
 				<div className={classes.row}>
 					<IconButton onClick={()=>{itemPressed(heroRef);setShowMenu(false);}} style={{paddingLeft:0}}>
-						<img style={{ height: 50, width: 250 }} src={Logo}alt={'logo'}/>	
+						<img style={{ width:'9em',height:'2em' }} src={Logo}alt={'logo'}/>	
 					</IconButton>
+					<div style={{padding:'0.5em'}}>
+						<Hamburger toggled={shouldShowMenu} toggle={toggleMenu} color={'#EEC283'} size={28} />
+					</div>
 					
-					<IconButton
-						onClick={toggleMenu}
-						size="large"
-						color="inherit"
-						aria-label="menu"
-					>
-						<MenuIcon fontSize='10' style={{color:'#EEC283'}} />
-					</IconButton>
 				</div>
 			);
 		}
