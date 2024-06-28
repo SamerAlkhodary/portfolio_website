@@ -6,7 +6,6 @@ import { AppBar } from '@material-ui/core';
 import Slide from '@material-ui/core/Slide';
 import React, { useCallback, useEffect, useState } from 'react';
 import useStyles from './style';
-//import Menu from '../menu/menu';
 import { useMediaQuery } from 'react-responsive';
 import Logo from '../../res/vertical_logo.svg';
 import {useAtom} from 'jotai';
@@ -101,9 +100,6 @@ function CustomAppBar({refs,heroRef}) {
 				</AppBar>
 			</Slide>
 
-			{
-				//isDrawerOpen?<Menu customRefs={refs} itemPressed={itemPressed} onClose={()=>{setDrawerOpen(false);}}/>:null
-			}
 		</>
 	);
 }

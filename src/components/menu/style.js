@@ -1,12 +1,14 @@
 import { makeStyles } from '@material-ui/core/styles';
+import Consts from '../../consts';
 
 const useStyles = makeStyles(() => ({
 	menu: {
 	},
 	menuItem:{
-		color:'#EEC283',
-		fontWeight: 'bold',
+		color: Consts.theme.accent,
+		fontFamily: Consts.theme.fontFamily,
 		textAlign:'center',
+		listStyleType:'none'
 	},
 	arrowIcon:{
 		

@@ -1,4 +1,3 @@
-import {   ListItem, ListItemText } from '@mui/material';
 import React, { useEffect } from 'react';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import useStyles from './style';
@@ -8,6 +7,7 @@ import { animated } from 'react-spring';
 import { useAtom } from 'jotai';
 import {  useSpring } from '@react-spring/web';
 import { showMenuAtom } from '../../atoms';
+import { Typography } from '@material-ui/core';
 // eslint-disable-next-line react/prop-types
 function Menu({ customRefs}) {
 	const itemPressed =(ref)=>{
@@ -49,27 +49,31 @@ function Menu({ customRefs}) {
 		config: { tension: 280, friction: 60 },
 	});
 
-	const renderItem=(text,Icon,ref)=>{
+	const renderItem=(text,Icon,onClick)=>{
 		return (
-			<ListItem key={text} onClick={()=>{itemPressed(ref);setShow(false);}}>
-				<ListItemText primary={text} classes={{primary:classes.menuItem}}  />
-			</ListItem>      
-
+			<li onClick={onClick} className={classes.menuItem} key={text}>
+				<Typography className={classes.txt} variant='h6' fontFamily={'Merriweather'} fontWeight='bold'>
+					{text}
+				</Typography>
+			</li>
 		);
 	};
 	const menuItems = [
 		{
-			title:'About',icon:AccountCircleIcon,desitnation:customRefs[0]
+			title:'About',icon:AccountCircleIcon,onClick:()=>{itemPressed(customRefs[0]);setShow(false);}
 		},
 		{
-			title:'Services',icon:CodeIcon,desitnation:customRefs[1]
+			title:'Services',icon:CodeIcon,onClick:()=>{itemPressed(customRefs[1]);setShow(false);}
 		},
 		{
-			title:'Contact',icon:EmailIcon,desitnation:customRefs[2]
+			title:'Contact',icon:EmailIcon,onClick:()=>{itemPressed(customRefs[2]);setShow(false);}
+		},
+		{
+			title:'HUN',icon:EmailIcon,onClick:()=>{}
 		}];
 	return (
 		<animated.div style={fadeInProps}>
-			{menuItems.map((item)=> renderItem(item.title,item.icon,item.desitnation))}
+			{menuItems.map((item)=> renderItem(item.title,item.icon,item.onClick))}
 		</animated.div>
 	);
 }
