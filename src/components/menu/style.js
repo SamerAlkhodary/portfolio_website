@@ -1,13 +1,14 @@
 import { makeStyles } from '@material-ui/core/styles';
+import Consts from '../../consts';
 
 const useStyles = makeStyles(() => ({
 	menu: {
-		width: '200px',
-		display: 'flex',
-		flexDirection: 'column',
-		flex: 1,
-		backgroundColor: '#242424',
-		position:'relative',
+	},
+	menuItem:{
+		color: Consts.theme.accent,
+		fontFamily: Consts.theme.fontFamily,
+		textAlign:'center',
+		listStyleType:'none'
 	},
 	arrowIcon:{
 		

@@ -2,33 +2,36 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, SwipeableDrawer } from '@material-ui/core';
+import { AppBar } from '@material-ui/core';
 import Slide from '@material-ui/core/Slide';
 import React, { useCallback, useEffect, useState } from 'react';
 import useStyles from './style';
-import Menu from '../menu/menu';
 import { useMediaQuery } from 'react-responsive';
 import Logo from '../../res/vertical_logo.svg';
+import {useAtom} from 'jotai';
+import { showMenuAtom } from '../../atoms';
 
 // eslint-disable-next-line react/prop-types
 function CustomAppBar({refs,heroRef}) {
+	const [shouldShowMenu, setShowMenu] = useAtom(showMenuAtom);
+	const  toggleMenu= useCallback(() => {
+		setShowMenu(!shouldShowMenu);
+	},[shouldShowMenu,setShowMenu]);
+	
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 
-	const [isDrawerOpen, setDrawerOpen] = useState(false);
 
 	const menuItems = ['About', 'Services', 'Contact'];
 
 	const classes = useStyles();
 	const itemPressed =(ref)=>{
-		console.log(ref);
 		ref.current.scrollIntoView();
     
 	};
 	const [scrollPosition, setScrollPosition] = useState(0);
 	const handleScroll = () => {
 		const position = window.scrollY;
-		console.log(window.scrollY);
 		setScrollPosition(position);
 	};
 	useEffect(() => {
@@ -38,7 +41,7 @@ function CustomAppBar({refs,heroRef}) {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, [window]);
-	
+
 	const appBarItems= useCallback(()=>{
 		if(isDesktopOrLaptop){
 			return(
@@ -70,14 +73,12 @@ function CustomAppBar({refs,heroRef}) {
 		}else{
 			return(
 				<div className={classes.row}>
-					<IconButton onClick={()=>{itemPressed(heroRef);}} style={{paddingLeft:0}}>
+					<IconButton onClick={()=>{itemPressed(heroRef);setShowMenu(false);}} style={{paddingLeft:0}}>
 						<img style={{ height: 50, width: 250 }} src={Logo}alt={'logo'}/>	
 					</IconButton>
-         
+					
 					<IconButton
-						onClick={() => {
-							setDrawerOpen(true);
-						}}
+						onClick={toggleMenu}
 						size="large"
 						color="inherit"
 						aria-label="menu"
@@ -87,7 +88,7 @@ function CustomAppBar({refs,heroRef}) {
 				</div>
 			);
 		}
-	},[isDesktopOrLaptop,scrollPosition]);
+	},[isDesktopOrLaptop,scrollPosition,shouldShowMenu]);
 
 	return (
 		<>
@@ -99,18 +100,6 @@ function CustomAppBar({refs,heroRef}) {
 				</AppBar>
 			</Slide>
 
-			<SwipeableDrawer
-				onOpen={()=>{}}
-				swipeAreaWidth={0}
-				elevation={20}
-				anchor="right"
-				open={isDrawerOpen}
-				onClose={() => {
-					setDrawerOpen(false);
-				}}
-			>
-				<Menu customRefs={refs} itemPressed={itemPressed} onClose={()=>{setDrawerOpen(false);}}/>
-			</SwipeableDrawer>
 		</>
 	);
 }

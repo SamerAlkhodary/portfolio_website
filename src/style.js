@@ -3,10 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
 	page: {
 		width: '100%',
-		textAlign: 'center',
-		justifyContent: 'center',
-		alignItems: 'center',
+		position: 'relative',
 	},
+	
+	body:{
+		width: '100%',
+		height: '100%',
+	}
 
 }));
 
