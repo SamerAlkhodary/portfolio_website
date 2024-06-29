@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledTextField = styled(TextField)`
   & .MuiInput-root:after {
-    border-bottom-color: #E4BFB7;
+    border-bottom-color: #EEC283;
 		border-width:3px
   }
 	& .MuiInput-root:hover:not(.Mui-focused):before {
@@ -14,7 +14,7 @@ const StyledTextField = styled(TextField)`
   }
  
     &.Mui-focused fieldset {
-      border-color: #E4BFB7;
+      border-color: #EEC283;
     }
   }
 `;
