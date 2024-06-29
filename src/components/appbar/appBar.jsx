@@ -9,8 +9,8 @@ import { useMediaQuery } from 'react-responsive';
 import Logo from '../../res/vertical_logo.svg';
 import {useAtom} from 'jotai';
 import { showMenuAtom } from '../../atoms';
-import Hamburger from 'hamburger-react';
 import Consts from '../../consts';
+import Hamburger from '../humburger/humburger';
 
 // eslint-disable-next-line react/prop-types
 function CustomAppBar({refs,heroRef}) {
@@ -77,8 +77,8 @@ function CustomAppBar({refs,heroRef}) {
 					<IconButton onClick={()=>{itemPressed(heroRef);setShowMenu(false);}} style={{paddingLeft:0}}>
 						<img style={{ width:'9em',height:'2em' }} src={Logo}alt={'logo'}/>	
 					</IconButton>
-					<div style={{padding:'0.5em',backgroundColor:Consts.theme.secondary}}>
-						<Hamburger toggled={shouldShowMenu} toggle={toggleMenu} color={'#EEC283'} size={28} />
+					<div style={{padding:'1em',backgroundColor:Consts.theme.secondary}}>
+						<Hamburger isOpen={shouldShowMenu} onclick={toggleMenu} color={'#EEC283'} size={28}/>
 					</div>
 					
 				</div>
