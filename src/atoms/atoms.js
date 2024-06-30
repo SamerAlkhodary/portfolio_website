@@ -1,3 +1,4 @@
 import {atom} from 'jotai';
 const showMenuAtom = atom(false);
-export {showMenuAtom};
+const languageAtom = atom('hu-HU');
+export {showMenuAtom,languageAtom};

@@ -2,7 +2,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import React from 'react';
 import {Typography } from '@mui/material';
-import logo from '../../../../res/logo.svg';
+import logo from '../../../../res/images/logo.svg';
 import useStyles from './style.js';
 import Consts from '../../../../consts.js';
 

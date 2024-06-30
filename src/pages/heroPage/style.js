@@ -24,19 +24,19 @@ const useStyles = makeStyles(() => ({
 	},
 	button: {
 		backgroundColor: '#a87267',
-		width:'12em',
+		width:'16em',
 		color: Consts.theme.secondary,
 		
 	},
 
-	textsDesktop:{ height:'80%',
+	textsDesktop:{ height:'100%',
 		minWidth:'25em',
 		maxWidth:'50em', 
 		width:'30%',top:'3em',
 		paddingLeft:'10%',
 		position:'absolute',
 		display:'flex',
-		gap:'5em',
+		gap:'3em',
 		flexDirection:'column',
 		justifyContent:'center'},
 

@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import StyledTextField from '../../components/styledTextField.js/styledTextField.js';
 import { Card } from './items';
 import Consts from '../../consts.js';
+import translate from '../../res/strings/strings.js';
 const ContactPage = (props,ref)=> {
 	
 	const classes = useStyles();
@@ -12,8 +13,8 @@ const ContactPage = (props,ref)=> {
 		query: '(min-width: 900px)'});
 	return (
 		<div ref={ref} className={classes.contactPage}>
-			<Typography  fontWeight='bold' className={classes.title}variant='h4' fontFamily={'Merriweather'}>
-				{'Get in touch'}
+			<Typography  fontWeight='bold' className={classes.title}variant='h5' fontFamily={'Merriweather'}>
+				{translate('contactPageTitle')}
 			</Typography>
 			<div  className={isDesktopOrLaptop?classes.containerDesktop:classes.containerMobile} >
 				
@@ -26,7 +27,7 @@ const ContactPage = (props,ref)=> {
 							}
 						}}
 						variant='standard'
-						placeholder="Your Name"
+						placeholder={translate('yourName')}
 						margin='dense'
 					/>
 
@@ -38,7 +39,7 @@ const ContactPage = (props,ref)=> {
 						}}
 						
 						variant='standard'
-						placeholder="Your email address"
+						placeholder={translate('yourEmail')}
 						margin='dense'
 
 					/>
@@ -49,7 +50,7 @@ const ContactPage = (props,ref)=> {
 							}
 						}}
 						variant='standard'
-						placeholder={'Message'} 
+						placeholder={translate('message')}
 						multiline={true}
 						margin='dense'
 
@@ -57,8 +58,8 @@ const ContactPage = (props,ref)=> {
 					/>
 					<Button variant='filled' 
 						style={{backgroundColor:'#EEC283'}}>
-						<Typography fontFamily={'Merriweather'} fontSize={15} fontWeight={'bold'} color={Consts.theme.primary}>
-							{'Send'}
+						<Typography fontFamily={'Merriweather'} fontSize={15} fontWeight={'bold'} color={Consts.theme.secondary}>
+							{translate('send')}
 						</Typography>
 					</Button>
 				</div>

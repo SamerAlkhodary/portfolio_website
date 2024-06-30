@@ -1,2 +1,2 @@
-import {showMenuAtom} from './atoms';
-export {showMenuAtom};
+import {showMenuAtom,languageAtom} from './atoms';
+export {showMenuAtom,languageAtom};

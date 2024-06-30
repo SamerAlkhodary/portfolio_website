@@ -6,15 +6,18 @@ import Slide from '@material-ui/core/Slide';
 import React, { useCallback, useEffect, useState } from 'react';
 import useStyles from './style';
 import { useMediaQuery } from 'react-responsive';
-import Logo from '../../res/vertical_logo.svg';
+import Logo from '../../res/images/vertical_logo.svg';
 import {useAtom} from 'jotai';
-import { showMenuAtom } from '../../atoms';
+import { languageAtom, showMenuAtom } from '../../atoms';
 import Consts from '../../consts';
 import Hamburger from '../humburger/humburger';
+import translate from '../../res/strings/strings';
 
 // eslint-disable-next-line react/prop-types
 function CustomAppBar({refs,heroRef}) {
 	const [shouldShowMenu, setShowMenu] = useAtom(showMenuAtom);
+	const [language,setLanguage] = useAtom(languageAtom);
+
 	const  toggleMenu= useCallback(() => {
 		setShowMenu(!shouldShowMenu);
 	},[shouldShowMenu,setShowMenu]);
@@ -23,7 +26,39 @@ function CustomAppBar({refs,heroRef}) {
 		query: '(min-width: 900px)'});
 
 
-	const menuItems = ['About', 'Services', 'Contact'];
+	const menuItems = [
+		{
+			title:translate('about'), 
+			onClick:()=>{
+				itemPressed(refs[0]);
+			}
+		},
+		{
+			title:translate('services'),
+			onClick:()=>{
+				itemPressed(refs[1]);
+			}
+		},
+		{
+			title:translate('contact'),
+			onClick:()=>{
+				itemPressed(refs[2]);
+			}
+		},
+		{
+			title:translate('locale'),
+			onClick:()=>{
+				console.log('local: '+language);
+				if(language ==='en-US'){
+					setLanguage('hu-HU');
+				}
+				else{
+					setLanguage('en-US');
+				}
+
+			}
+		}
+	];
 
 	const classes = useStyles();
 	const itemPressed =(ref)=>{
@@ -53,21 +88,16 @@ function CustomAppBar({refs,heroRef}) {
 						</IconButton>
 					</div>
 					<div className={classes.pagesRow}>
-						<IconButton  onClick={()=>{itemPressed(refs[0]);}}>
-							<Typography fontFamily={'Merriweather'} fontWeight={'bold'} className={ classes.menuButton} fontSize={'1.1em'}>
-								{menuItems[0]}
-							</Typography>
-						</IconButton>
-						<IconButton  onClick={()=>{itemPressed(refs[1]);}}>
-							<Typography fontFamily={'Merriweather'} fontWeight={'bold'} className={classes.menuButton}fontSize={'1.1em'}>
-								{menuItems[1]}
-							</Typography>
-						</IconButton>
-						<IconButton onClick={()=>{itemPressed(refs[2]);}}>
-							<Typography fontFamily={'Merriweather'} fontWeight={'bold'} className={classes.menuButton}fontSize={'1.1em'}>
-								{menuItems[2]}
-							</Typography>
-						</IconButton>
+						{
+							menuItems.map(item =>(
+								<IconButton  key={item.title} onClick={item.onClick}>
+									<Typography fontFamily={'Merriweather'} fontWeight={'bold'} className={ classes.menuButton} fontSize={'1rem'}>
+										{item.title}
+									</Typography>
+								</IconButton>
+							))
+						}
+						
 					</div>
 				</div>
 			);
@@ -84,7 +114,7 @@ function CustomAppBar({refs,heroRef}) {
 				</div>
 			);
 		}
-	},[isDesktopOrLaptop,scrollPosition,shouldShowMenu]);
+	},[isDesktopOrLaptop,scrollPosition,shouldShowMenu,language,setLanguage]);
 
 	return (
 		<>
