@@ -6,10 +6,13 @@ import CodeIcon from '@mui/icons-material/Code';
 import { animated } from 'react-spring';
 import { useAtom } from 'jotai';
 import {  useSpring } from '@react-spring/web';
-import { showMenuAtom } from '../../atoms';
+import { languageAtom, showMenuAtom } from '../../atoms';
 import { Typography } from '@material-ui/core';
+import translate from '../../res/strings/strings';
 // eslint-disable-next-line react/prop-types
 function Menu({ customRefs}) {
+	const [language,setLanguage] = useAtom(languageAtom);
+
 	const itemPressed =(ref)=>{
 		ref.current.scrollIntoView();
 	};
@@ -60,16 +63,21 @@ function Menu({ customRefs}) {
 	};
 	const menuItems = [
 		{
-			title:'About',icon:AccountCircleIcon,onClick:()=>{itemPressed(customRefs[0]);setShow(false);}
+			title:translate('about'),icon:AccountCircleIcon,onClick:()=>{itemPressed(customRefs[0]);setShow(false);}
 		},
 		{
-			title:'Services',icon:CodeIcon,onClick:()=>{itemPressed(customRefs[1]);setShow(false);}
+			title:translate('services'),icon:CodeIcon,onClick:()=>{itemPressed(customRefs[1]);setShow(false);}
 		},
 		{
-			title:'Contact',icon:EmailIcon,onClick:()=>{itemPressed(customRefs[2]);setShow(false);}
+			title: translate('contact'),icon:EmailIcon,onClick:()=>{itemPressed(customRefs[2]);setShow(false);}
 		},
 		{
-			title:'HUN',icon:EmailIcon,onClick:()=>{}
+			title:translate('locale'),icon:EmailIcon,onClick:()=>{
+				if(language ==='en-US')
+					setLanguage('hu-HU');
+				else
+					setLanguage('en-US');
+			}
 		}];
 	return (
 		<animated.div style={fadeInProps}>

@@ -2,6 +2,7 @@ import React from 'react';
 import  Typography  from '@mui/material/Typography';
 import useStyles from './style.js';
 import { useMediaQuery } from 'react-responsive';
+import translate from '../../res/strings/strings.js';
 
 
 const AboutPage =(props,ref)=> {
@@ -13,8 +14,8 @@ const AboutPage =(props,ref)=> {
 	return (
 		<div ref={ref} className={classes.page} >
 			<div className={classes.mainContainer}>
-				<Typography className={classes.title} variant='h4' fontFamily={'Merriweather'} fontWeight='bold'>
-				About
+				<Typography className={classes.title} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
+					{translate('about')}
 				</Typography>
 				<div className={classes.padding} />
 
@@ -23,7 +24,7 @@ const AboutPage =(props,ref)=> {
 					<div className={isDesktopOrLaptop?classes.textsDesktop:classes.textsMobile}>
 				
 						<Typography fontFamily={'Merriweather'} variant="h7">
-							{'Transform your living spaces with our expert renovation services! As a premier general contractor, we enhance apartments and houses, ensuring customer satisfaction and timely completion. From major overhauls to minor upgrades, our comprehensive construction services are tailored to meet your needs.'}
+							{translate('aboutText')}
 						</Typography>
 				
 						
