@@ -15,10 +15,6 @@ const ServiceCard = ({img,title})=> {
 			<Typography className={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 				{title}
 			</Typography>
-
-			
-
-
 			
 		</div>
 

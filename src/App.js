@@ -1,4 +1,4 @@
-import { HeroPage,AboutPage,ContactPage, ServicesPage } from './pages';
+import { HeroPage,AboutPage,ContactPage, ServicesPage, ProjectsPage } from './pages';
 import React, {createRef} from 'react';
 import useStyles from './style.js';
 import{CustomAppBar, Menu} from './components';
@@ -28,9 +28,10 @@ function App() {
 			<CustomAppBar refs={[aboutRef,servicesRef,contactRef]} heroRef={heroRef} className={classes.appBar} />
 			<Menu  customRefs={[aboutRef,servicesRef,contactRef]} itemPressed={()=>{}}/>
 			<div className={classes.body}>
-				<HeroPage ref={heroRef}/>
+				<HeroPage ref={heroRef} aboutRef={aboutRef}/>
 				<AboutPage ref={aboutRef} />
 				<ServicesPage ref={servicesRef}/>
+				<ProjectsPage ref={contactRef} />
 				<ContactPage ref={contactRef} />
 			</div>	
 				

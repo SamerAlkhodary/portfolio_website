@@ -1,39 +1,27 @@
 import { makeStyles } from '@material-ui/core/styles';
+import Consts from '../../../../consts';
 
 const useStyles = makeStyles(() => ({
 	cardDesktop:{
-		display: 'flex',
-		flexDirection: 'row',
-		justifyContent:'space-between',
-		alignContent: 'center',
-		alignItems: 'center',
-		flex:1,
+		backgroundColor:Consts.theme.secondary,
+		position:'relative',
+		width: '30%',
 	},
 	cardMobile:{
-		display: 'flex',
-		flexDirection: 'column',
-		justifyContent:'space-between',
-		alignItems: 'start',
-		flex:1,
+		backgroundColor:Consts.theme.secondary,
+		position:'relative',
 	},
-	thumbnailDesktop:{
-		width: '30%',
-		height:'30%',
-		objectFit: 'cover',
+	txt:{
+		display:'flex',
+		left:'50%',
+		right:'50%',
+		top:'50%',
+		bottom: '50%',
+		position:'absolute',
+		justifyContent:'center',
+		color: Consts.theme.primary
 	},
-	thumbnailMobile:{
-		width: '100%',
-		height:'20%',
-		objectFit: 'cover',
-	},
-	txtDesktop:{
-		textAlign:'start',
-		width: '50%',
-	},
-	txtMobile:{
-		textAlign:'start',
-		width: '100%',
-	}
+	
 	
 }));
 
