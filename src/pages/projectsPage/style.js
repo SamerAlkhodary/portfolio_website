@@ -1,28 +1,36 @@
 import { makeStyles } from '@material-ui/core/styles';
+import Consts from '../../consts';
 
 const useStyles = makeStyles(() => ({
-	projectsPage:{
-		backgroundColor:'#FFF0DB',
-		paddingTop: '7em',
+	servicesPage:{
+		backgroundColor:Consts.theme.secondary,
+		paddingTop: '5em',
 		paddingBottom:'6em',
 		display:'flex',
 		flexDirection:'column'
 	},
 	container:{
-		width:'80%',
-		alignSelf: 'center',
 
 	},
-	projectList:{
+	serviceList:{
+		display: 'flex',
+		flexDirection:'row',
+		justifyContent: 'space-around',
+		flex:1,
+		height:'100%'
+	},
+	serviceListMobile:{
 		display: 'flex',
 		flexDirection:'column',
-		justifyContent: 'space-evenly',
+		justifyContent: 'space-between',
+		flex:1,
 		height:'100%'
 	},
 	title:{
-		alignSelf:'start',
+		alignSelf:'center',
 		paddingBottom: '1em',
-		textAlign:'start',
+		color: Consts.theme.primary,
+		textAlign:'center',
 	}
 
 	

@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 import Consts from '../../consts.js';
 import translate from '../../res/strings/strings.js';
 
-const HeroPage = (props,ref)=> {
+const HeroPage = ({aboutRef},ref)=> {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	const classes = useStyles();
@@ -22,7 +22,7 @@ const HeroPage = (props,ref)=> {
 				<Typography  variant={isDesktopOrLaptop?'h5':'h6'} paragraph className={classes.h2} fontFamily={'Merriweather'}>
 					{translate('heroTextSubtitle')}
 				</Typography>
-				<Button  variant='filled' className={classes.button} style={{backgroundColor:'#EEC283'}}>
+				<Button onClick={()=>{console.log('aboutt'); aboutRef.current.scrollIntoView();}} variant='filled' className={classes.button} style={{backgroundColor:'#EEC283'}}>
 					<Typography 
 						fontFamily={'Merriweather'} 
 						color= {Consts.theme.secondary}

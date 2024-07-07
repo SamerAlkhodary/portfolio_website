@@ -1,19 +1,21 @@
-import { StylesContext } from '@material-ui/styles';
-import { Typography } from '@mui/material';
+import {  Typography } from '@mui/material';
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
+
+
 import useStyles from './style.js';
-const ProjectCard = ({thumbnail,description})=> {
+const ProjectCard = ({img,title})=> {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	const classes = useStyles();
 	
 	return (
-		<div  className={isDesktopOrLaptop? classes.cardDesktop: StylesContext.cardMobile  }>
-			<img className={isDesktopOrLaptop?classes.thumbnailDesktop: classes.thumbnailMobile} src={thumbnail} alt='project'/>
-			<Typography className={isDesktopOrLaptop?classes.txtDesktop: classes.txtMobile} variant='h6' fontFamily={'Merriweather'}>
-				{description}
+		<div className={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile }>
+			<img style={{width:'100%',height:'100%',opacity:0.6}} src={img} alt="programming"/>
+			<Typography className={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
+				{title}
 			</Typography>
+			
 		</div>
 
 	);
