@@ -4,9 +4,9 @@ import Consts from '../../consts';
 const useStyles = makeStyles(() => ({
 	servicesPage:{
 		backgroundColor:Consts.theme.secondary,
-		paddingTop: '5em',
-		paddingBottom:'6em',
 		display:'flex',
+		paddingBottom:'5em',
+		paddingTop: '5em',
 		flexDirection:'column'
 	},
 	container:{
@@ -24,6 +24,7 @@ const useStyles = makeStyles(() => ({
 		flexDirection:'column',
 		justifyContent: 'space-between',
 		flex:1,
+		gap:'1em',
 		height:'100%'
 	},
 	title:{

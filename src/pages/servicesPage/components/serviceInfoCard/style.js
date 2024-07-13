@@ -2,19 +2,27 @@ import { makeStyles } from '@material-ui/core/styles';
 import Consts from '../../../../consts';
 
 const useStyles = makeStyles(() => ({
-	cardDesktop:{
-		backgroundColor:Consts.theme.primary,
-		margin: '1em',
-		border: '1px solid green',
-		borderRadius: 10,
-
-		width: '20%',
+	
+	card:{
+		alignSelf:'center',
+		gap:'3em',
+		width:'30%',
+		backgroundImage:'linear-gradient(to bottom right, #EEC283, rgba(228,191,183,0.7))',
+		backdropFilter: 'blur(10px)',
+		boxShadow: '10px 10px 10px rgba(30,30,30,0.4)',
+		borderRadius:'0.5em',
+		border: 'solid 2px transparent',	
 	},
-	cardMobile:{
-		backgroundColor:Consts.theme.primary,
-		margin: '1em',
-		border: '1px solid green',
-		borderRadius: 10
+	mobileCard:{
+		alignSelf:'center',
+		width:'90%',
+
+		gap:'3em',
+		backgroundImage:'linear-gradient(to bottom right, #EEC283, rgba(228,191,183,0.7))',
+		backdropFilter: 'blur(10px)',
+		boxShadow: '10px 10px 10px rgba(30,30,30,0.4)',
+		borderRadius:'0.5em',
+		border: 'solid 2px transparent',	
 	},
 	txt:{
 		textAlign:'center',
