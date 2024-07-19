@@ -12,8 +12,8 @@ const useStyles = makeStyles(() => ({
 		position:'relative',
 		width: '20em',
 		display:'flex',
-		borderRadius:'0.5em',
-		border: 'solid 2px transparent',	
+		borderRadius:'1em',
+		boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3)',		
 	},
 	txt:{
 		display:'flex',

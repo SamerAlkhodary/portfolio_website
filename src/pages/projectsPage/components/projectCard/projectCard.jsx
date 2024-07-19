@@ -10,9 +10,9 @@ const ProjectCard = ({img,title})=> {
 	const classes = useStyles();
 	
 	return (
-		<div className={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile }>
-			<img style={{width:'100%',height:'100%',opacity:0.6,	borderRadius:'1em',
-				border: 'solid 2px transparent',}} src={img} alt="projects"/>
+		<div className={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile} onClick={()=>{}}>
+			<img style={{width:'100%',height:'100%',opacity:0.7,borderRadius:'1em',objectFit: 'cover',
+				border: 'solid 2px transparent',}} src={img} alt={title}/>
 			<Typography className={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 				{title}
 			</Typography>
