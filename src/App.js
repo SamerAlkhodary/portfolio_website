@@ -12,6 +12,8 @@ function App() {
 	const aboutRef=createRef();
 	const contactRef=createRef();
 	const servicesRef=createRef();
+	const projectsRef=createRef();
+
 
 	const theme = createTheme({
 		typography: {
@@ -25,13 +27,13 @@ function App() {
 	});
 	return (
 		<ThemeProvider theme={theme}>
-			<CustomAppBar refs={[aboutRef,servicesRef,contactRef]} heroRef={heroRef} className={classes.appBar} />
-			<Menu  customRefs={[aboutRef,servicesRef,contactRef]} itemPressed={()=>{}}/>
+			<CustomAppBar refs={[aboutRef,servicesRef,projectsRef,contactRef]} heroRef={heroRef} className={classes.appBar} />
+			<Menu  customRefs={[aboutRef,servicesRef,projectsRef,contactRef]} itemPressed={()=>{}}/>
 			<div className={classes.body}>
 				<HeroPage ref={heroRef} aboutRef={aboutRef}/>
 				<AboutPage ref={aboutRef} />
 				<ServicesPage ref={servicesRef}/>
-				<ProjectsPage ref={contactRef} />
+				<ProjectsPage ref={projectsRef} />
 				<ContactPage ref={contactRef} />
 			</div>	
 				

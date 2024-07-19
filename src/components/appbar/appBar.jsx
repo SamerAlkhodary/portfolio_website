@@ -40,9 +40,15 @@ function CustomAppBar({refs,heroRef}) {
 			}
 		},
 		{
-			title:translate('contact'),
+			title:translate('projects'),
 			onClick:()=>{
 				itemPressed(refs[2]);
+			}
+		},
+		{
+			title:translate('contact'),
+			onClick:()=>{
+				itemPressed(refs[3]);
 			}
 		},
 		{

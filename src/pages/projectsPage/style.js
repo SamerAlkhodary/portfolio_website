@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
 		flexDirection:'column'
 	},
 	container:{
+		overflowX: 'auto',
 
 	},
 	serviceList:{
@@ -20,10 +21,9 @@ const useStyles = makeStyles(() => ({
 		height:'100%'
 	},
 	serviceListMobile:{
+		width:'60em',
 		display: 'flex',
-		flexDirection:'column',
-		justifyContent: 'space-between',
-		flex:1,
+		gap:'20px',
 		height:'100%'
 	},
 	title:{

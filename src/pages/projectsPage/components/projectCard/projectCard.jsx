@@ -11,7 +11,8 @@ const ProjectCard = ({img,title})=> {
 	
 	return (
 		<div className={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile }>
-			<img style={{width:'100%',height:'100%',opacity:0.6}} src={img} alt="programming"/>
+			<img style={{width:'100%',height:'100%',opacity:0.6,	borderRadius:'1em',
+				border: 'solid 2px transparent',}} src={img} alt="projects"/>
 			<Typography className={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 				{title}
 			</Typography>

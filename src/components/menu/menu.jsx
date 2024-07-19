@@ -69,8 +69,12 @@ function Menu({ customRefs}) {
 			title:translate('services'),icon:CodeIcon,onClick:()=>{itemPressed(customRefs[1]);setShow(false);}
 		},
 		{
-			title: translate('contact'),icon:EmailIcon,onClick:()=>{itemPressed(customRefs[2]);setShow(false);}
+			title: translate('projects'),icon:EmailIcon,onClick:()=>{itemPressed(customRefs[2]);setShow(false);}
 		},
+		{
+			title: translate('contact'),icon:EmailIcon,onClick:()=>{itemPressed(customRefs[3]);setShow(false);}
+		},
+		
 		{
 			title:translate('locale'),icon:EmailIcon,onClick:()=>{
 				if(language ==='en-US')

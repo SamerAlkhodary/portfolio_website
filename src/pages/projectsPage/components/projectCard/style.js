@@ -10,6 +10,10 @@ const useStyles = makeStyles(() => ({
 	cardMobile:{
 		backgroundColor:Consts.theme.secondary,
 		position:'relative',
+		width: '20em',
+		display:'flex',
+		borderRadius:'0.5em',
+		border: 'solid 2px transparent',	
 	},
 	txt:{
 		display:'flex',
