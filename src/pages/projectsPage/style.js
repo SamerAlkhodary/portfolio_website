@@ -6,6 +6,8 @@ const useStyles = makeStyles(() => ({
 		backgroundColor:Consts.theme.secondary,
 		paddingBottom:'5em',
 		paddingTop: '5em',
+		paddingLeft:'1em',
+		paddingRight:'1em',
 		display:'flex',
 		flexDirection:'column'
 	},
