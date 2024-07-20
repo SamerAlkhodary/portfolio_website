@@ -1,7 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
 import Consts from '../../consts';
 
-const useStyles = makeStyles(() => ({
+const useStyles = {
 	menu: {
 	},
 	menuItem:{
@@ -35,6 +34,6 @@ const useStyles = makeStyles(() => ({
 	iconTextRow:{
 		display:'flex',flexDirection:'row',flex:1,alignItems:'center'
 	}
-}));
+};
 
 export default useStyles;

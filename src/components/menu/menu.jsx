@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import useStyles from './style';
+import classes from './style';
 import EmailIcon from '@mui/icons-material/Email';
 import CodeIcon from '@mui/icons-material/Code';
 import { animated } from 'react-spring';
 import { useAtom } from 'jotai';
 import {  useSpring } from '@react-spring/web';
 import { languageAtom, showMenuAtom } from '../../atoms';
-import { Typography } from '@material-ui/core';
+import { Typography } from '@mui/material';
 import translate from '../../res/strings/strings';
 // eslint-disable-next-line react/prop-types
 function Menu({ customRefs}) {
@@ -16,7 +16,6 @@ function Menu({ customRefs}) {
 	const itemPressed =(ref)=>{
 		ref.current.scrollIntoView();
 	};
-	const classes = useStyles();
 	const [showMenu,setShow] = useAtom(
 		showMenuAtom,
 	);
@@ -54,8 +53,8 @@ function Menu({ customRefs}) {
 
 	const renderItem=(text,Icon,onClick)=>{
 		return (
-			<li onClick={onClick} className={classes.menuItem} key={text}>
-				<Typography className={classes.txt} variant='h6' fontFamily={'Merriweather'} fontWeight='bold'>
+			<li onClick={onClick} style={classes.menuItem} key={text}>
+				<Typography style={classes.txt} variant='h6' fontFamily={'Merriweather'} fontWeight='bold'>
 					{text}
 				</Typography>
 			</li>

@@ -1,8 +1,7 @@
-import { makeStyles } from '@material-ui/core/styles';
 import Consts from '../../consts';
 
 // eslint-disable-next-line no-unused-vars
-const useStyles = makeStyles((theme) => ({
+const useStyles = {
 	aboutContainerMobile: {
 		paddingBottom:'2em',
 		display: 'flex',
@@ -72,6 +71,6 @@ const useStyles = makeStyles((theme) => ({
 		width: '100%',
 	},
 
-}));
+};
 
 export default useStyles;

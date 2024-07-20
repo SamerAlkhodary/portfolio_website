@@ -1,7 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
 import Consts from '../../../../consts';
 
-const useStyles = makeStyles(() => ({
+const useStyles = {
 	cardDesktop:{
 		backgroundColor:Consts.theme.secondary,
 		position:'relative',
@@ -24,6 +23,6 @@ const useStyles = makeStyles(() => ({
 	},
 	
 	
-}));
+};
 
 export default useStyles;

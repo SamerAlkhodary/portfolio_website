@@ -3,17 +3,15 @@ import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 
-import useStyles from './style.js';
+import classes from './style.js';
 const ProjectCard = ({img,title})=> {
 	const isDesktopOrLaptop = useMediaQuery({
-		query: '(min-width: 900px)'});
-	const classes = useStyles();
-	
+		query: '(min-width: 900px)'});	
 	return (
-		<div className={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile} onClick={()=>{}}>
+		<div style={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile} onClick={()=>{}}>
 			<img style={{width:'100%',height:'100%',opacity:0.7,borderRadius:'1em',objectFit: 'cover',
 				border: 'solid 2px transparent',}} src={img} alt={title}/>
-			<Typography className={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
+			<Typography style={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 				{title}
 			</Typography>
 			

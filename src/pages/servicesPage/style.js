@@ -1,7 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
 import Consts from '../../consts';
 
-const useStyles = makeStyles(() => ({
+const useStyles = {
 	servicesPage:{
 		backgroundColor:Consts.theme.secondary,
 		display:'flex',
@@ -35,6 +34,6 @@ const useStyles = makeStyles(() => ({
 	}
 
 	
-}));
+};
 
 export default useStyles;

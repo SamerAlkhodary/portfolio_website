@@ -1,6 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import React from 'react';
-import useStyles from './style.js';
+import classes from './style.js';
 import { useMediaQuery } from 'react-responsive';
 import StyledTextField from '../../components/styledTextField.js/styledTextField.js';
 import { Card } from './items';
@@ -8,17 +8,16 @@ import Consts from '../../consts.js';
 import translate from '../../res/strings/strings.js';
 const ContactPage = (props,ref)=> {
 	
-	const classes = useStyles();
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
-		<div ref={ref} className={classes.contactPage}>
-			<Typography  fontWeight='bold' className={classes.title}variant='h5' fontFamily={'Merriweather'}>
+		<div ref={ref} style={classes.contactPage}>
+			<Typography  fontWeight='bold' style={classes.title}variant='h5' fontFamily={'Merriweather'}>
 				{translate('contactPageTitle')}
 			</Typography>
-			<div  className={isDesktopOrLaptop?classes.containerDesktop:classes.containerMobile} >
+			<div  style={isDesktopOrLaptop?classes.containerDesktop:classes.containerMobile} >
 				
-				<div className= {isDesktopOrLaptop?classes.formDesktop:classes.formMobile}>
+				<div style= {isDesktopOrLaptop?classes.formDesktop:classes.formMobile}>
 					
 					<StyledTextField
 						InputProps={{

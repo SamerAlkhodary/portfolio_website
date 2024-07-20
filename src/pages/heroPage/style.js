@@ -1,11 +1,10 @@
-import { makeStyles } from '@material-ui/core/styles';
 import Consts from '../../consts';
 
-const useStyles = makeStyles(() => ({
+const useStyles = {
 	
 	container: {
 		width: '100%',
-		height:'100%',
+		height: '100vh',
 		backgroundColor:'black',
 	},
 	hero: {
@@ -23,7 +22,7 @@ const useStyles = makeStyles(() => ({
 		color: 'white',
 	},
 	button: {
-		backgroundColor: '#a87267',
+		backgroundColor:'#EEC283',
 		width:'16em',
 		color: Consts.theme.secondary,
 		
@@ -51,6 +50,6 @@ const useStyles = makeStyles(() => ({
 		gap:'3em',
 		flexDirection:'column',
 		justifyContent:'center'}
-}));
+};
 
 export default useStyles;

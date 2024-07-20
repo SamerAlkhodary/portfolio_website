@@ -3,29 +3,28 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import React from 'react';
 import {Typography } from '@mui/material';
 import logo from '../../../../res/images/logo.svg';
-import useStyles from './style.js';
+import classes from './style.js';
 import Consts from '../../../../consts.js';
 
 const Card =({cardStyle})=>{
-	const classes = useStyles();
-
+ 
 	return(
-		<div className={cardStyle}>
+		<div style={cardStyle}>
 					
-			<div className={classes.row}>
+			<div style={classes.row}>
             
-				<div className={classes.column}>
+				<div style={classes.column}>
 					<Typography variant='h7' fontFamily={'Merriweather'}color={Consts.theme.secondary} fontWeight={'bold'}>
 						{'PALMYRA ÉPÍTŐ KFT.'}
 					</Typography>
 					
 				</div>
-				<img src={logo} className={classes.logo}>
+				<img src={logo} style={classes.logo}>
 				</img>
         
 			</div>
-			<div className={classes.cardBody}>
-				<div className={classes.cardContent}>
+			<div style={classes.cardBody}>
+				<div style={classes.cardContent}>
 					<EmailIcon color={Consts.theme.secondary}/>
 					<Typography  color={Consts.theme.secondary}>
 						{'palmyraepito@gmail.com'}

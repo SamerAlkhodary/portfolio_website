@@ -1,7 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
 import Consts from '../../../../consts';
 
-const useStyles = makeStyles(() => ({
+const useStyles = {
 	
 	card:{
 		alignSelf:'center',
@@ -31,6 +30,6 @@ const useStyles = makeStyles(() => ({
 	},
 
 
-}));
+};
 
 export default useStyles;

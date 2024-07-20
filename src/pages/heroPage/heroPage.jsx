@@ -1,6 +1,6 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import useStyles from './style.js';
+import classes from './style.js';
 import hero from '../../res/images/hero.webp';
 import { Button } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
@@ -10,19 +10,18 @@ import translate from '../../res/strings/strings.js';
 const HeroPage = ({aboutRef},ref)=> {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
-	const classes = useStyles();
 	return (
-		<div ref={ref} className={classes.container} style={{height: '100vh'}} >
-			<img className={classes.hero} src={hero} alt="programming"/>
-			<div className={isDesktopOrLaptop?classes.textsDesktop:classes.textsMobile}>
-				<Typography variant={isDesktopOrLaptop?'h4':'h5'} paragraph fontFamily={'Merriweather'} className={classes.h1}>
+		<div ref={ref} style={classes.container} >
+			<img style={classes.hero} src={hero} alt="programming"/>
+			<div style={isDesktopOrLaptop?classes.textsDesktop:classes.textsMobile}>
+				<Typography variant={isDesktopOrLaptop?'h4':'h5'} paragraph fontFamily={'Merriweather'} style={classes.h1}>
 					{translate('heroTextTitle')}
 				</Typography>
 
-				<Typography  variant={isDesktopOrLaptop?'h5':'h6'} paragraph className={classes.h2} fontFamily={'Merriweather'}>
+				<Typography  variant={isDesktopOrLaptop?'h5':'h6'} paragraph style={classes.h2} fontFamily={'Merriweather'}>
 					{translate('heroTextSubtitle')}
 				</Typography>
-				<Button onClick={()=>{console.log('aboutt'); aboutRef.current.scrollIntoView();}} variant='filled' className={classes.button} style={{backgroundColor:'#EEC283'}}>
+				<Button onClick={()=>{aboutRef.current.scrollIntoView();}} variant='filled' style={classes.button}>
 					<Typography 
 						fontFamily={'Merriweather'} 
 						color= {Consts.theme.secondary}

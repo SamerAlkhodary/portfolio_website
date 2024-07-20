@@ -1,7 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
 import Consts from '../../consts';
 
-const useStyles = makeStyles(() => ({
+const useStyles = {
 	contactPage:{
 		paddingTop:'2em',
 		backgroundColor: Consts.theme.secondary,
@@ -92,6 +91,6 @@ const useStyles = makeStyles(() => ({
 	}
 
 	
-}));
+};
 
 export default useStyles;

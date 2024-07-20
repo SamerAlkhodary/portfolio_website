@@ -1,12 +1,12 @@
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import { AppBar } from '@material-ui/core';
-import Slide from '@material-ui/core/Slide';
+import { AppBar } from '@mui/material';
+import Slide from '@mui/material/Slide';
 import React, { useCallback, useEffect, useState } from 'react';
-import useStyles from './style';
 import { useMediaQuery } from 'react-responsive';
 import Logo from '../../res/images/vertical_logo.svg';
+import classes from './style';
 import {useAtom} from 'jotai';
 import { languageAtom, showMenuAtom } from '../../atoms';
 import Consts from '../../consts';
@@ -66,7 +66,6 @@ function CustomAppBar({refs,heroRef}) {
 		}
 	];
 
-	const classes = useStyles();
 	const itemPressed =(ref)=>{
 		ref.current.scrollIntoView();
     
@@ -87,17 +86,17 @@ function CustomAppBar({refs,heroRef}) {
 	const appBarItems= useCallback(()=>{
 		if(isDesktopOrLaptop){
 			return(
-				<div className={classes.itemRow}>
-					<div  className={classes.logoItem}>
+				<div style={classes.itemRow}>
+					<div  style={classes.logoItem}>
 						<IconButton onClick={()=>{itemPressed(heroRef);}} style={{paddingLeft:0}}>
 							<img style={{ height: 50, width: 300 }} src={Logo}alt={'logo'}/>	
 						</IconButton>
 					</div>
-					<div className={classes.pagesRow}>
+					<div style={classes.pagesRow}>
 						{
 							menuItems.map(item =>(
 								<IconButton  key={item.title} onClick={item.onClick}>
-									<Typography fontFamily={'Merriweather'} fontWeight={'bold'} className={ classes.menuButton} fontSize={'1rem'}>
+									<Typography fontFamily={'Merriweather'} fontWeight={'bold'} style={ classes.menuButton} fontSize={'1rem'}>
 										{item.title}
 									</Typography>
 								</IconButton>
@@ -109,7 +108,7 @@ function CustomAppBar({refs,heroRef}) {
 			);
 		}else{
 			return(
-				<div className={classes.row}>
+				<div style={classes.row}>
 					<IconButton onClick={()=>{itemPressed(heroRef);setShowMenu(false);}} style={{paddingLeft:0}}>
 						<img style={{ width:'9em',height:'2em' }} src={Logo}alt={'logo'}/>	
 					</IconButton>
@@ -125,7 +124,7 @@ function CustomAppBar({refs,heroRef}) {
 	return (
 		<>
 			<Slide apear={'false'} direction="down" in={scrollPosition >= 0 }>
-				<AppBar position="fixed" className={classes.appBarHero} elevation={0}>
+				<AppBar position="fixed" style={classes.appBarHero} elevation={0}>
 					<Toolbar style={{padding:0}}>
 						{appBarItems()}
 					</Toolbar>

@@ -1,6 +1,5 @@
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = {
 	itemRow:{
 		display:'flex',
 		flexDirection: 'row',
@@ -44,6 +43,6 @@ const useStyles = makeStyles(() => ({
 		color: '#EEC283'        
 	},
 	
-}));
+};
 
 export default useStyles;

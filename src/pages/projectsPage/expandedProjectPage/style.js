@@ -1,31 +1,15 @@
 import Consts from '../../consts';
 
-const useStyles ={
-	servicesPage:{
+const useStyles = {
+	page:{
 		backgroundColor:Consts.theme.secondary,
 		paddingBottom:'5em',
 		paddingTop: '5em',
-		paddingLeft:'1em',
-		paddingRight:'1em',
 		display:'flex',
 		flexDirection:'column'
 	},
 	container:{
-		overflowX: 'auto',
 
-	},
-	serviceList:{
-		display: 'flex',
-		flexDirection:'row',
-		justifyContent: 'space-around',
-		flex:1,
-		height:'100%'
-	},
-	serviceListMobile:{
-		width:'60em',
-		display: 'flex',
-		gap:'20px',
-		height:'100%'
 	},
 	title:{
 		alignSelf:'center',
