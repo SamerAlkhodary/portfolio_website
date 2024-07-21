@@ -1,18 +1,21 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import classes from './style.js';
-import hero from '../../res/images/hero.webp';
+import hero from '../../res/images/hero2.webp';
 import { Button } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
 import Consts from '../../consts.js';
 import translate from '../../res/strings/strings.js';
 
 const HeroPage = ({aboutRef},ref)=> {
+	const Image = React.memo(function Image({ src }) {
+		return <img style={classes.hero} src={src} className="hero" />;
+	});
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
 		<div ref={ref} style={classes.container} >
-			<img style={classes.hero} src={hero} alt="programming"/>
+			<Image src={hero} />
 			<div style={isDesktopOrLaptop?classes.textsDesktop:classes.textsMobile}>
 				<Typography variant={isDesktopOrLaptop?'h4':'h5'} paragraph fontFamily={'Merriweather'} style={classes.h1}>
 					{translate('heroTextTitle')}
