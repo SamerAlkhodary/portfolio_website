@@ -26,6 +26,12 @@ const Strings={
 		locale:'EN/HU',
 		restaurant: 'Restaurant',
 		apartments: 'Apartments',
+		projectsInfo:{
+			midoName: 'Mido restaurant',
+			midoDescription: 'Transform your living spaces with our expert renovation services! As a premier general contractor, we enhance apartments and houses, ensuring customer satisfaction and timely completion. From major overhauls to minor upgrades, our comprehensive construction services are tailored to meet your needs.',
+			midoType:'Restaurant',
+
+		}
 	},
 	'hu-HU': {
 		about: 'Rólunk',
@@ -50,13 +56,18 @@ const Strings={
 		yourName: 'Az ön neve',
 		yourEmail: 'Az ön email címe',
 		message: 'Üzenet',
-		locale:'EN/HU'
-
+		locale:'EN/HU',
+		projectsInfo:{
+			midoName: 'Mido etterem',
+			midoDescription: 'Új építés esetén fővállalkozóként tudunk tevékenykedni. Saját földmunkarészlegünk van.',
+			midoType:'Étterem',
+		}
 	}
 };
 Object.freeze(Strings);
-function translate(value){
+function translate(value,section){
 	const [language,] = useAtom(languageAtom);
-	return Strings[language][value];
+	const result = section? Strings[language][section][value]:  Strings[language][value];
+	return result??value;
 }
 export default translate;

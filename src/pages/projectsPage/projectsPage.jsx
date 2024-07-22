@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
+import { useNavigate } from 'react-router-dom';
 
 import { ProjectCard } from './components';
 import classes from './style.js';
@@ -10,7 +11,8 @@ import restaurant from '../../res/images/restaurant.webp';
 import extension from '../../res/images/extension.webp';
 //import { useMediaQuery } from 'react-responsive';
 const ProjectsPage = (props,ref)=> {
-	
+	const navigate = useNavigate();
+
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
@@ -21,8 +23,8 @@ const ProjectsPage = (props,ref)=> {
 			</Typography>
 			<div style={classes.container}>
 				<div style={isDesktopOrLaptop?classes.serviceList:classes.serviceListMobile}>
-					<ProjectCard img={barbershop} title={translate('barbershop')}/>
-					<ProjectCard img={restaurant} title={translate('restaurant')} />
+					<ProjectCard img={barbershop} title={translate('barbershop')} />
+					<ProjectCard img={restaurant} title={translate('restaurant')} onclick={()=>navigate('/portfolio_website/projects/mido')} />
 					<ProjectCard img={extension} title={translate('apartments')} />
 				</div>
 			</div>

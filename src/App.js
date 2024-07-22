@@ -1,8 +1,9 @@
-import { HeroPage,AboutPage,ContactPage, ServicesPage, ProjectsPage } from './pages';
+import { HeroPage,AboutPage,ContactPage, ServicesPage, ProjectsPage,ExtendedProjectPage } from './pages';
 import React, {createRef} from 'react';
 import classes from './style.js';
 import{CustomAppBar, Menu} from './components';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 
 
 function App() {
@@ -13,7 +14,23 @@ function App() {
 	const servicesRef=createRef();
 	const projectsRef=createRef();
 
+	const HomePage= ()=>{
+		return(
+			<div>
+				<CustomAppBar refs={[aboutRef,servicesRef,projectsRef,contactRef]} heroRef={heroRef} style={classes.appBar} />
+				<Menu  customRefs={[aboutRef,servicesRef,projectsRef,contactRef]} itemPressed={()=>{}}/>
+				<div style={classes.body}>
+					<HeroPage ref={heroRef} aboutRef={aboutRef}/>
+					<AboutPage ref={aboutRef} />
+					<ServicesPage ref={servicesRef}/>
+					<ProjectsPage ref={projectsRef} />
+					<ContactPage ref={contactRef} />
+				</div>	
+			</div>
 
+
+		);
+	};
 	const theme = createTheme({
 		typography: {
 			fontFamily: [
@@ -26,15 +43,12 @@ function App() {
 	});
 	return (
 		<ThemeProvider theme={theme}>
-			<CustomAppBar refs={[aboutRef,servicesRef,projectsRef,contactRef]} heroRef={heroRef} style={classes.appBar} />
-			<Menu  customRefs={[aboutRef,servicesRef,projectsRef,contactRef]} itemPressed={()=>{}}/>
-			<div style={classes.body}>
-				<HeroPage ref={heroRef} aboutRef={aboutRef}/>
-				<AboutPage ref={aboutRef} />
-				<ServicesPage ref={servicesRef}/>
-				<ProjectsPage ref={projectsRef} />
-				<ContactPage ref={contactRef} />
-			</div>	
+			<Router>
+				<Routes>
+					<Route path='/portfolio_website' element= {<HomePage/>}/>
+					<Route exact path='/portfolio_website/projects/:name' element= {<ExtendedProjectPage/>}/>
+				</Routes>
+			</Router>
 				
 		</ThemeProvider>
 
