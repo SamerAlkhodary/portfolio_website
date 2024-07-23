@@ -8,11 +8,7 @@ const useStyles = {
 		position:'relative'
 	},
 	page:{
-		backgroundColor: Consts.theme.secondary,
-		justifyContent:'start',
-		flex:1,
-		flexDirection:'column',
-		display: 'flex',
+		backgroundColor: Consts.theme.secondary,	
 
 	},
 	iconRow:{
@@ -21,11 +17,20 @@ const useStyles = {
 		justifyContent:'space-around'
 
 	},
-	imageList:{
+	imageListDesktop:{
+		gap:'0.5em',
+		flex:1,
+		display:'flex',
+		flexDirection:'row',
+		justifyContent:'center',
+		flexWrap: 'wrap'
+	},
+	imageListMobile:{
 		flex:1,
 		display:'flex',
 		flexDirection:'column',
-		gap: '0.5em'
+		gap: '0.5em',
+		justifyContent:'center'
 	},
 	appBarHero: {
 		backgroundColor: '#242424',
@@ -70,6 +75,7 @@ const useStyles = {
 		color: 'white',
 	},
 	title: {
+		paddingLeft:'0.5em',
 		paddingTop:'1em',
 		textAlign: 'start',
 		color: 'white',

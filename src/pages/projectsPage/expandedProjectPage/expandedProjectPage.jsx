@@ -1,15 +1,21 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Typography } from '@mui/material';
 import projects from './projects.js';
 import classes from './style.js';
+import { useMediaQuery } from 'react-responsive';
 import translate from '../../../res/strings/strings.js';
-import {useParams} from 'react-router-dom';
+import {useParams,useLocation} from 'react-router-dom';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonthOutlined';
 import PlaceIcon from '@mui/icons-material/PlaceOutlined';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 //import { useMediaQuery } from 'react-responsive';
-const ExpandedProjectPage = (props,ref)=> {
 
+const ExpandedProjectPage = (props,ref)=> {
+	const { pathname } = useLocation();
+	const isDesktopOrLaptop = useMediaQuery({
+		query: '(min-width: 900px)'});	
+	useEffect(() => {
+		window.scrollTo(0, 0);}, [pathname]);
 	const params = useParams();
 	const project = projects.find(p=>p.title==params.name);
 	const Image = React.memo(function Image({style, src }) {
@@ -18,29 +24,18 @@ const ExpandedProjectPage = (props,ref)=> {
 	const beforeImages= useCallback(()=>{
 		var images =[];
 		for(let i=1; i<project.beforeImageCount;i++){
-			images.push(<Image style={{height:'100vw',width:'100vw'}} src={`/portfolio_website/assets/images/projects/${project.title}/b-${i}.webp`} />);
+			images.push(<Image style={isDesktopOrLaptop?{width:'30%',aspectRatio:1}:{width:'100%',aspectRatio:1}} src={`/portfolio_website/assets/images/projects/${project.title}/b-${i}.webp`} />);
 		}
-		return (
-			<div>
-				{images}
-			</div>
+		return images;
 
-		);
-
-	},[project.beforeImageCount]);
+	},[project.beforeImageCount,isDesktopOrLaptop]);
 	const afterImages= useCallback(()=>{
 		var images =[];
 		for(let i=1; i<=project.afterImageCount;i++){
-			images.push(<Image style={{height:'100vw',width:'100vw'}} src={`/portfolio_website/assets/images/projects/${project.title}/a-${i}.webp`} />);
+			images.push(<Image style={isDesktopOrLaptop?{width:'30%',aspectRatio:1}:{width:'100%',aspectRatio:1}} src={`/portfolio_website/assets/images/projects/${project.title}/a-${i}.webp`} />);
 		}
-		return (
-			<div>
-				{images}
-			</div>
-
-		);
-
-	},[project.afterImageCount]);
+		return images;
+	},[project.afterImageCount,isDesktopOrLaptop]);
 	
 	return (
 		<div style={classes.page}>
@@ -85,7 +80,7 @@ const ExpandedProjectPage = (props,ref)=> {
 			<Typography variant={'h5'}  fontFamily={'Merriweather'}  style={classes.title}>
 				{translate('Before:')}
 			</Typography>
-			<div style={classes.imageList}>
+			<div style={isDesktopOrLaptop? classes.imageListDesktop:classes.imageListMobile}>
 				{
 					beforeImages()
 				}
@@ -93,7 +88,7 @@ const ExpandedProjectPage = (props,ref)=> {
 			<Typography variant={'h5'}  fontFamily={'Merriweather'}  style={classes.title}>
 				{translate('After:')}
 			</Typography>
-			<div style={classes.imageList}>
+			<div style={isDesktopOrLaptop? classes.imageListDesktop:classes.imageListMobile}>
 				{
 					afterImages()
 				}
