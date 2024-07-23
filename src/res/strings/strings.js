@@ -51,7 +51,7 @@ const Strings={
 		consultationDescription: 'Szakértői tanácsadás az építkezés minden fázisában,Műszaki ellenőrzés és Felelős műszaki vezetés',
 		constructionDescription: 'Teljes körű szolgáltatás a tervezéstől a kivitelezésig, beleértve irodaházakat, üzleteket is.',
 		renovationDescription: 'Teljes lakásfelújítási projektek, beleértve a belsőépítészeti munkákat is.',
-		houseConstructionDescription: 'Egyedi és kulcsrakész családi házak építése.',
+		houseConstructionDescription: 'Building custom family houses, fully finished and ready for you to move in.',
 		heroTextTitle: 'Ötleteit megvalósítjuk',
 		heroTextSubtitle: 'Generál kivitelezés tervezéstől kulcsátadásig',
 		aboutText: 'A Palmyra-Építő Kft. Budapesten alakult, és elkötelezetten dolgozunk azon, hogy a legjobb minőségű építőipari szolgáltatásokat nyújtsuk ügyfeleinknek. Küldetésünk, hogy álmait valóra váltsuk, legyen szó házépítésről vagy lakásfelújításról, és víziónk, hogy a magyar építőipar meghatározó szereplőjévé váljunk, folyamatosan innovatív és fenntartható megoldásokkal szolgálva ügyfeleinket.',
