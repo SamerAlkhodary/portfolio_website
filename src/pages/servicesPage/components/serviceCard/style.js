@@ -4,7 +4,7 @@ const useStyles = {
 	cardDesktop:{
 		backgroundColor:Consts.theme.secondary,
 		position:'relative',
-		width: '30%',
+
 	},
 	cardMobile:{
 		backgroundColor:Consts.theme.secondary,

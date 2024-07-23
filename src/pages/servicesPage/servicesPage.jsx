@@ -21,7 +21,9 @@ const ServicesPage = (props,ref)=> {
 				<div style={isDesktopOrLaptop?classes.serviceList:classes.serviceListMobile}>
 					<ServiceInfoCard img={construction} title={translate('construction')} description= {translate('constructionDescription')}/>
 					<ServiceInfoCard img={renovation} title={translate('renovation')} description= {translate('renovationDescription')}/>
-					<ServiceInfoCard img={extension} title={translate('extension')} description= {translate('extensionDescription')}/>
+					<ServiceInfoCard img={extension} title={translate('houseConstruction')} description= {translate('houseConstructionDescription')}/>
+					<ServiceInfoCard img={extension} title={translate('consultation')} description= {translate('consultationDescription')}/>
+
 
 				</div>
 			</div>

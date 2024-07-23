@@ -14,37 +14,38 @@ const useStyles = {
 		objectFit: 'cover',
 	},
 	h1: {
-		textAlign: 'start',
+		textAlign: 'center',
 		color: 'white',
 	},
 	h2: {
-		textAlign: 'start',
+		textAlign: 'center',
 		color: 'white',
 	},
 	button: {
 		backgroundColor:'#EEC283',
 		width:'16em',
+		alignSelf:'center',
 		color: Consts.theme.secondary,
 		
 	},
 
-	textsDesktop:{ height:'100%',
-		minWidth:'25em',
-		maxWidth:'50em', 
-		width:'30%',top:'3em',
-		paddingLeft:'10%',
+	textsDesktop:{
 		position:'absolute',
+		top:'1em',
+		left:'1em',
+		right:'1em',
+		bottom:'1em',
+
 		display:'flex',
 		gap:'3em',
 		flexDirection:'column',
 		justifyContent:'center'},
 
 	textsMobile:{ 
-		height:'80%',
 		top:'3em',
-		width: '75%',
-		maxWidth:'50em', 
-		left:'10%',
+		left:'1em',
+		bottom:'3em',
+		right:'1em',
 		position:'absolute',
 		display:'flex',
 		gap:'3em',

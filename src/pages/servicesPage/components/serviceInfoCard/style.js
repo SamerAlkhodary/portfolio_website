@@ -4,8 +4,12 @@ const useStyles = {
 	
 	card:{
 		alignSelf:'center',
-		gap:'3em',
-		width:'30%',
+		width:'25em',
+		height: '10em',
+		gap:'1em',
+		flexDirection:'column',
+		display:'flex',
+		justifyContent: 'center',
 		backgroundImage:'linear-gradient(to bottom right, #EEC283, rgba(228,191,183,0.7))',
 		backdropFilter: 'blur(10px)',
 		boxShadow: '10px 10px 10px rgba(30,30,30,0.4)',
@@ -15,8 +19,12 @@ const useStyles = {
 	mobileCard:{
 		alignSelf:'center',
 		width:'90%',
-
-		gap:'3em',
+		height:'8em',
+		padding:'0.5em',
+		gap:'0.5em',
+		flexDirection:'column',
+		display:'flex',
+		justifyContent: 'center',
 		backgroundImage:'linear-gradient(to bottom right, #EEC283, rgba(228,191,183,0.7))',
 		backdropFilter: 'blur(10px)',
 		boxShadow: '10px 10px 10px rgba(30,30,30,0.4)',

@@ -8,7 +8,6 @@ const useStyles = {
 		position:'relative'
 	},
 	page:{
-		width: '100%',
 		height: '100vh',
 		backgroundColor: Consts.theme.secondary,
 		justifyContent:'start',
@@ -23,10 +22,17 @@ const useStyles = {
 		justifyContent:'space-around'
 
 	},
+	appBarHero: {
+		backgroundColor: '#242424',
+		padding:0,
+		boxShadow: '0px',
+		paddingLeft:'1em',
+	},
+
 	info:{
-		top:'0em',
-		left: '0.5em',
-		right:'0.5em',
+		left: '1em',
+		right:'1em',
+		top:'2em',
 		height: '100%',
 		position:'absolute',
 		flexDirection:'column',
@@ -40,11 +46,9 @@ const useStyles = {
 		flexDirection:'column',
 		display:'flex',
 		justifyContent:'center',
-		
 
 	},
 	texts:{ 
-		
 		display:'flex',
 		gap:'1.5em',
 		flexDirection:'column',

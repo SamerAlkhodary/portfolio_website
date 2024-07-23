@@ -14,6 +14,9 @@ const useStyles = {
 	serviceList:{
 		display: 'flex',
 		flexDirection:'row',
+		gap:'1em',
+		paddingLeft:'1em',
+		paddingRight:'1em',
 		justifyContent: 'space-around',
 		flex:1,
 		height:'100%'

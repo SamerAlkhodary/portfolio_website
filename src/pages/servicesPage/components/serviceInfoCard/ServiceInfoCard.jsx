@@ -1,4 +1,4 @@
-import { CardContent, Typography } from '@mui/material';
+import {  Typography } from '@mui/material';
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -8,16 +8,16 @@ const ServiceInfoCard = ({title,description})=> {
 		query: '(min-width: 900px)'});
 	return (
 		<div style={isDesktopOrLaptop?classes.card:classes.mobileCard} variant="outlined" >
-			<CardContent>
-				<Typography style={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
-					{title}
-				</Typography>
+			
+			<Typography style={classes.txt} variant='h6' fontFamily={'Merriweather'} fontWeight='bold'>
+				{title}
+			</Typography>
 
-				<Typography style={classes.txt} variant='body2' fontFamily={'Merriweather'}>
-					{description}
-				</Typography>
+			<Typography style={classes.txt} variant='body2' fontFamily={'Merriweather'}>
+				{description}
+			</Typography>
 
-			</CardContent>
+			
 
 		</div>
 

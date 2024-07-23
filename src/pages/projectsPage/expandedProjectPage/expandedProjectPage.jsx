@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, Typography } from '@mui/material';
+import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
 import projects from './projects.js';
 import classes from './style.js';
 import translate from '../../../res/strings/strings.js';
@@ -20,20 +20,21 @@ const ExpandedProjectPage = (props,ref)=> {
 	
 	return (
 		<div style={classes.page}>
-			<div style={{display:'flex',flexDirection:'row',gap:'1.5em',padding:'1em'}}>
-				<IconButton sx={{margin:0,padding:0}} onClick={()=>{navigate(-1);}}>
-					<ArrowBackOutlinedIcon sx={{color:'white',alignSelf:'center'}}></ArrowBackOutlinedIcon>
-				</IconButton>
-				<Typography variant={'h5'}  fontFamily={'Merriweather'} fontWeight='bold' style={classes.h1}>
-					{translate(project.name,'projectsInfo')}
-				</Typography>
-
-			</div>
+			<AppBar position="fixed" style={classes.appBarHero} elevation={0}>
+				<Toolbar style={{padding:0}}>
+					<IconButton sx={{margin:0,padding:0,flex:1,justifyContent:'start'}} onClick={()=>{navigate(-1);}}>
+						<ArrowBackOutlinedIcon sx={{color:'white',alignSelf:'center'}}></ArrowBackOutlinedIcon>
+					</IconButton>
+				</Toolbar>
+			</AppBar>
+			
 			<div ref={ref} style={classes.container} >
 				<Image src={`/portfolio_website/assets/images/projects/${project.title}/hero.webp`} />
 				<div style={classes.info}>
 					<div style={classes.texts}>
-						
+						<Typography variant={'h5'}  fontFamily={'Merriweather'} fontWeight='bold' style={classes.h1}>
+							{translate(project.name,'projectsInfo')}
+						</Typography>
 						<Typography  variant={'h6'} paragraph style={classes.h2} fontFamily={'Merriweather'}>
 							{translate(project.description,'projectsInfo')}
 						</Typography>
