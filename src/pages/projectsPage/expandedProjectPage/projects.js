@@ -4,7 +4,9 @@ const projects =[
 		description: 'midoDescription',
 		startDate: '2024',
 		location: 'Budapest',
-		type: 'midoType'
+		type: 'midoType',
+		beforeImageCount:4,
+		afterImageCount: 4
 	}
     
 ];

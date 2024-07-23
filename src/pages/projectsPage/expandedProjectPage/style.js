@@ -8,7 +8,6 @@ const useStyles = {
 		position:'relative'
 	},
 	page:{
-		height: '100vh',
 		backgroundColor: Consts.theme.secondary,
 		justifyContent:'start',
 		flex:1,
@@ -21,6 +20,12 @@ const useStyles = {
 		display:'flex',
 		justifyContent:'space-around'
 
+	},
+	imageList:{
+		flex:1,
+		display:'flex',
+		flexDirection:'column',
+		gap: '0.5em'
 	},
 	appBarHero: {
 		backgroundColor: '#242424',
@@ -62,6 +67,11 @@ const useStyles = {
 	},
 	h1: {
 		textAlign: 'center',
+		color: 'white',
+	},
+	title: {
+		paddingTop:'1em',
+		textAlign: 'start',
 		color: 'white',
 	},
 	h2: {
