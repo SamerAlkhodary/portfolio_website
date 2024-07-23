@@ -28,10 +28,10 @@ const Strings={
 		apartments: 'Apartments',
 		projectsInfo:{
 			midoName: 'Mido restaurant',
-			midoDescription: 'Transform your living spaces with our expert renovation services! As a premier general contractor, we enhance apartments and houses, ensuring customer satisfaction and timely completion. From major overhauls to minor upgrades, our comprehensive construction services are tailored to meet your needs.',
+			midoDescription: 'Transforce apartments and houses, ensuring customer satisfaction and timely completion. From major overhauls to minor upgrades.',
 			midoType:'Restaurant',
 			barbershopName: 'Barbershop',
-			barbershopDescription: 'Transform your living spaces with our expert renovation services! As a premier general contractor, we enhance apartments and houses, ensuring customer satisfaction and timely completion. From major overhauls to minor upgrades, our comprehensive construction services are tailored to meet your needs.',
+			barbershopDescription: 'premier general contractor, we enhance apartments and houses, ensuring customer satisfaction and timely completion. From major.',
 			barbershopType:'Barbershop',
 
 		},
@@ -68,7 +68,7 @@ const Strings={
 			midoDescription: 'Új epítés esetén fővállalkozóként tudunk tevékenykedni. Saját földmunkarészlegünk van.',
 			midoType:'Étterem',
 			barbershopName: 'Barbershop',
-			barbershopDescription: 'Transform your living spaces with our expert renovation services! As a premier general contractor, we enhance apartments and houses, ensuring customer satisfaction and timely completion. From major overhauls to minor upgrades, our comprehensive construction services are tailored to meet your needs.',
+			barbershopDescription: 'Új epítés esetén fővállalkozóként tudunk tevékenykedni. Saját földmunkarészlegünk van.',
 			barbershopType:'Barbershop',
 		}
 	}
