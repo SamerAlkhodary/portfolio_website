@@ -30,8 +30,12 @@ const Strings={
 			midoName: 'Mido restaurant',
 			midoDescription: 'Transform your living spaces with our expert renovation services! As a premier general contractor, we enhance apartments and houses, ensuring customer satisfaction and timely completion. From major overhauls to minor upgrades, our comprehensive construction services are tailored to meet your needs.',
 			midoType:'Restaurant',
+			barbershopName: 'Barbershop',
+			barbershopDescription: 'Transform your living spaces with our expert renovation services! As a premier general contractor, we enhance apartments and houses, ensuring customer satisfaction and timely completion. From major overhauls to minor upgrades, our comprehensive construction services are tailored to meet your needs.',
+			barbershopType:'Barbershop',
 
-		}
+		},
+		
 	},
 	'hu-HU': {
 		about: 'Rólunk',
@@ -63,6 +67,9 @@ const Strings={
 			midoName: 'Mido etterem',
 			midoDescription: 'Új epítés esetén fővállalkozóként tudunk tevékenykedni. Saját földmunkarészlegünk van.',
 			midoType:'Étterem',
+			barbershopName: 'Barbershop',
+			barbershopDescription: 'Transform your living spaces with our expert renovation services! As a premier general contractor, we enhance apartments and houses, ensuring customer satisfaction and timely completion. From major overhauls to minor upgrades, our comprehensive construction services are tailored to meet your needs.',
+			barbershopType:'Barbershop',
 		}
 	}
 };

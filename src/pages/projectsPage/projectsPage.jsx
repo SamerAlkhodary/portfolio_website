@@ -23,7 +23,7 @@ const ProjectsPage = (props,ref)=> {
 			</Typography>
 			<div style={classes.container}>
 				<div style={isDesktopOrLaptop?classes.serviceList:classes.serviceListMobile}>
-					<ProjectCard img={barbershop} title={translate('barbershop')} />
+					<ProjectCard img={barbershop} title={translate('barbershop')} onclick={()=>navigate('/portfolio_website/projects/barbershop')}/>
 					<ProjectCard img={restaurant} title={translate('restaurant')} onclick={()=>navigate('/portfolio_website/projects/mido')} />
 					<ProjectCard img={extension} title={translate('apartments')} />
 				</div>
