@@ -24,7 +24,7 @@ const ExpandedProjectPage = (props,ref)=> {
 	const beforeImages= useCallback(()=>{
 		var images =[];
 		for(let i=1; i<project.beforeImageCount;i++){
-			images.push(<Image style={isDesktopOrLaptop?{width:'30%',aspectRatio:1}:{width:'100%',aspectRatio:1}} src={`/portfolio_website/assets/images/projects/${project.title}/b-${i}.webp`} />);
+			images.push(<Image style={isDesktopOrLaptop?{width:'32%',aspectRatio:1}:{width:'100%',aspectRatio:1}} src={`/assets/images/projects/${project.title}/b-${i}.webp`} />);
 		}
 		return images;
 
@@ -32,7 +32,7 @@ const ExpandedProjectPage = (props,ref)=> {
 	const afterImages= useCallback(()=>{
 		var images =[];
 		for(let i=1; i<=project.afterImageCount;i++){
-			images.push(<Image style={isDesktopOrLaptop?{width:'30%',aspectRatio:1}:{width:'100%',aspectRatio:1}} src={`/portfolio_website/assets/images/projects/${project.title}/a-${i}.webp`} />);
+			images.push(<Image style={isDesktopOrLaptop?{width:'32%',aspectRatio:1}:{width:'100%',aspectRatio:1}} src={`/assets/images/projects/${project.title}/a-${i}.webp`} />);
 		}
 		return images;
 	},[project.afterImageCount,isDesktopOrLaptop]);
@@ -41,7 +41,7 @@ const ExpandedProjectPage = (props,ref)=> {
 		<div style={classes.page}>
 			
 			<div ref={ref} style={classes.container} >
-				<Image style={classes.hero} src={`/portfolio_website/assets/images/projects/${project.title}/hero.webp`} />
+				<Image style={classes.hero} src={`/assets/images/projects/${project.title}/hero.webp`} />
 				<div style={classes.info}>
 					<div style={classes.texts}>
 						<Typography variant={'h5'}  fontFamily={'Merriweather'} fontWeight='bold' style={classes.h1}>

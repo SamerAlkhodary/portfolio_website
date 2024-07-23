@@ -12,6 +12,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.1.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "atom": "^1.4.2",
     "eslint-plugin-prettier": "^5.2.1",
     "gh-pages": "^5.0.0",
@@ -22,16 +23,17 @@
     "react-dom": "^18.3.0",
     "react-responsive": "^9.0.1",
     "react-router-dom": "^6.25.1",
-    "react-scripts": "5.0.1",
     "react-spring": "^9.7.4",
     "styled-components": "5.3.1",
+    "vite": "^5.3.4",
+    "vite-tsconfig-paths": "^4.3.2",
     "web-vitals": "^3.1.0"
   },
   "scripts": {
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "vite",
+    "build": "vite build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
