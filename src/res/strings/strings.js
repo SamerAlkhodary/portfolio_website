@@ -24,6 +24,7 @@ const Strings={
 		yourEmail: 'Your email address',
 		message: 'Message',
 		locale:'EN/HU',
+		projectNotFound: 'Project not found!',
 		restaurant: 'Restaurant',
 		apartments: 'Apartments',
 		projectsInfo:{
@@ -63,6 +64,7 @@ const Strings={
 		yourEmail: 'Az ön email címe',
 		message: 'Üzenet',
 		locale:'EN/HU',
+		projectNotFound: 'A projekt nem található!',
 		projectsInfo:{
 			midoName: 'Mido etterem',
 			midoDescription: 'Új epítés esetén fővállalkozóként tudunk tevékenykedni. Saját földmunkarészlegünk van.',
