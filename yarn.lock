@@ -1115,6 +1115,13 @@ ast-types-flow@^0.0.7:
   resolved "https://registry.npmjs.org/ast-types-flow/-/ast-types-flow-0.0.7.tgz"
   integrity sha512-eBvWn1lvIApYMhzQMsu9ciLfkBY499mFZlNqG+/9WR7PVlroQw0vG30cOQQbaKz3sCEc44TAOu2ykzqXSNnwag==
 
+async@^2.6.1:
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.6.4.tgz#706b7ff6084664cd7eae713f6f965433b5504221"
+  integrity sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==
+  dependencies:
+    lodash "^4.17.14"
+
 async@^3.2.4:
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/async/-/async-3.2.5.tgz#ebd52a8fdaf7a2289a24df399f8d8485c8a46b66"
@@ -1470,6 +1477,11 @@ electron-to-chromium@^1.4.820:
   version "1.4.832"
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.832.tgz"
   integrity sha512-cTen3SB0H2SGU7x467NRe1eVcQgcuS6jckKfWJHia2eo0cHIGOqHoAxevIYZD4eRHcWjkvFzo93bi3vJ9W+1lA==
+
+email-addresses@^3.0.1:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/email-addresses/-/email-addresses-3.1.0.tgz#cabf7e085cbdb63008a70319a74e6136188812fb"
+  integrity sha512-k0/r7GrWVL32kZlGwfPNgB2Y/mMXVTq/decgLczm/j34whdaspNrZO8CnXPf1laaHxI6ptUlsnAxN+UAPw+fzg==
 
 email-addresses@^5.0.0:
   version "5.0.0"
@@ -1972,6 +1984,19 @@ get-symbol-description@^1.0.0:
     call-bind "^1.0.2"
     get-intrinsic "^1.1.1"
 
+gh-pages@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/gh-pages/-/gh-pages-4.0.0.tgz#bd7447bab7eef008f677ac8cc4f6049ab978f4a6"
+  integrity sha512-p8S0T3aGJc68MtwOcZusul5qPSNZCalap3NWbhRUZYu1YOdp+EjZ+4kPmRM8h3NNRdqw00yuevRjlkuSzCn7iQ==
+  dependencies:
+    async "^2.6.1"
+    commander "^2.18.0"
+    email-addresses "^3.0.1"
+    filenamify "^4.3.0"
+    find-cache-dir "^3.3.1"
+    fs-extra "^8.1.0"
+    globby "^6.1.0"
+
 gh-pages@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/gh-pages/-/gh-pages-5.0.0.tgz#e0893272a0e33f0453e53a3c017c33b91ddd6394"
@@ -2436,7 +2461,7 @@ lodash.merge@^4.6.2:
   resolved "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
-lodash@^4.17.15, lodash@^4.17.21:
+lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -3259,6 +3284,13 @@ v8-compile-cache@^2.0.3:
   version "2.3.0"
   resolved "https://registry.npmjs.org/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
+
+vite-plugin-gh-pages@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-gh-pages/-/vite-plugin-gh-pages-0.4.1.tgz#3e9cb9557db0307453faa3b722339bef1f5376ae"
+  integrity sha512-le3VEvsI7GURftAiXPsgd+8noO/W1+gv363gFZdVNQ2uZGO78/nKl7um+0873ZH5paO8+iA5tXAss8TM6z4pyA==
+  dependencies:
+    gh-pages "^4.0.0"
 
 vite-plugin-rewrite-all@^1.0.2:
   version "1.0.2"

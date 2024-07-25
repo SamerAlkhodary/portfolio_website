@@ -35,7 +35,6 @@
     "start": "vite",
     "build": "vite build --base=/portfolio_website/",
     "preview": "vite preview"
-
   },
   "eslintConfig": {
     "extends": [
@@ -56,12 +55,12 @@
     ]
   },
   "devDependencies": {
-    "vite-plugin-rewrite-all": "^1.0.2",
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-react-hooks": "^4.3.0"
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "vite-plugin-rewrite-all": "^1.0.2"
   }
 }
