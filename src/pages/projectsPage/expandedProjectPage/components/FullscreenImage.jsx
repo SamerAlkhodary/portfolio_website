@@ -51,7 +51,7 @@ function FullScreenImage() {
 	return (
 		<animated.div style={fadeInProps}>
 			<Image src={showImage.imgSrc} style={imagesStyle}/>
-			<div style={classes.closeIconDiv} onClick={()=>{setShowImage({visible:false,imgSrc:''});}}>
+			<div style={classes.closeIconDiv} onClick={()=>{setShowImage({visible:false});}}>
 				<CloseIcon sx={{fontSize: 30,color:'white',alignSelf:'center',backgroundColor:Consts.theme.secondary,borderRadius:'2em'}} />
 			</div>
 			

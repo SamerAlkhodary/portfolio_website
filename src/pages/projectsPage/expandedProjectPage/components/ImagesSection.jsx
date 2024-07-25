@@ -13,7 +13,7 @@ const ImageSection = ({project})=> {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});	
 	const Image = React.memo(function Image({style, src }) {
-		return <img style={style} src={src} className="hero" onClick={()=>{console.log('hi');setShowImage({visible:true,imgSrc:src});}}/>;
+		return <img style={style} src={src} className="hero" onClick={()=>{setShowImage({visible:true,imgSrc:src});}}/>;
 	});
 	
 	const imagesStyle= isDesktopOrLaptop?{width:'32%',aspectRatio:1}:{width:'100%',aspectRatio:1};
