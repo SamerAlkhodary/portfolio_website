@@ -7,6 +7,7 @@ import { TitleSection } from './components/index.js';
 import translate from '../../../res/strings/strings.js';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import { Typography } from '@mui/material';
+import FullScreenImage from './components/FullscreenImage.jsx';
 
 const ExpandedProjectPage = ()=> {
 	const { pathname } = useLocation();
@@ -18,10 +19,11 @@ const ExpandedProjectPage = ()=> {
 		<div style={classes.page}>
 			{
 				project? 
-					<>
+					<div style={{position:'relative'}}>
+						<FullScreenImage/>
 						<TitleSection project={project}/>
 						<ImageSection project={project}/>
-					</>:
+					</div>:
 					<div style={classes.pageNotfound}>
 						<SentimentVeryDissatisfiedIcon  sx={{ fontSize: '4em',color:'white',alignSelf:'center' }}/>
 						<Typography variant={'h5'} fontFamily={'Merriweather'}  style={classes.h1}>

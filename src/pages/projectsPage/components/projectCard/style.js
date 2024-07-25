@@ -5,6 +5,7 @@ const useStyles = {
 		backgroundColor:Consts.theme.secondary,
 		position:'relative',
 		width: '30%',
+		aspectRatio: 1,
 	},
 	cardMobile:{
 		backgroundColor:Consts.theme.secondary,
