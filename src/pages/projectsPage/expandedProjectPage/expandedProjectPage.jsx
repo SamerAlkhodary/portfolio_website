@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import projects from './projects.js';
 import classes from './style.js';
-import {useParams,useLocation} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import ImageSection from './components/ImagesSection.jsx';
 import { TitleSection } from './components/index.js';
 import translate from '../../../res/strings/strings.js';
@@ -10,9 +10,13 @@ import { Typography } from '@mui/material';
 import FullScreenImage from './components/FullscreenImage.jsx';
 
 const ExpandedProjectPage = ()=> {
-	const { pathname } = useLocation();
 	useEffect(() => {
-		window.scrollTo(0, 0);}, [pathname]);
+		window.scrollTo({
+			top:0,
+			behavior:'instant'
+		});
+
+	}, [window]);
 	const params = useParams();
 	const project = projects.find(p=>p.title==params.name);
 	return (
