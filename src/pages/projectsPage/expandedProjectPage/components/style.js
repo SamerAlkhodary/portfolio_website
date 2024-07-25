@@ -13,22 +13,14 @@ const useStyles={
 		justifyContent:'space-around'
 
 	},
-	closeIconDivMobile:{
+	closeIconDiv:{
 		flex:1,
 		position:'fixed',
 		top: '2em',
 		left: '1.5em',
 		right: 0,
 	},
-	closeIconDiv:{
-		flex:1,
-		position:'fixed',
-		alignItems:'center',
-		width:'3em',
-		top: '2em',
-		left: '26vw',
-		right: 0,
-	},
+	
 	imageListDesktop:{
 		paddingTop:'0.5em',
 		gap:'0.5em',
