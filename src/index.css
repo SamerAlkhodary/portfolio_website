@@ -5,11 +5,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior:none;
-  background-color: '#242424';
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  background-color: #242424;
+
+}
+html {
+  background-color: #242424;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  scroll-behavior: smooth;
 
 }
 
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #242424;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
