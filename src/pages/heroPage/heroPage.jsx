@@ -24,7 +24,7 @@ const HeroPage = ({aboutRef},ref)=> {
 				<Typography  variant={isDesktopOrLaptop?'h5':'h6'} paragraph style={classes.h2} fontFamily={'Merriweather'}>
 					{translate('heroTextSubtitle')}
 				</Typography>
-				<Button onClick={()=>{aboutRef.current.scrollIntoView();}} variant='filled' style={classes.button}>
+				<Button onClick={()=>{aboutRef.current.scrollIntoView({ behavior: 'smooth',});}} variant='filled' style={classes.button}>
 					<Typography 
 						fontFamily={'Merriweather'} 
 						color= {Consts.theme.secondary}

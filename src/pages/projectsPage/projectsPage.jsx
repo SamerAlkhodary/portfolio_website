@@ -8,7 +8,6 @@ import classes from './style.js';
 import translate from '../../res/strings/strings.js';
 import barbershop from '../../res/images/barbershop.webp';
 import restaurant from '../../res/images/restaurant.webp';
-import extension from '../../res/images/extension.webp';
 //import { useMediaQuery } from 'react-responsive';
 const ProjectsPage = (props,ref)=> {
 	const navigate = useNavigate();
@@ -25,7 +24,6 @@ const ProjectsPage = (props,ref)=> {
 				<div style={isDesktopOrLaptop?classes.serviceList:classes.serviceListMobile}>
 					<ProjectCard img={barbershop} title={translate('barbershop')} onclick={()=>navigate('/portfolio_website/projects/barbershop')}/>
 					<ProjectCard img={restaurant} title={translate('restaurant')} onclick={()=>navigate('/portfolio_website/projects/mido')} />
-					<ProjectCard img={extension} title={translate('apartments')} />
 				</div>
 			</div>
 		</div>

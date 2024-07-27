@@ -12,7 +12,6 @@ const useStyles ={
 	},
 	container:{
 		overflowX: 'auto',
-
 	},
 	serviceList:{
 		display: 'flex',
@@ -22,8 +21,10 @@ const useStyles ={
 		height:'100%'
 	},
 	serviceListMobile:{
-		width:'60em',
+		width:'40em',
 		display: 'flex',
+		flexDirection:'row',
+		flex:1,
 		gap:'20px',
 		height:'100%'
 	},
