@@ -8,13 +8,21 @@ import translate from '../../../res/strings/strings.js';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import { Typography } from '@mui/material';
 import FullScreenImage from './components/FullscreenImage.jsx';
+import { useAtom } from 'jotai';
+import { showImageAtom } from '../../../atoms/atoms.js';
 
 const ExpandedProjectPage = ()=> {
+	const [,setShowImage] = useAtom(
+		showImageAtom,
+	);
 	useEffect(() => {
 		window.scrollTo({
 			top:0,
 			behavior:'instant'
 		});
+		return () => {
+			setShowImage({visible:false,imgSrc:''});
+		};
 
 	}, [window]);
 	const params = useParams();

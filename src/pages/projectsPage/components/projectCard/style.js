@@ -15,6 +15,15 @@ const useStyles = {
 		borderRadius:'1em',
 		boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3)',		
 	},
+	img:{
+		width:'100%',
+		height:'100%',
+		opacity:0.7,
+		borderRadius:'1em',
+		objectFit: 'cover',
+		backgroundColor:Consts.theme.secondary,
+		border: 'solid 2px transparent',
+	},
 	txt:{
 		display:'flex',
 		left:'50%',
