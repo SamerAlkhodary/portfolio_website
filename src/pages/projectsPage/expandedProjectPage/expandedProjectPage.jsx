@@ -8,6 +8,7 @@ import translate from '../../../res/strings/strings.js';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import { Typography } from '@mui/material';
 import FullScreenImage from './components/FullscreenImage.jsx';
+import { Footer } from '../../../components/index.js';
 
 const ExpandedProjectPage = ()=> {
 
@@ -38,8 +39,8 @@ const ExpandedProjectPage = ()=> {
 							}
 						</Typography>
 					</div>
-				
 			}
+			<Footer></Footer>
 		</div>
 	);
 };

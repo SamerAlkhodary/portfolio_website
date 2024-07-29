@@ -27,8 +27,6 @@ function App() {
 					<ContactPage ref={contactRef} />
 				</div>	
 			</div>
-
-
 		);
 	};
 	const theme = createTheme({

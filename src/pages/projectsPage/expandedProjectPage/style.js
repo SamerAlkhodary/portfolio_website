@@ -17,6 +17,8 @@ const useStyles = {
 		display:'flex',
 		alignItems:'center',
 		flexDirection:'column',
-		gap:'1em'}
+		gap:'1em'},
+
 };
+
 export default useStyles;

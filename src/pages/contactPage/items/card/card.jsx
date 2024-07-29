@@ -5,6 +5,7 @@ import {Typography } from '@mui/material';
 import logo from '../../../../res/images/logo.svg';
 import classes from './style.js';
 import Consts from '../../../../consts.js';
+import info from '../../../../res/strings/info.js';
 
 const Card =({cardStyle})=>{
  
@@ -27,13 +28,13 @@ const Card =({cardStyle})=>{
 				<div style={classes.cardContent}>
 					<EmailIcon color={Consts.theme.secondary}/>
 					<Typography  color={Consts.theme.secondary}>
-						{'palmyraepito@gmail.com'}
+						{info.email}
 					</Typography>
 				</div>
 				<div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',gap:'1em'}}>
 					<LocalPhoneIcon  color={Consts.theme.secondary}/>
 					<Typography color={Consts.theme.secondary}>
-						{'+3630201334'}
+						{info.number}
 					</Typography>
 				</div>
             
