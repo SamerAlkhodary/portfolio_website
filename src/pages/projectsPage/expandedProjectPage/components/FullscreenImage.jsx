@@ -7,16 +7,41 @@ import { showImageAtom } from '../../../../atoms';
 import Consts from '../../../../consts';
 import classes from './style.js';
 import CloseIcon from '@mui/icons-material/Close';
+import { useNavigate, useParams } from 'react-router-dom';
+
+const getHashVariables= (url)=> {
+	const hash = url.substring(1); // Remove the leading '#'
+	const vars = hash.split('&');
+	const hashVars = {};
+	vars.forEach((v) => {
+		const [key, value] = v.split('=');
+		hashVars[key] = value;
+	});
+	return hashVars;
+};
 // eslint-disable-next-line react/prop-types
 function FullScreenImage() {
+	const navigate = useNavigate();
 
 	const [showImage,setShowImage] = useAtom(
 		showImageAtom,
 	);
 	const Image = React.memo(function Image({style, src }) {
-		return <img style={style} src={src} className="hero" onClick={()=>{console.log('hi');}} />;
+		return <img style={style} src={src} className="hero" />;
 	});
+	const params = useParams();
+	useEffect(() => {
+		// execute on location change
+		console.log('Location changed!', location.hash);
+		const vars= getHashVariables(location.hash);
+		if (vars['f']!== undefined && vars['id']!==undefined ){
+			setShowImage({visible:true,imgSrc:`/portfolio_website/assets/images/projects/${params.id}/${vars['f']}/${vars['id']}.webp`});
+		}else{
+			setShowImage({ visible: false, imgSrc: '' });
+			
+		}
 
+	}, [location.hash,params.id]);
 	useEffect(() => {
 		if (showImage.visible) {
 			document.body.style.overflow = 'hidden';
@@ -51,7 +76,10 @@ function FullScreenImage() {
 	return (
 		<animated.div style={fadeInProps}>
 			<Image src={showImage.imgSrc} style={imagesStyle}/>
-			<div style={classes.closeIconDiv} onClick={()=>{setShowImage({visible:false});}}>
+			<div style={classes.closeIconDiv} onClick={()=>
+			{setShowImage({visible:false});
+				navigate(-1);
+			}}>
 				<CloseIcon sx={{fontSize: 30,color:'white',alignSelf:'center',backgroundColor:Consts.theme.secondary,borderRadius:'2em'}} />
 			</div>
 			

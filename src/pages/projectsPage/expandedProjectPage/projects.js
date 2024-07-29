@@ -1,5 +1,5 @@
 const projects =[
-	{   title:'mido',
+	{   id:'1',
 		name: 'midoName',
 		description: 'midoDescription',
 		startDate: '2024',
@@ -9,7 +9,7 @@ const projects =[
 		afterImageCount: 5,
 		progressImages: 0,
 	},
-	{   title:'barbershop',
+	{   id:'2',
 		name: 'barbershopName',
 		description: 'barbershopDescription',
 		startDate: '2024',

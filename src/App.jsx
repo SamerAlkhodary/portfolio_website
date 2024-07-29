@@ -46,7 +46,7 @@ function App() {
 			<Router>
 				<Routes>
 					<Route exact path='/portfolio_website' element= {<HomePage/>}/>
-					<Route exact path='/portfolio_website/projects/:name' element= {<ExtendedProjectPage/>}/>
+					<Route exact path='/portfolio_website/projects/:id' element= {<ExtendedProjectPage/>}/>
 				</Routes>
 			</Router>
 				

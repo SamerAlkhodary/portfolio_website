@@ -6,12 +6,20 @@ import { useNavigate } from 'react-router-dom';
 import { ProjectCard } from './components';
 import classes from './style.js';
 import translate from '../../res/strings/strings.js';
-import barbershop from '../../res/images/barbershop.webp';
-import restaurant from '../../res/images/restaurant.webp';
+import projects from './expandedProjectPage/projects.js';
 //import { useMediaQuery } from 'react-responsive';
 const ProjectsPage = (props,ref)=> {
 	const navigate = useNavigate();
+	const projectCards = projects.map(p=>{
+		return <ProjectCard 
+			key={p.id}
+			img={`/portfolio_website/assets/images/projects/${p.id}/hero.webp`} 
+			title={translate(p.type,'projectsInfo')} 
+			onclick={()=>navigate(`/portfolio_website/projects/${p.id}/`)}
+		/>;
+	
 
+	});
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
@@ -22,8 +30,9 @@ const ProjectsPage = (props,ref)=> {
 			</Typography>
 			<div style={classes.container}>
 				<div style={isDesktopOrLaptop?classes.serviceList:classes.serviceListMobile}>
-					<ProjectCard img={barbershop} title={translate('barbershop')} onclick={()=>navigate('/portfolio_website/projects/barbershop')}/>
-					<ProjectCard img={restaurant} title={translate('restaurant')} onclick={()=>navigate('/portfolio_website/projects/mido')} />
+					{
+						projectCards
+					}
 				</div>
 			</div>
 		</div>

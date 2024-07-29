@@ -54,7 +54,6 @@ function CustomAppBar({refs,heroRef}) {
 		{
 			title:translate('locale'),
 			onClick:()=>{
-				console.log('local: '+language);
 				if(language ==='en-US'){
 					setLanguage('hu-HU');
 				}
