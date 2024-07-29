@@ -32,15 +32,12 @@ function FullScreenImage() {
 	const params = useParams();
 	useEffect(() => {
 		// execute on location change
-		console.log('Location changed!', location.hash);
 		const vars= getHashVariables(location.hash);
 		if (vars['f']!== undefined && vars['id']!==undefined ){
 			setShowImage({visible:true,imgSrc:`/portfolio_website/assets/images/projects/${params.id}/${vars['f']}/${vars['id']}.webp`});
 		}else{
 			setShowImage({ visible: false, imgSrc: '' });
-			
 		}
-
 	}, [location.hash,params.id]);
 	useEffect(() => {
 		if (showImage.visible) {
@@ -51,7 +48,6 @@ function FullScreenImage() {
 		// Cleanup on component unmount
 		return () => {
 			document.body.style.overflow = 'auto';
-
 		};
 	}, [showImage.visible]);
 
@@ -70,9 +66,6 @@ function FullScreenImage() {
 		config: { tension: 280, friction: 60 },
 	});
 	const imagesStyle={width:'100%',aspectRatio:1,objectFit:'contain'};
-
-
-	
 	return (
 		<animated.div style={fadeInProps}>
 			<Image src={showImage.imgSrc} style={imagesStyle}/>

@@ -23,13 +23,13 @@ const ProjectsPage = (props,ref)=> {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
-		<div ref={ref} style={classes.servicesPage}>
+		<div ref={ref} style={classes.projectsPage}>
 
 			<Typography  style={classes.title} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 				{translate('projects')}
 			</Typography>
 			<div style={classes.container}>
-				<div style={isDesktopOrLaptop?classes.serviceList:classes.serviceListMobile}>
+				<div style={isDesktopOrLaptop?classes.projectList:classes.projectListMobile}>
 					{
 						projectCards
 					}

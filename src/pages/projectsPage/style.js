@@ -1,7 +1,7 @@
 import Consts from '../../consts';
 
 const useStyles ={
-	servicesPage:{
+	projectsPage:{
 		backgroundColor:Consts.theme.secondary,
 		paddingBottom:'5em',
 		paddingTop: '5em',
@@ -11,16 +11,17 @@ const useStyles ={
 		flexDirection:'column'
 	},
 	container:{
-		overflowX: 'auto',
+		overflow: 'scroll',
+		overflowY: 'hidden',
 	},
-	serviceList:{
+	projectList:{
 		display: 'flex',
 		flexDirection:'row',
 		justifyContent: 'space-around',
 		flex:1,
 		height:'100%'
 	},
-	serviceListMobile:{
+	projectListMobile:{
 		width:'40em',
 		display: 'flex',
 		flexDirection:'row',
