@@ -19,11 +19,11 @@ function Footer({edge}) {
 						translate('contactDetails')
 					}
 				</Typography>
-				<Typography variant={'h7'} fontFamily={'Merriweather'}  style={classes.h1}>
+				<Link onClick={()=>{window.open(`mailto:${info.email}`);}} variant="body1"  style={classes.h1}>
 					{
 						info.email
 					}
-				</Typography>
+				</Link>
 				<Link onClick={()=>{window.open('tel:'+info.number);}} variant="body1"  style={classes.h1}>
 					{
 						info.number

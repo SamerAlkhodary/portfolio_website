@@ -1,5 +1,5 @@
 const info = {
-	email: 'palmyraepito@gmail.com',
-	number: '+3630201334'
+	email: 'info@palmyraepito.com',
+	number: '+36306951211'
 };
 export default info;
