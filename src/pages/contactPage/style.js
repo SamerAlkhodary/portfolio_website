@@ -15,7 +15,6 @@ const useStyles = {
 	containerMobile: {
 		width: '100%',
 		gap:'5em',
-		paddingBottom:'3em',
 		alignItems:'center',
 		display:'flex',
 		flexDirection:'column',
@@ -23,7 +22,6 @@ const useStyles = {
 	},
 	containerDesktop: {
 		width: '100%',
-		paddingBottom:'3em',
 		display:'flex',
 		flexDirection:'row',
 		justifyContent: 'space-around',

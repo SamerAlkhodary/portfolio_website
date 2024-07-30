@@ -8,8 +8,6 @@ const useStyles = {
 		flexDirection: 'column',
 		justifyContent:'start',
 		alignItems:'center',
-		paddingLeft: '1.5em',
-		paddingRight: '1.5em',
 		paddingTop:'4em',
 		paddingBottom:'4em',
 		gap:'1em'
@@ -19,17 +17,19 @@ const useStyles = {
 		display:'flex',
 		flexDirection: 'column',
 		justifyContent:'start',
+		width:'200',
 		alignItems:'center',
 		gap:'1em'
 
 	},
 	socialMedia:{
-		backgroundColor: Consts.theme.secondary,
 		display:'flex',
 		flexDirection: 'column',
 		justifyContent:'start',
 		alignItems:'center',
-		gap:'1em'
+		gap:'1em',
+		width:200,
+
 
 	},
 	footerDesktop:{

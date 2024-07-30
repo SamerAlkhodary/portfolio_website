@@ -56,7 +56,7 @@ const Strings={
 		learnMore: 'Tudjon meg többet',
 		contactDetails: 'Elérhetőségek',
 		send: 'Küldés',
-		followUs: 'Kövess minket:',
+		followUs: 'Kövessen minket:',
 		consultationDescription: 'Szakértői tanácsadás az építkezés minden fázisában,Műszaki ellenőrzés és Felelős műszaki vezetés',
 		constructionDescription: 'Teljes körű szolgáltatás a tervezéstől a kivitelezésig, beleértve irodaházakat, üzleteket is.',
 		renovationDescription: 'Teljes lakásfelújítási projektek, beleértve a belsőépítészeti munkákat is.',
