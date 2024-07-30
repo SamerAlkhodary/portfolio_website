@@ -37,7 +37,7 @@ const useStyles = {
 	formDesktop:{
 		display:'flex',
 		flexDirection:'column',
-		width:'35%',
+		width:'60%',
 		gap:'1em',
 		height:'30%',
 	},

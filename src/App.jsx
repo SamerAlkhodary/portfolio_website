@@ -1,7 +1,7 @@
 import { HeroPage,AboutPage,ContactPage, ServicesPage, ProjectsPage,ExtendedProjectPage } from './pages/index.js';
 import React, {createRef} from 'react';
 import classes from './style.js';
-import{CustomAppBar, Menu} from './components/index.js';
+import{CustomAppBar, Footer, Menu} from './components/index.js';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 
@@ -25,6 +25,8 @@ function App() {
 					<ServicesPage ref={servicesRef}/>
 					<ProjectsPage ref={projectsRef} />
 					<ContactPage ref={contactRef} />
+					<Footer></Footer>
+
 				</div>	
 			</div>
 		);

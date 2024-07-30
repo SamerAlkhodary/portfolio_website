@@ -3,7 +3,6 @@ import React from 'react';
 import classes from './style.js';
 import { useMediaQuery } from 'react-responsive';
 import StyledTextField from '../../components/styledTextField.js/styledTextField.js';
-import { Card } from './items';
 import Consts from '../../consts.js';
 import translate from '../../res/strings/strings.js';
 const ContactPage = (props,ref)=> {
@@ -62,7 +61,6 @@ const ContactPage = (props,ref)=> {
 						</Typography>
 					</Button>
 				</div>
-				<Card cardStyle={classes.businessCard}/>
 	
 			</div>
 		</div>

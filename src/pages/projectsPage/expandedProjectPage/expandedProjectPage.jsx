@@ -40,7 +40,7 @@ const ExpandedProjectPage = ()=> {
 						</Typography>
 					</div>
 			}
-			<Footer></Footer>
+			<Footer edge></Footer>
 		</div>
 	);
 };
