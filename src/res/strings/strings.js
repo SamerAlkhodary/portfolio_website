@@ -70,11 +70,11 @@ const Strings={
 		locale:'EN/HU',
 		projectNotFound: 'A projekt nem található!',
 		projectsInfo:{
-			midoName: 'Mido etterem',
-			midoDescription: 'Új epítés esetén fővállalkozóként tudunk tevékenykedni. Saját földmunkarészlegünk van.',
+			midoName: 'Etterem',
+			midoDescription: '',
 			midoType:'Étterem',
 			barbershopName: 'Barbershop',
-			barbershopDescription: 'Új epítés esetén fővállalkozóként tudunk tevékenykedni. Saját földmunkarészlegünk van.',
+			barbershopDescription: '',
 			barbershopType:'Barbershop',
 		}
 	}

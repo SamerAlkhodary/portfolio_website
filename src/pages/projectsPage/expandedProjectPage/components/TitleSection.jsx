@@ -11,7 +11,7 @@ const TitleSection = ({project})=> {
 	});
 	return (
 		<div  style={classes.container} >
-			<Image style={classes.hero} src={`/portfolio_website/assets/images/projects/${project.id}/hero.webp`} />
+			<Image style={classes.hero} src={`/assets/images/projects/${project.id}/hero.webp`} />
 			<div style={classes.info}>
 				<div style={classes.texts}>
 					<Typography variant={'h5'}  fontFamily={'Merriweather'} fontWeight='bold' style={classes.h1}>

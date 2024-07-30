@@ -25,7 +25,7 @@ const ImageSection = ({project})=> {
 		for(let i=1; i<project.beforeImageCount;i++){
 			images.push(<Image
 				style={imagesStyle}
-				src={`/portfolio_website/assets/images/projects/${project.id}/before/${i}.webp`}
+				src={`/assets/images/projects/${project.id}/before/${i}.webp`}
 				key={i} 
 				folder='before'
 				id={i}  
@@ -39,7 +39,7 @@ const ImageSection = ({project})=> {
 		for(let i=1; i<=project.afterImageCount;i++){
 			images.push(<Image 
 				style={imagesStyle} 
-				src={`/portfolio_website/assets/images/projects/${project.id}/after/${i}.webp`} 
+				src={`/assets/images/projects/${project.id}/after/${i}.webp`} 
 				key={i}
 				folder='after'
 				id={i}  
@@ -52,7 +52,7 @@ const ImageSection = ({project})=> {
 		for(let i=1; i<=project.progressImages;i++){
 			images.push(<Image 
 				style={imagesStyle} 
-				src={`/portfolio_website/assets/images/projects/${project.id}/progress/${i}.webp`} 
+				src={`/assets/images/projects/${project.id}/progress/${i}.webp`} 
 				key={i}  
 				folder='progress'
 				id={i}  

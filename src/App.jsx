@@ -45,8 +45,8 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<Router>
 				<Routes>
-					<Route exact path='/portfolio_website' element= {<HomePage/>}/>
-					<Route exact path='/portfolio_website/projects/:id' element= {<ExtendedProjectPage/>}/>
+					<Route exact path='/' element= {<HomePage/>}/>
+					<Route exact path='/projects/:id' element= {<ExtendedProjectPage/>}/>
 				</Routes>
 			</Router>
 				

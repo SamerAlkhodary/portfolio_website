@@ -34,7 +34,7 @@ function FullScreenImage() {
 		// execute on location change
 		const vars= getHashVariables(location.hash);
 		if (vars['f']!== undefined && vars['id']!==undefined ){
-			setShowImage({visible:true,imgSrc:`/portfolio_website/assets/images/projects/${params.id}/${vars['f']}/${vars['id']}.webp`});
+			setShowImage({visible:true,imgSrc:`/assets/images/projects/${params.id}/${vars['f']}/${vars['id']}.webp`});
 		}else{
 			setShowImage({ visible: false, imgSrc: '' });
 		}
