@@ -6,6 +6,7 @@ import info from '../../res/strings/info';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import translate from '../../res/strings/strings';
 import { useMediaQuery } from 'react-responsive';
+import FacebookIcon from '@mui/icons-material/Facebook';
 // eslint-disable-next-line react/prop-types
 function Footer({edge}) {
 	const isDesktopOrLaptop = useMediaQuery({
@@ -36,10 +37,16 @@ function Footer({edge}) {
 						translate('followUs')
 					}
 				</Typography>
-				<IconButton  onClick={()=>{ window.open('https://www.instagram.com/palmyra_epito?igsh=amR0OHpia2xyYWp6', '_blank', 'noreferrer');
-				}}>
-					<InstagramIcon style={classes.instagram}></InstagramIcon>
-				</IconButton>
+				<div style={classes.iconList}>
+					<IconButton  onClick={()=>{ window.open(info.instagramLink, '_blank', 'noreferrer');
+					}}>
+						<InstagramIcon style={classes.instagram}></InstagramIcon>
+					</IconButton>
+					<IconButton  onClick={()=>{ window.open(info.facebookLink, '_blank', 'noreferrer');
+					}}>
+						<FacebookIcon style={classes.instagram}></FacebookIcon>
+					</IconButton>
+				</div>
 
 			</div>
 			

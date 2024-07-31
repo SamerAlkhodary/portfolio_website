@@ -12,6 +12,11 @@ const useStyles = {
 		paddingBottom:'4em',
 		gap:'1em'
 	},
+	iconList:{
+		display:'flex',
+		flexDirection: 'row',
+		justifyContent:'center',
+	},
 	contact:{
 		backgroundColor: Consts.theme.secondary,
 		display:'flex',
