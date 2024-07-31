@@ -14,8 +14,6 @@ body {
 }
 html {
   background-color: #242424;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-
 }
 
 #root {
