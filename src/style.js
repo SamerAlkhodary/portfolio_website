@@ -12,6 +12,7 @@ const useStyles = {
 	},
 	cookie:{ 
 		alignItems: 'center',
+		zIndex:2,
 		backgroundColor: Consts.theme.secondary,
 		fontFamily:Consts.theme.fontFamily
 	},
