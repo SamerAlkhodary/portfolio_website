@@ -2,20 +2,31 @@ import React from 'react';
 import { Typography } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
-
 import { ProjectCard } from './components';
 import classes from './style.js';
 import translate from '../../res/strings/strings.js';
 import projects from './expandedProjectPage/projects.js';
+import useAnalytics from '../../utils/analytics.js';
 //import { useMediaQuery } from 'react-responsive';
 const ProjectsPage = (props,ref)=> {
+	const sendEvent = useAnalytics();
+
 	const navigate = useNavigate();
 	const projectCards = projects.map(p=>{
 		return <ProjectCard 
 			key={p.id}
 			img={`/assets/images/projects/${p.id}/hero.webp`} 
 			title={translate(p.type,'projectsInfo')} 
-			onclick={()=>navigate(`/projects/${p.id}/`)}
+			onclick={
+				()=>{
+					sendEvent({
+						category: 'projects',
+						action: 'click',
+						label:p.type,
+					});
+					navigate(`/projects/${p.id}/`);
+				}
+			}
 		/>;
 	
 

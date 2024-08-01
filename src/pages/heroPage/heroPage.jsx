@@ -6,11 +6,14 @@ import { Button } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
 import Consts from '../../consts.js';
 import translate from '../../res/strings/strings.js';
+import useAnalytics from '../../utils/analytics.js';
 
 const HeroPage = ({aboutRef},ref)=> {
 	const Image = React.memo(function Image({ src }) {
 		return <img style={classes.hero} src={src} className="hero" />;
 	});
+	const sendEvent = useAnalytics();
+
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
@@ -24,7 +27,14 @@ const HeroPage = ({aboutRef},ref)=> {
 				<Typography  variant={isDesktopOrLaptop?'h5':'h6'} paragraph style={classes.h2} fontFamily={'Merriweather'}>
 					{translate('heroTextSubtitle')}
 				</Typography>
-				<Button onClick={()=>{aboutRef.current.scrollIntoView({ behavior: 'smooth',});}} variant='filled' style={classes.button}>
+				<Button onClick={()=>{
+					sendEvent({
+						category: 'hero',
+						action: 'click',
+						label: 'learn more',
+					});
+					aboutRef.current.scrollIntoView({ behavior: 'smooth',});}
+				} variant='filled' style={classes.button}>
 					<Typography 
 						fontFamily={'Merriweather'} 
 						color= {Consts.theme.secondary}

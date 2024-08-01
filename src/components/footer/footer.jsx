@@ -7,8 +7,11 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import translate from '../../res/strings/strings';
 import { useMediaQuery } from 'react-responsive';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import useAnalytics from '../../utils/analytics';
+
 // eslint-disable-next-line react/prop-types
 function Footer({edge}) {
+	const sendEvent = useAnalytics();
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
@@ -20,12 +23,28 @@ function Footer({edge}) {
 						translate('contactDetails')
 					}
 				</Typography>
-				<Link onClick={()=>{window.open(`mailto:${info.email}`);}} variant="body1"  style={classes.h1}>
+				<Link onClick={()=>{
+					window.open(`mailto:${info.email}`);
+					sendEvent({
+						category: 'contacts',
+						action: 'Click',
+						label: 'email',
+					});
+
+				}
+				} variant="body1"  style={classes.h1}>
 					{
 						info.email
 					}
 				</Link>
-				<Link onClick={()=>{window.open('tel:'+info.number);}} variant="body1"  style={classes.h1}>
+				<Link onClick={()=>{
+					window.open('tel:'+info.number);
+					sendEvent({
+						category: 'contacts',
+						action: 'Click',
+						label: 'phone',
+					});
+				}} variant="body1"  style={classes.h1}>
 					{
 						info.number
 					}
@@ -38,11 +57,23 @@ function Footer({edge}) {
 					}
 				</Typography>
 				<div style={classes.iconList}>
-					<IconButton  onClick={()=>{ window.open(info.instagramLink, '_blank', 'noreferrer');
+					<IconButton  onClick={()=>{ 
+						window.open(info.instagramLink, '_blank', 'noreferrer');
+						sendEvent({
+							category: 'contacts',
+							action: 'Click',
+							label: 'instagram',
+						});
 					}}>
 						<InstagramIcon style={classes.instagram}></InstagramIcon>
 					</IconButton>
-					<IconButton  onClick={()=>{ window.open(info.facebookLink, '_blank', 'noreferrer');
+					<IconButton  onClick={()=>{ 
+						window.open(info.facebookLink, '_blank', 'noreferrer');
+						sendEvent({
+							category: 'contacts',
+							action: 'Click',
+							label: 'facebook',
+						});
 					}}>
 						<FacebookIcon style={classes.instagram}></FacebookIcon>
 					</IconButton>
