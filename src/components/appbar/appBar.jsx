@@ -12,11 +12,13 @@ import { languageAtom, showMenuAtom } from '../../atoms';
 import Consts from '../../consts';
 import Hamburger from '../humburger/humburger';
 import translate from '../../res/strings/strings';
+import useAnalytics from '../../utils/analytics';
 
 // eslint-disable-next-line react/prop-types
 function CustomAppBar({refs,heroRef}) {
 	const [shouldShowMenu, setShowMenu] = useAtom(showMenuAtom);
 	const [language,setLanguage] = useAtom(languageAtom);
+	const sendEvent = useAnalytics();
 
 	const  toggleMenu= useCallback(() => {
 		setShowMenu(!shouldShowMenu);
@@ -56,9 +58,19 @@ function CustomAppBar({refs,heroRef}) {
 			onClick:()=>{
 				if(language ==='en-US'){
 					setLanguage('hu-HU');
+					sendEvent({
+						category: 'language',
+						action: 'click',
+						label: 'hu-HU',
+					});
 				}
 				else{
 					setLanguage('en-US');
+					sendEvent({
+						category: 'language',
+						action: 'click',
+						label: 'en-US',
+					});
 				}
 
 			}

@@ -9,9 +9,11 @@ import {  useSpring } from '@react-spring/web';
 import { languageAtom, showMenuAtom } from '../../atoms';
 import { Typography } from '@mui/material';
 import translate from '../../res/strings/strings';
+import useAnalytics from '../../utils/analytics';
 // eslint-disable-next-line react/prop-types
 function Menu({ customRefs}) {
 	const [language,setLanguage] = useAtom(languageAtom);
+	const sendEvent = useAnalytics();
 
 	const itemPressed =(ref)=>{
 		ref.current.scrollIntoView();
@@ -76,10 +78,22 @@ function Menu({ customRefs}) {
 		
 		{
 			title:translate('locale'),icon:EmailIcon,onClick:()=>{
-				if(language ==='en-US')
+				if(language ==='en-US'){
 					setLanguage('hu-HU');
-				else
+					sendEvent({
+						category: 'language',
+						action: 'click',
+						label: 'hu-HU',
+					});
+				}
+				else{
 					setLanguage('en-US');
+					sendEvent({
+						category: 'language',
+						action: 'click',
+						label: 'en-US',
+					});
+				}
 			}
 		}];
 	return (
