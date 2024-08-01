@@ -5,6 +5,9 @@ const Consts ={
 		secondaryOpacity: 'rgba(36, 36, 36, 0.8)',
 		accent:'#EEC283',
 		fontFamily: 'Merriweather',
+	},
+	config:{
+		enableAnalytics: false
 	}
 };
 Object.freeze(Consts);
