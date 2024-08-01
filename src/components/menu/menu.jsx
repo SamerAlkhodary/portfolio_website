@@ -43,7 +43,7 @@ function Menu({ customRefs}) {
 		pointerEvents:'auto',
 		backgroundColor: '#242424',
 		display: 'flex',
-		zIndex:999,
+		zIndex:800,
 		top: 0,
 		left: 0,
 		right: 0,

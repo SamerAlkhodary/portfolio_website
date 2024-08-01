@@ -55,7 +55,7 @@ function FullScreenImage() {
 		position: 'fixed',
 		pointerEvents:'auto',
 		display: 'flex',
-		zIndex:999,
+		zIndex:800,
 		backgroundColor: Consts.theme.secondary,
 		top: 0,
 		left: 0,

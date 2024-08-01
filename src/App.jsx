@@ -50,7 +50,7 @@ function App() {
 			declineButtonStyle={{ backgroundColor: Consts.theme.secondary, color: Consts.theme.primary,fontSize:'0.8em',fontWeight:'bold',fontFamily:Consts.theme.fontFamily }}
 			overlay
 		>
-			{'This website uses cookies to enhance user experience. Cookies will be used for analytics, personalized content, and third-party tracking.'}
+			{'This website uses cookies to enhance user experience. Cookies will be used for analytics, and third-party tracking.'}
 		</CookieConsent>;
 	},[CookieConsent,declineCookies,acceptCookie]);
 

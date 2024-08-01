@@ -22,7 +22,7 @@ const useStyles = {
 	},
 	appBarHero: {
 		backgroundColor: '#242424',
-		zIndex:1,
+		zIndex:900,
 		padding:0,
 		boxShadow: '0px',
 		paddingLeft:'10%',
