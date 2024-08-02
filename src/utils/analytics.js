@@ -8,7 +8,7 @@ const useAnalytics = () => {
 			const consent = Cookies.get('analytics-consent');
 			try{
 				const consentObject =JSON.parse(consent);
-				if (consentObject?.analytics === 'true') {
+				if (consentObject?.analytics === true) {
 					ReactGA.event(event);
 				}
 			}catch(e){
