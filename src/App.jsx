@@ -1,16 +1,12 @@
 import { HeroPage,AboutPage,ContactPage, ServicesPage, ProjectsPage,ExtendedProjectPage, CookiePolicyPage } from './pages/index.js';
-import React, {createRef, useCallback, useEffect} from 'react';
+import React, {createRef, useEffect} from 'react';
 import classes from './style.js';
 import{CustomAppBar, Footer, Menu} from './components/index.js';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
-import {Cookies} from 'react-cookie-consent';
-import ReactGA from 'react-ga4';
-
 import Consts from './consts.js';
 import CookieConsentModal from './components/cookieConsentModal/CookieConsentModal.jsx';
 import useAnalytics from './utils/analytics.js';
-
 
 function App() {
 	const {getConsentObject,enableTracking,clearTracking} = useAnalytics();
@@ -72,9 +68,6 @@ function App() {
 			</Router>
 				
 		</ThemeProvider>
-
-
- 
 	);
 }
 

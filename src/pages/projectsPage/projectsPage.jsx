@@ -7,8 +7,6 @@ import classes from './style.js';
 import translate from '../../res/strings/strings.js';
 import projects from './expandedProjectPage/projects.js';
 import useAnalytics from '../../utils/analytics.js';
-import CookieConsentModal from '../../components/cookieConsentModal/CookieConsentModal.jsx';
-//import { useMediaQuery } from 'react-responsive';
 const ProjectsPage = (props,ref)=> {
 	const {sendEvent} = useAnalytics();
 
