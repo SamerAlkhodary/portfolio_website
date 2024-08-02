@@ -13,25 +13,20 @@ import useAnalytics from './utils/analytics.js';
 
 
 function App() {
-	const {getConsentObject} = useAnalytics();
+	const {getConsentObject,enableTracking,clearTracking} = useAnalytics();
 
 	useEffect(()=>{
 		if(Consts.config.enableAnalytics === true){
 			const consentObject= getConsentObject();
 			if(consentObject?.analytics === true){
-				const TRACKING_ID = 'G-JKWK78TVMF';
-				ReactGA.initialize(TRACKING_ID);
+				enableTracking();
 			}else{
-				ReactGA.reset();
-				Cookies.remove('_ga');
-				Cookies.remove('_ga_JKWK78TVMF');
+				clearTracking();
 			}
 		}else{
-			ReactGA.reset();
-			Cookies.remove('_ga');
-			Cookies.remove('_ga_JKWK78TVMF');
+			clearTracking();
 		}
-	},[Cookies,ReactGA,document.body.style.overflow,Consts.config.enableAnalytics,window.location.pathname,getConsentObject]);
+	},[enableTracking,clearTracking,Consts.config.enableAnalytics,getConsentObject]);
 
 	const heroRef= createRef();
 	const aboutRef=createRef();

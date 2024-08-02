@@ -17,6 +17,16 @@ const useAnalytics = () => {
 		}
 		return undefined;
 	};
+	const clearTracking=()=>{
+		ReactGA.reset();
+		Cookies.remove('_ga');
+		Cookies.remove('_ga_JKWK78TVMF');
+	};
+
+	const enableTracking=()=>{
+		const TRACKING_ID = 'G-JKWK78TVMF';
+		ReactGA.initialize(TRACKING_ID);
+	};
 	const getConsentObject = ()=>{
 		if(Consts.config.enableAnalytics===true){
 			try{
@@ -29,7 +39,7 @@ const useAnalytics = () => {
 		}
 		return undefined;
 	};
-	return  {sendEvent,getConsentObject} ;
+	return  {sendEvent,getConsentObject,enableTracking,clearTracking} ;
 };
 
 export default useAnalytics;

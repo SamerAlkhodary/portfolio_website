@@ -1,24 +1,28 @@
-import React,{useCallback, useState} from 'react';
+import React,{ useState} from 'react';
 import classes from './style';
 import CookieConsent from 'react-cookie-consent';
 import Consts from '../../consts';
 import { FormControlLabel, FormGroup, Switch, Typography, alpha, styled,Link } from '@mui/material';
-import { useNavigate,useLocation } from 'react-router-dom';
-import translate from '../../res/strings/strings';
+import { useNavigate } from 'react-router-dom';
+import useAnalytics from '../../utils/analytics';
 
 
 // eslint-disable-next-line react/prop-types
 function CookieConsentModal() {
 	const navigate = useNavigate();
-	const location = useLocation();
+	const {enableTracking} = useAnalytics();
 	const [switchValue, setSwitchValue] = useState({
 		essentials: true,
 		analytics: false,
 	});
 
 	const acceptCookie= ()=>{
+		enableTracking(); 
 	};
 	const declineCookies= ()=>{
+		if(switchValue.analytics===true){
+			enableTracking(); 
+		}
 	};
 	const label= (variant,label)=>{
 		return <Typography fontFamily={'Merriweather'} variant={variant} fontSize={'0.75em'}>
