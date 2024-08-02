@@ -8,10 +8,13 @@ import translate from '../../res/strings/strings';
 import { useMediaQuery } from 'react-responsive';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import useAnalytics from '../../utils/analytics';
+import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 function Footer({edge}) {
-	const sendEvent = useAnalytics();
+	const {sendEvent} = useAnalytics();
+	const navigate = useNavigate();
+
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
@@ -32,7 +35,7 @@ function Footer({edge}) {
 					});
 
 				}
-				} variant="body1"  style={classes.h1}>
+				} variant="body1"  style={classes.link}>
 					{
 						info.email
 					}
@@ -44,7 +47,7 @@ function Footer({edge}) {
 						action: 'Click',
 						label: 'phone',
 					});
-				}} variant="body1"  style={classes.h1}>
+				}} variant="body1"  style={classes.link}>
 					{
 						info.number
 					}
@@ -79,6 +82,24 @@ function Footer({edge}) {
 					</IconButton>
 				</div>
 
+			</div>
+			<div style={classes.contact}>
+				<Typography variant={'h6'} fontFamily={'Merriweather'}  style={classes.h1}>
+					{
+						translate('legal')
+					}
+				</Typography>
+				<Link  variant="body1"  style={classes.link} onClick={()=>{
+					navigate('/cookie-policy');
+					sendEvent({
+						category: 'legals',
+						action: 'Click',
+						label: 'cookie_policy',
+					});
+				}}>
+					{translate('cookiePolicy')}
+				</Link>
+				
 			</div>
 			
 		</div>

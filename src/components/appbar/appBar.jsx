@@ -18,7 +18,7 @@ import useAnalytics from '../../utils/analytics';
 function CustomAppBar({refs,heroRef}) {
 	const [shouldShowMenu, setShowMenu] = useAtom(showMenuAtom);
 	const [language,setLanguage] = useAtom(languageAtom);
-	const sendEvent = useAnalytics();
+	const {sendEvent} = useAnalytics();
 
 	const  toggleMenu= useCallback(() => {
 		setShowMenu(!shouldShowMenu);

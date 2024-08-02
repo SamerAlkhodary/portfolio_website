@@ -58,6 +58,10 @@ const useStyles = {
 		padding:0,
 		alignSelf:'center',
 		justifyContent:'center'
+	},
+	link:{
+		color:Consts.theme.accent
+
 	}
 
 };

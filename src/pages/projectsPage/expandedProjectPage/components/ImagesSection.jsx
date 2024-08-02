@@ -66,7 +66,7 @@ const ImageSection = ({project})=> {
 				project.beforeImageCount!=0?(
 					<>
 						<Typography variant={'h5'}  fontFamily={'Merriweather'}  style={classes.title}>
-							{translate('Before:')}
+							{translate('before')}
 						</Typography>
 						<div style={isDesktopOrLaptop? classes.imageListDesktop:classes.imageListMobile}>
 							{
@@ -74,7 +74,7 @@ const ImageSection = ({project})=> {
 							}
 						</div>
 						<Typography variant={'h5'}  fontFamily={'Merriweather'}  style={classes.title}>
-							{translate('After:')}
+							{translate('after')}
 						</Typography>
 						<div style={isDesktopOrLaptop? classes.imageListDesktop:classes.imageListMobile}>
 							{

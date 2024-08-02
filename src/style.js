@@ -1,5 +1,3 @@
-import Consts from './consts';
-
 const useStyles = {
 	page: {
 		width: '100%',
@@ -9,12 +7,6 @@ const useStyles = {
 	body:{
 		width: '100%',
 		height: '100%',
-	},
-	cookie:{ 
-		alignItems: 'center',
-		zIndex:1000,
-		backgroundColor: Consts.theme.secondary,
-		fontFamily:Consts.theme.fontFamily
 	},
 
 
