@@ -36,7 +36,7 @@ function App() {
 				<div
 					style={{
 						position: 'fixed',
-						opacity:0.6,
+						opacity:0.5,
 						top: 0,
 						left: 0,
 						width: '100vw',
