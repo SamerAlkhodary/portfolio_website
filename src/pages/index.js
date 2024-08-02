@@ -4,6 +4,7 @@ import ContactPage from './contactPage/contactPage';
 import ServicesPage from './servicesPage/servicesPage';
 import ProjectsPage from './projectsPage/projectsPage';
 import ExtendedProjectPage from './projectsPage/expandedProjectPage/expandedProjectPage';
+import CookiePolicyPage from './cookiePage/cookiePolicyPage';
 
 export {
 	HeroPage,
@@ -11,5 +12,7 @@ export {
 	ContactPage,
 	ServicesPage,
 	ProjectsPage,
-	ExtendedProjectPage
+	ExtendedProjectPage,
+	CookiePolicyPage,
+	
 };

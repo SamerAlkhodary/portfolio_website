@@ -9,6 +9,7 @@ import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDiss
 import { Typography } from '@mui/material';
 import FullScreenImage from './components/FullscreenImage.jsx';
 import { Footer } from '../../../components/index.js';
+import CookieConsentModal from '../../../components/cookieConsentModal/CookieConsentModal.jsx';
 
 const ExpandedProjectPage = ()=> {
 
@@ -23,25 +24,30 @@ const ExpandedProjectPage = ()=> {
 	const params = useParams();
 	const project = projects.find(p=>p.id==params.id);
 	return (
-		<div style={classes.page}>
-			{
-				project? 
-					<div style={{position:'relative'}}>
-						<FullScreenImage/>
-						<TitleSection project={project}/>
-						<ImageSection project={project}/>
-					</div>:
-					<div style={classes.pageNotfound}>
-						<SentimentVeryDissatisfiedIcon  sx={{ fontSize: '4em',color:'white',alignSelf:'center' }}/>
-						<Typography variant={'h5'} fontFamily={'Merriweather'}  style={classes.h1}>
-							{
-								translate('projectNotFound')
-							}
-						</Typography>
-					</div>
-			}
-			<Footer edge></Footer>
-		</div>
+		<>
+			<CookieConsentModal/>
+
+			<div style={classes.page}>
+				{
+					project? 
+						<div style={{position:'relative'}}>
+							<FullScreenImage/>
+							<TitleSection project={project}/>
+							<ImageSection project={project}/>
+						</div>:
+						<div style={classes.pageNotfound}>
+							<SentimentVeryDissatisfiedIcon  sx={{ fontSize: '4em',color:'white',alignSelf:'center' }}/>
+							<Typography variant={'h5'} fontFamily={'Merriweather'}  style={classes.h1}>
+								{
+									translate('projectNotFound')
+								}
+							</Typography>
+						</div>
+				}
+				<Footer edge></Footer>
+			</div>
+		</>
+
 	);
 };
 export default React.forwardRef(ExpandedProjectPage);

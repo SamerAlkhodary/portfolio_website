@@ -1,72 +1,37 @@
-import { HeroPage,AboutPage,ContactPage, ServicesPage, ProjectsPage,ExtendedProjectPage } from './pages/index.js';
+import { HeroPage,AboutPage,ContactPage, ServicesPage, ProjectsPage,ExtendedProjectPage, CookiePolicyPage } from './pages/index.js';
 import React, {createRef, useCallback, useEffect} from 'react';
 import classes from './style.js';
 import{CustomAppBar, Footer, Menu} from './components/index.js';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
-import CookieConsent from 'react-cookie-consent';
 import {Cookies} from 'react-cookie-consent';
 import ReactGA from 'react-ga4';
 
 import Consts from './consts.js';
+import CookieConsentModal from './components/cookieConsentModal/CookieConsentModal.jsx';
+import useAnalytics from './utils/analytics.js';
 
 
 function App() {
+	const {getConsentObject} = useAnalytics();
+
 	useEffect(()=>{
 		if(Consts.config.enableAnalytics === true){
-			const cookie = Cookies.get('analytics-consent');
-			if(cookie === undefined){
-				document.body.style.overflow = 'hidden';
-			}else if(cookie === 'true'){
+			const consentObject= getConsentObject();
+			if(consentObject?.analytics === true){
 				const TRACKING_ID = 'G-JKWK78TVMF';
 				ReactGA.initialize(TRACKING_ID);
-				document.body.style.overflow = 'auto';
 			}else{
 				ReactGA.reset();
 				Cookies.remove('_ga');
 				Cookies.remove('_ga_JKWK78TVMF');
-				document.body.style.overflow = 'auto';
 			}
 		}else{
 			ReactGA.reset();
 			Cookies.remove('_ga');
 			Cookies.remove('_ga_JKWK78TVMF');
-
 		}
-		
-	},[Cookies,ReactGA,document.body.style.overflow,Consts.config.enableAnalytics]);
-
-	const acceptCookie= useCallback(()=>{
-		document.body.style.overflow = 'auto';
-
-	},[document.body.style.overflow]);
-	const declineCookies= useCallback(()=>{
-		document.body.style.overflow = 'auto';
-
-	},[document.body.style.overflow]);
-
-	const cookieConcentBanner = useCallback(()=>{
-		if(Consts.config.enableAnalytics){
-			return <CookieConsent
-				style={classes.cookie}
-				enableDeclineButton
-				cookieName="analytics-consent"
-				onAccept={acceptCookie}
-				onDecline={declineCookies}
-				buttonText="Accept"
-				buttonStyle={{ backgroundColor: Consts.theme.accent, color:  Consts.theme.secondary,fontSize:'0.8em',fontWeight:'bold',fontFamily:Consts.theme.fontFamily}}
-				declineButtonText="Reject"
-				declineButtonStyle={{ backgroundColor: Consts.theme.secondary, color: Consts.theme.primary,fontSize:'0.8em',fontWeight:'bold',fontFamily:Consts.theme.fontFamily }}
-				overlay
-			>
-				{'This website uses cookies to enhance user experience. Cookies will be used for analytics, and third-party tracking.'}
-			</CookieConsent>;
-			
-		}else{
-			return <div/>;
-		}
-		
-	},[CookieConsent,declineCookies,acceptCookie]);
+	},[Cookies,ReactGA,document.body.style.overflow,Consts.config.enableAnalytics,window.location.pathname,getConsentObject]);
 
 	const heroRef= createRef();
 	const aboutRef=createRef();
@@ -77,6 +42,7 @@ function App() {
 	const HomePage= ()=>{
 		return(
 			<div>
+				<CookieConsentModal/>
 				<CustomAppBar refs={[aboutRef,servicesRef,projectsRef,contactRef]} heroRef={heroRef} style={classes.appBar} />
 				<Menu  customRefs={[aboutRef,servicesRef,projectsRef,contactRef]} itemPressed={()=>{}}/>
 				<div style={classes.body}>
@@ -86,7 +52,6 @@ function App() {
 					<ProjectsPage ref={projectsRef} />
 					<ContactPage ref={contactRef} />
 					<Footer></Footer>
-
 				</div>	
 			</div>
 		);
@@ -103,9 +68,9 @@ function App() {
 	});
 	return (
 		<ThemeProvider theme={theme}>
-			{cookieConcentBanner()}
 			<Router>
 				<Routes>
+					<Route exact path='/cookie-policy' element={<CookiePolicyPage/>}/>
 					<Route exact path='/' element= {<HomePage/>}/>
 					<Route exact path='/projects/:id' element= {<ExtendedProjectPage/>}/>
 				</Routes>

@@ -13,7 +13,7 @@ import useAnalytics from '../../utils/analytics';
 // eslint-disable-next-line react/prop-types
 function Menu({ customRefs}) {
 	const [language,setLanguage] = useAtom(languageAtom);
-	const sendEvent = useAnalytics();
+	const {sendEvent} = useAnalytics();
 
 	const itemPressed =(ref)=>{
 		ref.current.scrollIntoView();

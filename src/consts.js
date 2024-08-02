@@ -7,7 +7,7 @@ const Consts ={
 		fontFamily: 'Merriweather',
 	},
 	config:{
-		enableAnalytics: false
+		enableAnalytics: true
 	}
 };
 Object.freeze(Consts);
