@@ -5,7 +5,8 @@ const useStyles = {
 	container: {
 		width: '100%',
 		height: '100vh',
-		backgroundColor:'black',
+		backgroundColor:'transparent',
+
 	},
 	hero: {
 		width: '100%',
@@ -29,16 +30,14 @@ const useStyles = {
 		
 	},
 
-	textsDesktop:{
-		position:'absolute',
-		top:'1em',
-		left:'1em',
-		right:'1em',
-		bottom:'1em',
-
+	texts:{
+		alignItems:'center',
 		display:'flex',
 		gap:'3em',
+		height:'100%',
+		backgroundColor:'transparent',
 		flexDirection:'column',
+		alignSelf:'center',
 		justifyContent:'center'},
 
 	textsMobile:{ 

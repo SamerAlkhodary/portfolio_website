@@ -33,17 +33,38 @@ function App() {
 	const HomePage= ()=>{
 		return(
 			<div>
-				<CookieConsentModal/>
-				<CustomAppBar refs={[aboutRef,servicesRef,projectsRef,contactRef]} heroRef={heroRef} style={classes.appBar} />
-				<Menu  customRefs={[aboutRef,servicesRef,projectsRef,contactRef]} itemPressed={()=>{}}/>
-				<div style={classes.body}>
-					<HeroPage ref={heroRef} aboutRef={aboutRef}/>
-					<AboutPage ref={aboutRef} />
-					<ServicesPage ref={servicesRef}/>
-					<ProjectsPage ref={projectsRef} />
-					<ContactPage ref={contactRef} />
-					<Footer></Footer>
-				</div>	
+				<div
+					style={{
+						position: 'fixed',
+						opacity:0.6,
+						top: 0,
+						left: 0,
+						width: '100vw',
+						height: '100vh',
+						backgroundSize: 'cover', /* Ensures the image covers the entire container */
+						backgroundPosition: 'center', /* Centers the image within the container */
+						backgroundRepeat: 'no-repeat', /* Prevents the image from repeating */
+						zIndex: 1,
+						backgroundImage: 'url(/assets/images/hero2.webp)',
+					}}
+				></div>
+				<div style={{
+					position: 'relative',
+					
+					zIndex: 1,  
+				}}>
+					<CookieConsentModal/>
+					<CustomAppBar refs={[aboutRef,servicesRef,projectsRef,contactRef]} heroRef={heroRef} style={classes.appBar} />
+					<Menu  customRefs={[aboutRef,servicesRef,projectsRef,contactRef]} itemPressed={()=>{}}/>
+					<div style={classes.body}>
+						<HeroPage ref={heroRef} aboutRef={aboutRef}/>
+						<AboutPage ref={aboutRef} />
+						<ServicesPage ref={servicesRef}/>
+						<ProjectsPage ref={projectsRef} />
+						<ContactPage ref={contactRef} />
+						<Footer></Footer>
+					</div>	
+				</div>
 			</div>
 		);
 	};
