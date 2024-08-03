@@ -1,3 +1,5 @@
+import Consts from './consts';
+
 const useStyles = {
 	page: {
 		width: '100%',
@@ -5,8 +7,8 @@ const useStyles = {
 	},
 	
 	body:{
-		width: '100%',
-		height: '100%',
+	
+		backgroundColor:Consts.theme.secondary
 	},
 
 

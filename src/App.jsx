@@ -11,7 +11,6 @@ import PageNotFoundPage from './pages/pageNotFoundPage/pageNotFoundPage.jsx';
 
 function App() {
 	const {getConsentObject,enableTracking,clearTracking} = useAnalytics();
-
 	useEffect(()=>{
 		if(Consts.config.enableAnalytics === true){
 			const consentObject= getConsentObject();
@@ -30,7 +29,6 @@ function App() {
 	const contactRef=createRef();
 	const servicesRef=createRef();
 	const projectsRef=createRef();
-
 	const HomePage= ()=>{
 		return(
 			<div>
@@ -57,8 +55,9 @@ function App() {
 					<CookieConsentModal/>
 					<CustomAppBar refs={[aboutRef,servicesRef,projectsRef,contactRef]} heroRef={heroRef} style={classes.appBar} />
 					<Menu  customRefs={[aboutRef,servicesRef,projectsRef,contactRef]} itemPressed={()=>{}}/>
+					<HeroPage ref={heroRef} aboutRef={aboutRef}/>
+
 					<div style={classes.body}>
-						<HeroPage ref={heroRef} aboutRef={aboutRef}/>
 						<AboutPage ref={aboutRef} />
 						<ServicesPage ref={servicesRef}/>
 						<ProjectsPage ref={projectsRef} />

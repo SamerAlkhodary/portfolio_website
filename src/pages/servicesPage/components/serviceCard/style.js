@@ -11,7 +11,7 @@ const useStyles = {
 
 	},
 	imgMobile:{
-		width:'70%',
+		width:'80%',
 		borderRadius:'0.5em',
 
 	},
