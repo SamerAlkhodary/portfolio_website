@@ -33,6 +33,7 @@ const Strings={
 		projectNotFound: 'Project not found!',
 		restaurant: 'Restaurant',
 		apartments: 'Apartments',
+		pageNotFound: 'Page not found',
 		projectsInfo:{
 			midoName: 'Mido restaurant',
 			midoDescription: 'Transforce apartments and houses, ensuring customer satisfaction and timely completion. From major overhauls to minor upgrades.',
@@ -56,6 +57,7 @@ const Strings={
 		legal:'Jogi',
 		barbershop: 'Barbershop',
 		contact: 'Kapcsolat',
+		pageNotFound: 'Az oldal nem található.',
 		construction: 'Lakó- és nem lakó Epület építése',
 		renovation: 'Lakásfelújítás',
 		houseConstruction: 'Családiház építés',
