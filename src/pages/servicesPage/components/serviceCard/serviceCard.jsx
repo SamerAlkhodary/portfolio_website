@@ -4,15 +4,29 @@ import { useMediaQuery } from 'react-responsive';
 
 
 import classes from './style.js';
-const ServiceCard = ({img,title})=> {
+const ServiceCard = ({img,title,description,reverse})=> {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
+	var cardStyle={
+		...isDesktopOrLaptop?classes.cardDesktop:classes.cardMobile
+	};
+	if(isDesktopOrLaptop && reverse){
+		cardStyle= {...cardStyle,flexDirection:'row-reverse'};
+
+	}
+	
 	return (
-		<div style={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile }>
-			<img style={{width:'100%',height:'100%',opacity:0.6}} src={img} alt="programming"/>
-			<Typography style={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
-				{title}
-			</Typography>
+		<div style={cardStyle}>
+			<img style={isDesktopOrLaptop? classes.imgDesktop:classes.imgMobile} src={img} alt="programming"/>
+			<div style={isDesktopOrLaptop?classes.textColumnDesktop:classes.textColumnMobile}>
+				<Typography style={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
+					{title}
+				</Typography>
+				<Typography style={classes.txt} variant='body3' paragraph fontFamily={'Merriweather'}>
+					{description}
+				</Typography>
+			</div>
+			
 			
 		</div>
 

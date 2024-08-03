@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 import Consts from './consts.js';
 import CookieConsentModal from './components/cookieConsentModal/CookieConsentModal.jsx';
 import useAnalytics from './utils/analytics.js';
+import PageNotFoundPage from './pages/pageNotFoundPage/pageNotFoundPage.jsx';
 
 function App() {
 	const {getConsentObject,enableTracking,clearTracking} = useAnalytics();
@@ -85,6 +86,7 @@ function App() {
 					<Route exact path='/cookie-policy' element={<CookiePolicyPage/>}/>
 					<Route exact path='/' element= {<HomePage/>}/>
 					<Route exact path='/projects/:id' element= {<ExtendedProjectPage/>}/>
+					<Route exact path='*' element= {<PageNotFoundPage/>}/>
 				</Routes>
 			</Router>
 				

@@ -13,25 +13,25 @@ const useStyles = {
 	},
 	serviceList:{
 		display: 'flex',
-		flexDirection:'row',
-		gap:'1em',
+		paddingTop:'4em',
+		flexDirection:'column',
+		gap:'5em',
 		paddingLeft:'1em',
 		paddingRight:'1em',
-		justifyContent: 'space-around',
+		justifyContent: 'center',
 		flex:1,
-		height:'100%'
 	},
 	serviceListMobile:{
 		display: 'flex',
+		gap:'5em',
 		flexDirection:'column',
 		justifyContent: 'space-between',
 		flex:1,
-		gap:'1em',
 		height:'100%'
 	},
 	title:{
 		alignSelf:'center',
-		paddingBottom: '1em',
+		paddingBottom: '3em',
 		color: Consts.theme.primary,
 		textAlign:'center',
 	}

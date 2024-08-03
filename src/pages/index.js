@@ -5,7 +5,7 @@ import ServicesPage from './servicesPage/servicesPage';
 import ProjectsPage from './projectsPage/projectsPage';
 import ExtendedProjectPage from './projectsPage/expandedProjectPage/expandedProjectPage';
 import CookiePolicyPage from './cookiePage/cookiePolicyPage';
-
+import PageNotFoundPage from './pageNotFoundPage/pageNotFoundPage';
 export {
 	HeroPage,
 	AboutPage,
@@ -14,5 +14,6 @@ export {
 	ProjectsPage,
 	ExtendedProjectPage,
 	CookiePolicyPage,
+	PageNotFoundPage,
 	
 };
