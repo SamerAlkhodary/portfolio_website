@@ -8,14 +8,17 @@ import translate from '../../res/strings/strings.js';
 import useAnalytics from '../../utils/analytics.js';
 
 const HeroPage = ({aboutRef},ref)=> {
-
+	const Image = React.memo(function Image({ src }) {
+		return <img style={classes.hero} src={src} className="hero" />;
+	});
 	const {sendEvent} = useAnalytics();
 
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
 		<div ref={ref} style={classes.container} >
-			<div style={classes.texts}>
+			<Image src={'/assets/images/hero2.webp'} />
+			<div style={isDesktopOrLaptop?classes.textsDesktop:classes.textsMobile}>
 				<Typography variant={isDesktopOrLaptop?'h4':'h5'} paragraph fontFamily={'Merriweather'} style={classes.h1}>
 					{translate('heroTextTitle')}
 				</Typography>
@@ -40,6 +43,8 @@ const HeroPage = ({aboutRef},ref)=> {
 
 					</Typography>
 				</Button>
+
+				
 			</div>
 			
 		</div>

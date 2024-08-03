@@ -5,12 +5,13 @@ const useStyles = {
 	container: {
 		width: '100%',
 		height: '100vh',
-		backgroundColor:'transparent',
+		backgroundColor:Consts.theme.secondary,
+		position:'relative',
 
 	},
 	hero: {
 		width: '100%',
-		height: '100%',
+		height: '100vh',
 		opacity: '0.5',
 		objectFit: 'cover',
 	},
@@ -30,15 +31,19 @@ const useStyles = {
 		
 	},
 
-	texts:{
-		alignItems:'center',
+	textsDesktop:{
 		display:'flex',
 		gap:'3em',
 		height:'100%',
 		backgroundColor:'transparent',
 		flexDirection:'column',
 		alignSelf:'center',
-		justifyContent:'center'},
+		justifyContent:'center',
+		position:'absolute',
+		top:'1em',
+		left:'1em',
+		right:'1em',
+		bottom:'1em',},
 
 	textsMobile:{ 
 		top:'3em',
