@@ -29,10 +29,37 @@ function App() {
 	const contactRef=createRef();
 	const servicesRef=createRef();
 	const projectsRef=createRef();
+	const imageRef = createRef();
 	const HomePage= ()=>{
+		useEffect(() => {
+			console.log(imageRef.current.style.position);
+			const handleScroll = () => {
+				
+				const imageBottom = imageRef.current.getBoundingClientRect().bottom;
+				const windowHeight = window.innerHeight;
+		
+				if (imageBottom <= windowHeight) {
+					imageRef.current.style.position = 'relative';
+				} else {
+					imageRef.current.style.position = 'fixed';
+					imageRef.current.style.top = '0';
+					imageRef.current.style.left = '0';
+				}
+			};
+		
+			window.addEventListener('scroll', handleScroll);
+		
+			return () => {
+				window.removeEventListener('scroll', handleScroll);
+			};
+		}, []);
 		return(
-			<div>
-				<div
+			<div style={{
+				position: 'relative',
+				height:'100vh',
+				overflow: 'auto',
+			}}>
+				<div ref={imageRef}
 					style={{
 						position: 'fixed',
 						opacity:0.5,
