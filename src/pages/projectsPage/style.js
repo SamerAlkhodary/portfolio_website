@@ -4,11 +4,12 @@ const useStyles ={
 	projectsPage:{
 		backgroundColor:Consts.theme.secondary,
 		paddingBottom:'5em',
-		paddingTop: '5em',
+		paddingTop: '2em',
 		paddingLeft:'1em',
 		paddingRight:'1em',
 		display:'flex',
-		flexDirection:'column'
+		flexDirection:'column',
+		gap:'5em'
 	},
 	container:{
 		overflow: 'scroll',
