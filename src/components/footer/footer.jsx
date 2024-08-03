@@ -26,7 +26,7 @@ function Footer({edge}) {
 						translate('contactDetails')
 					}
 				</Typography>
-				<Link onClick={()=>{
+				<Link underline='none' onClick={()=>{
 					window.open(`mailto:${info.email}`);
 					sendEvent({
 						category: 'contacts',
@@ -40,7 +40,7 @@ function Footer({edge}) {
 						info.email
 					}
 				</Link>
-				<Link onClick={()=>{
+				<Link underline='none' onClick={()=>{
 					window.open('tel:'+info.number);
 					sendEvent({
 						category: 'contacts',
@@ -89,7 +89,7 @@ function Footer({edge}) {
 						translate('legal')
 					}
 				</Typography>
-				<Link  variant="body1"  style={classes.link} onClick={()=>{
+				<Link underline='none' variant="body1"  style={classes.link} onClick={()=>{
 					navigate('/cookie-policy');
 					sendEvent({
 						category: 'legals',
