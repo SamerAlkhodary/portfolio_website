@@ -6,6 +6,7 @@ import ProjectsPage from './projectsPage/projectsPage';
 import ExtendedProjectPage from './projectsPage/expandedProjectPage/expandedProjectPage';
 import CookiePolicyPage from './cookiePage/cookiePolicyPage';
 import PageNotFoundPage from './pageNotFoundPage/pageNotFoundPage';
+import HomePage from './homePage/homePage';
 export {
 	HeroPage,
 	AboutPage,
@@ -15,5 +16,6 @@ export {
 	ExtendedProjectPage,
 	CookiePolicyPage,
 	PageNotFoundPage,
+	HomePage,
 	
 };
