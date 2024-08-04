@@ -8,9 +8,6 @@ import translate from '../../res/strings/strings.js';
 import useAnalytics from '../../utils/analytics.js';
 
 const HeroPage = ({aboutRef},ref)=> {
-	const Image = React.memo(function Image({ src }) {
-		return <img style={classes.hero} src={src} className="hero" />;
-	});
 	const {sendEvent} = useAnalytics();
 
 	const isDesktopOrLaptop = useMediaQuery({
