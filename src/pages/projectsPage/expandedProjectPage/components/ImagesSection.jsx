@@ -19,7 +19,7 @@ const ImageSection = ({project})=> {
 		}}/>;
 	});
 	
-	const imagesStyle= isDesktopOrLaptop?{width:'32%',aspectRatio:1}:{width:'100%',aspectRatio:1};
+	const imagesStyle= isDesktopOrLaptop?{width:'32%',aspectRatio:1,objectFit: 'cover',	}:{width:'100%',aspectRatio:1,objectFit: 'cover',	};
 	const beforeImages= useCallback(()=>{
 		var images =[];
 		for(let i=1; i<project.beforeImageCount;i++){

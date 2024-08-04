@@ -14,7 +14,7 @@ const ProjectsPage = (props,ref)=> {
 	const projectCards = projects.map(p=>{
 		return <ProjectCard 
 			key={p.id}
-			img={`/assets/images/projects/${p.id}/hero.webp`} 
+			img={`/assets/images/projects/${p.id}/hero_desktop.webp`} 
 			title={translate(p.type,'projectsInfo')} 
 			onclick={
 				()=>{

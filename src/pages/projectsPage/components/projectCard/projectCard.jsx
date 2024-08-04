@@ -4,12 +4,12 @@ import { useMediaQuery } from 'react-responsive';
 
 
 import classes from './style.js';
-const ProjectCard = ({img,title,onclick})=> {
+const ProjectCard = ({img,srcSet,title,onclick})=> {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});	
 	return (
 		<div style={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile} onClick={onclick}>
-			<img style={classes.img} src={img} alt={title}/>
+			<img srcSet={srcSet} style={classes.img} src={img} alt={title}/>
 			<Typography style={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 				{title}
 			</Typography>
