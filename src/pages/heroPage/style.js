@@ -7,14 +7,11 @@ const useStyles = {
 		height: '100vh',
 		backgroundColor:Consts.theme.secondary,
 		position:'relative',
-
+		backgroundSize: 'cover',
+		backgroundPosition: 'center', 
+		backgroundImage:'url("/assets/images/hero2.webp")',
 	},
-	hero: {
-		width: '100%',
-		height: '100vh',
-		opacity: '0.5',
-		objectFit: 'cover',
-	},
+	
 	h1: {
 		textAlign: 'center',
 		color: 'white',
@@ -32,24 +29,25 @@ const useStyles = {
 	},
 
 	textsDesktop:{
+		backgroundColor:'rgba(0, 0, 0, 0.5)',
 		display:'flex',
 		gap:'3em',
 		height:'100%',
-		backgroundColor:'transparent',
 		flexDirection:'column',
 		alignSelf:'center',
 		justifyContent:'center',
 		position:'absolute',
-		top:'1em',
-		left:'1em',
-		right:'1em',
-		bottom:'1em',},
+		top:'0em',
+		left:'0em',
+		right:'0em',
+		bottom:'0em',},
 
 	textsMobile:{ 
-		top:'3em',
-		left:'1em',
-		bottom:'3em',
-		right:'1em',
+		backgroundColor:'rgba(0, 0, 0, 0.5)',
+		top:'0em',
+		left:'0em',
+		bottom:'0em',
+		right:'0em',
 		position:'absolute',
 		display:'flex',
 		gap:'3em',

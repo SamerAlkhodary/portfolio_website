@@ -60,7 +60,7 @@ function Footer({edge}) {
 					}
 				</Typography>
 				<div style={classes.iconList}>
-					<IconButton  onClick={()=>{ 
+					<IconButton  aria-label={'Click this to go to Instagram page'} onClick={()=>{ 
 						window.open(info.instagramLink, '_blank', 'noreferrer');
 						sendEvent({
 							category: 'contacts',
@@ -70,7 +70,7 @@ function Footer({edge}) {
 					}}>
 						<InstagramIcon style={classes.instagram}></InstagramIcon>
 					</IconButton>
-					<IconButton  onClick={()=>{ 
+					<IconButton aria-label={'Click this to go to Facebook page'}  onClick={()=>{ 
 						window.open(info.facebookLink, '_blank', 'noreferrer');
 						sendEvent({
 							category: 'contacts',
