@@ -17,10 +17,10 @@ const ServicesPage = (props,ref)=> {
 					{translate('services')}
 				</Typography>
 				<div style={isDesktopOrLaptop?classes.serviceList:classes.serviceListMobile}>
-					<ServiceCard img={'/assets/images/construction.webp'} title={translate('construction')} description= {translate('constructionDescription')}/>
+					<ServiceCard img={'/assets/images/construction2.webp'} title={translate('construction')} description= {translate('constructionDescription')}/>
 					<ServiceCard img={'/assets/images/renovation.webp'}reverse title={translate('renovation')} description= {translate('renovationDescription')}/>
-					<ServiceCard img={'/assets/images/extension.webp'} title={translate('houseConstruction')} description= {translate('houseConstructionDescription')}/>
-					<ServiceCard img={'/assets/images/consultation.webp'}reverse title={translate('consultation')} description= {translate('consultationDescription')}/>
+					<ServiceCard img={'/assets/images/extension2.webp'} title={translate('houseConstruction')} description= {translate('houseConstructionDescription')}/>
+					<ServiceCard img={'/assets/images/consultation2.webp'}reverse title={translate('consultation')} description= {translate('consultationDescription')}/>
 
 				</div>
 			</div>
