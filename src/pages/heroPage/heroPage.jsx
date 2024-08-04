@@ -21,7 +21,7 @@ const HeroPage = ({aboutRef},ref)=> {
 				<Typography  variant={isDesktopOrLaptop?'h5':'h6'} paragraph style={classes.h2} fontFamily={'Merriweather'}>
 					{translate('heroTextSubtitle')}
 				</Typography>
-				<Button onClick={()=>{
+				<Button aria-label={'Click this to go to scroll to about section'} onClick={()=>{
 					sendEvent({
 						category: 'hero',
 						action: 'click',

@@ -99,14 +99,14 @@ function CustomAppBar({refs,heroRef}) {
 			return(
 				<div style={classes.itemRow}>
 					<div  style={classes.logoItem}>
-						<IconButton onClick={()=>{itemPressed(heroRef);}} style={{paddingLeft:0}}>
+						<IconButton aria-label='Click this button to scroll to top' onClick={()=>{itemPressed(heroRef);}} style={{paddingLeft:0}}>
 							<img style={{ height: 50, width: 300 }} src={Logo}alt={'logo'}/>	
 						</IconButton>
 					</div>
 					<div style={classes.pagesRow}>
 						{
 							menuItems.map(item =>(
-								<IconButton  key={item.title} onClick={item.onClick}>
+								<IconButton aria-label={`Click this to go to ${item.title}`}  key={item.title} onClick={item.onClick}>
 									<Typography fontFamily={'Merriweather'} fontWeight={'bold'} style={ classes.menuButton} fontSize={'1rem'}>
 										{item.title}
 									</Typography>
@@ -120,7 +120,7 @@ function CustomAppBar({refs,heroRef}) {
 		}else{
 			return(
 				<div style={classes.row}>
-					<IconButton onClick={()=>{itemPressed(heroRef);setShowMenu(false);}} style={{paddingLeft:0}}>
+					<IconButton aria-label={'Click this open hamburger menu'} onClick={()=>{itemPressed(heroRef);setShowMenu(false);}} style={{paddingLeft:0}}>
 						<img style={{ width:'9em',height:'2em' }} src={Logo}alt={'logo'}/>	
 					</IconButton>
 					<div style={{padding:'1em',backgroundColor:Consts.theme.secondary}}>
