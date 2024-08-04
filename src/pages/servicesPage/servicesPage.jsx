@@ -17,10 +17,10 @@ const ServicesPage = (props,ref)=> {
 					{translate('services')}
 				</Typography>
 				<div style={isDesktopOrLaptop?classes.serviceList:classes.serviceListMobile}>
-					<ServiceCard img={'/assets/images/construction.webp'} title={translate('construction')} description= {translate('constructionDescription')}/>
-					<ServiceCard img={'/assets/images/renovation.webp'}reverse title={translate('renovation')} description= {translate('renovationDescription')}/>
-					<ServiceCard img={'/assets/images/extension.webp'} title={translate('houseConstruction')} description= {translate('houseConstructionDescription')}/>
-					<ServiceCard img={'/assets/images/consultation.webp'}reverse title={translate('consultation')} description= {translate('consultationDescription')}/>
+					<ServiceCard  srcSet={'/assets/images/construction_mobile.webp 1500w, /assets/images/construction_desktop.webp 1700w '} img={'/assets/images/construction_desktop.webp'} title={translate('construction')} description= {translate('constructionDescription')}/>
+					<ServiceCard  srcSet={'/assets/images/renovation.webp 1500w, /assets/images/renovation.webp 1700w '} img={'/assets/images/renovation.webp'}reverse title={translate('renovation')} description= {translate('renovationDescription')}/>
+					<ServiceCard srcSet={'/assets/images/extension_mobile.webp 1500w, /assets/images/extension_desktop.webp 1700w '} img={'/assets/images/extension_desktop.webp'} title={translate('houseConstruction')} description= {translate('houseConstructionDescription')}/>
+					<ServiceCard  srcSet={'/assets/images/consultation_mobile.webp 1500w, /assets/images/consultation_desktop.webp 1700w '} img={'/assets/images/consultation_desktop.webp'}reverse title={translate('consultation')} description= {translate('consultationDescription')}/>
 
 				</div>
 			</div>

@@ -6,12 +6,16 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonthOutlined';
 import PlaceIcon from '@mui/icons-material/PlaceOutlined';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 const TitleSection = ({project})=> {
-	const Image = React.memo(function Image({style, src }) {
-		return <img style={style} src={src} className="hero" />;
+	const Image = React.memo(function Image({style,srcSet, src }) {
+		return <img style={style}srcSet={srcSet} src={src} className="hero" />;
 	});
 	return (
 		<div  style={classes.container} >
-			<Image style={classes.hero} src={`/assets/images/projects/${project.id}/hero.webp`} />
+			<Image style={classes.hero} 
+				src={`/assets/images/projects/${project.id}/hero_desktop.webp`}
+				srcSet={`/assets/images/projects/${project.id}/hero_mobile.webp 1500w, /assets/images/projects/${project.id}/hero_desktop.webp 1700w`}
+
+			/>
 			<div style={classes.info}>
 				<div style={classes.texts}>
 					<Typography variant={'h5'}  fontFamily={'Merriweather'} fontWeight='bold' style={classes.h1}>

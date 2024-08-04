@@ -44,12 +44,8 @@ const HeroPage = ({aboutRef},ref)=> {
 					</Typography>
 				</Button>
 
-				
 			</div>
-			
 		</div>
-     
-
 	);
 };
 export default React.forwardRef(HeroPage);
