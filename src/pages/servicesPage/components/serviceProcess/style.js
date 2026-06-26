@@ -5,6 +5,7 @@ const useStyles = {
 		display:'flex',
 		flexDirection:'column',
 		gap:'1.8em',
+		paddingTop:'5em',
 		paddingLeft:'1.5em',
 		paddingRight:'1.5em',
 	},

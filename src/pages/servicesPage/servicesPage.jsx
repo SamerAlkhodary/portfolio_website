@@ -18,7 +18,6 @@ const ServicesPage = (props,ref)=> {
 				<Typography  component='h2' style={classes.title} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 					{translate('services')}
 				</Typography>
-				<ServiceProcess/>
 				<div style={isDesktopOrLaptop?classes.serviceList:classes.serviceListMobile}>
 					<ServiceCard width={3730} height={2487} srcSet={'/assets/images/construction_mobile.webp 1500w, /assets/images/construction_desktop.webp 1700w '} img={'/assets/images/construction_desktop.webp'} title={translate('construction')} description= {translate('constructionDescription')} highlights={highlightsFor('construction')}/>
 					<ServiceCard width={4288} height={2848} srcSet={'/assets/images/renovation.webp 1500w, /assets/images/renovation.webp 1700w '} img={'/assets/images/renovation.webp'}reverse title={translate('renovation')} description= {translate('renovationDescription')} highlights={highlightsFor('renovation')}/>
@@ -26,6 +25,7 @@ const ServicesPage = (props,ref)=> {
 					<ServiceCard width={3220} height={2147} srcSet={'/assets/images/consultation_mobile.webp 1500w, /assets/images/consultation_desktop.webp 1700w '} img={'/assets/images/consultation_desktop.webp'}reverse title={translate('consultation')} description= {translate('consultationDescription')} highlights={highlightsFor('consultation')}/>
 
 				</div>
+				<ServiceProcess/>
 			</div>
 		</div>
 
