@@ -2,93 +2,54 @@ import Consts from '../../consts';
 
 const useStyles = {
 	contactPage:{
-		paddingTop:'2em',
+		paddingTop:'4em',
+		paddingBottom:'4em',
 		backgroundColor: Consts.theme.secondary,
 		display:'flex',
 		flexDirection:'column',
-		gap:'2em',
-
+		gap:'1.5em',
 		alignItems:'center',
-
-
-	},
-	containerMobile: {
-		width: '100%',
-		gap:'5em',
-		alignItems:'center',
-		display:'flex',
-		flexDirection:'column',
-		justifyContent: 'space-around',
-	},
-	containerDesktop: {
-		width: '100%',
-		display:'flex',
-		flexDirection:'row',
-		justifyContent: 'space-around',
-		alignItems:'start',
 	},
 	title:{
-		textAlign:'start',
-		color: Consts.theme.primary
-		
+		textAlign:'center',
+		color: Consts.theme.primary,
 	},
-	formDesktop:{
-		display:'flex',
-		flexDirection:'column',
-		width:'60%',
-		gap:'1em',
-		height:'30%',
+	prompt:{
+		textAlign:'center',
+		color: Consts.theme.primary,
+		maxWidth:'34em',
+		paddingLeft:'1.5em',
+		paddingRight:'1.5em',
 	},
-	formMobile:{
-		display:'flex',
-		flexDirection:'column',
-		gap:'1em',
-		justifyContent:'space-around',
-		width:'80%',
-		height:'50%',
-
-	},
-	
-	textInput:{
-		height:'300px'
-    
-	},
-	contactIcon:{
-		objectFit:'fit',
-		width:'1.5em',
-		height: '1.2em',
-
-	},
-	businessCard:{
-		width: '20em',
-		padding: '1em',
-		height:'10em',
-		alignSelf:'center',
-		backgroundImage:'linear-gradient(to bottom right, #EEC283, rgba(228,191,183,0.7))',
-		backdropFilter: 'blur(10px)',
-		boxShadow: '10px 10px 10px rgba(30,30,30,0.4)',
-		borderRadius:'0.5em',
-		border: 'solid 2px transparent',	
-	},
-	logo:{
-		objectFit:'fit',
-		width:'30%',
-		height: '30%',
-	},
-	row:{
+	ctaRow:{
 		display:'flex',
 		flexDirection:'row',
-		gap:'1em',
-		alignItems:'center'
-
+		gap:'1.5em',
+		flexWrap:'wrap',
+		justifyContent:'center',
+		paddingTop:'1em',
 	},
-	column:{
-		alignItems:'start',
+	ctaColumn:{
 		display:'flex',
-		flexDirection: 'column',
-	}
-
-	
+		flexDirection:'column',
+		gap:'1em',
+		alignItems:'stretch',
+		width:'80%',
+		paddingTop:'1em',
+	},
+	primaryCta:{
+		backgroundColor: Consts.theme.accent,
+		color: Consts.theme.secondary,
+		padding:'0.6em 2em',
+		minWidth:'13em',
+	},
+	secondaryCta:{
+		backgroundColor:'transparent',
+		border:`2px solid ${Consts.theme.accent}`,
+		color: Consts.theme.primary,
+		padding:'0.6em 2em',
+		minWidth:'13em',
+	},
 };
 
 export default useStyles;
