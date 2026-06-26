@@ -6,7 +6,8 @@ import classes from './style.js';
 import useTranslate from '../../res/strings/strings.js';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 
-const PageNotFoundPage =()=> {
+// eslint-disable-next-line react/prop-types
+const PageNotFoundPage =({ message })=> {
 	const translate = useTranslate();
 
 	return (
@@ -16,7 +17,7 @@ const PageNotFoundPage =()=> {
 				404
 			</Typography>
 			<Typography variant={'h5'} fontFamily={'Merriweather'} style={classes.h1}>
-				{translate('pageNotFound')}
+				{message || translate('pageNotFound')}
 			</Typography>
 			<Button component={Link} to='/' style={classes.button}>
 				<Typography fontFamily={'Merriweather'} fontWeight={'bold'} fontSize={'1em'} color={'#242424'}>
