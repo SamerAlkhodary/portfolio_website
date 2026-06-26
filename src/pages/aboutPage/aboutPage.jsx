@@ -12,7 +12,7 @@ const AboutPage =(props,ref)=> {
 	return (
 		<div ref={ref} style={classes.page} >
 			<div style={classes.mainContainer}>
-				<Typography style={classes.title} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
+				<Typography component='h2' style={classes.title} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 					{translate('about')}
 				</Typography>
 				<div style={classes.padding} />

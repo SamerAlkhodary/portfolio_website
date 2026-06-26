@@ -24,7 +24,7 @@ const ServiceCard = ({img,srcSet,title,description,reverse})=> {
 				src={img} 
 				alt={title}/>
 			<div style={isDesktopOrLaptop?classes.textColumnDesktop:classes.textColumnMobile}>
-				<Typography style={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
+				<Typography component='h3' style={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 					{title}
 				</Typography>
 				<Typography style={classes.txt} variant='body3' paragraph fontFamily={'Merriweather'}>
