@@ -53,7 +53,7 @@ const ProjectsListPage = ()=> {
 						{translate('noProjectsInCategory')}
 					</Typography>
 					:
-					<div style={{...classes.grid, gridTemplateColumns:`repeat(${isDesktopOrLaptop ? 3 : 2}, 1fr)`}}>
+					<div style={{...classes.grid, gridTemplateColumns:`repeat(${isDesktopOrLaptop ? 3 : 1}, 1fr)`}}>
 						{visible.map(p => (
 							<ProjectCard
 								key={p.id}

@@ -20,7 +20,7 @@ const ProjectsPage = (props,ref)=> {
 			<Typography  component='h2' style={classes.title} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 				{translate('projects')}
 			</Typography>
-			<div style={{...classes.grid, gridTemplateColumns:`repeat(${isDesktopOrLaptop ? 3 : 2}, 1fr)`}}>
+			<div style={{...classes.grid, gridTemplateColumns:`repeat(${isDesktopOrLaptop ? 3 : 1}, 1fr)`}}>
 				{featured.map(p => (
 					<ProjectCard
 						key={p.id}
