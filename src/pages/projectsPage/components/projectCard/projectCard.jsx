@@ -8,7 +8,13 @@ const ProjectCard = ({img,srcSet,title,onclick})=> {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});	
 	return (
-		<div style={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile} onClick={onclick}>
+		<div
+			style={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile}
+			onClick={onclick}
+			onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); onclick(); } }}
+			role='button'
+			tabIndex={0}
+			aria-label={title}>
 			<img srcSet={srcSet} style={classes.img} src={img} loading='lazy' alt={title}/>
 			<Typography component='h3' style={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 				{title}
