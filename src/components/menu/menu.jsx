@@ -17,7 +17,7 @@ function Menu({ customRefs}) {
 	const translate = useTranslate();
 
 	const itemPressed =(ref)=>{
-		ref.current.scrollIntoView();
+		ref.current.scrollIntoView({ behavior: 'smooth' });
 	};
 	const [showMenu,setShow] = useAtom(
 		showMenuAtom,

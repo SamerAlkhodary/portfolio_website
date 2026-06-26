@@ -27,3 +27,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+[role='button'] {
+  cursor: pointer;
+}
+
+/* Visible keyboard focus for all interactive elements */
+button:focus-visible,
+a:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid #eec283;
+  outline-offset: 2px;
+  border-radius: 2px;
+}

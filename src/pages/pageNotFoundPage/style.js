@@ -1,14 +1,25 @@
 import Consts from '../../consts';
 
-// eslint-disable-next-line no-unused-vars
 const useStyles = {
-	
 	page:{
 		backgroundColor: Consts.theme.secondary,
 	},
+	code: {
+		color: Consts.theme.primary,
+		lineHeight: 1,
+		margin: 0,
+	},
 	h1: {
 		textAlign: 'center',
-		color: 'white',
+		color: Consts.theme.primary,
+		paddingLeft: '1em',
+		paddingRight: '1em',
+	},
+	button: {
+		marginTop: '1em',
+		backgroundColor: Consts.theme.accent,
+		color: Consts.theme.secondary,
+		padding: '0.6em 2em',
 	},
 	pageNotfound:{
 		flex:1,
@@ -17,7 +28,8 @@ const useStyles = {
 		display:'flex',
 		alignItems:'center',
 		flexDirection:'column',
-		gap:'1em'},
-
+		gap:'0.6em',
+		backgroundColor: Consts.theme.secondary,
+	},
 };
 export default useStyles;
