@@ -4,6 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import { AppBar } from '@mui/material';
 import React, { useCallback } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { useNavigate } from 'react-router-dom';
 import Logo from '../../res/images/vertical_logo.svg';
 import classes from './style';
 import {useAtom} from 'jotai';
@@ -18,6 +19,7 @@ function CustomAppBar({refs,heroRef}) {
 	const [shouldShowMenu, setShowMenu] = useAtom(showMenuAtom);
 	const [language,setLanguage] = useAtom(languageAtom);
 	const {sendEvent} = useAnalytics();
+	const navigate = useNavigate();
 	const translate = useTranslate();
 
 	const  toggleMenu= useCallback(() => {
@@ -78,8 +80,11 @@ function CustomAppBar({refs,heroRef}) {
 	];
 
 	const itemPressed =(ref)=>{
-		ref.current.scrollIntoView({ behavior: 'smooth' });
-
+		if(ref && ref.current){
+			ref.current.scrollIntoView({ behavior: 'smooth' });
+		}else{
+			navigate('/');
+		}
 	};
 	const appBarItems= useCallback(()=>{
 		if(isDesktopOrLaptop){

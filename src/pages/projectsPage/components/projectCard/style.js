@@ -1,41 +1,41 @@
 import Consts from '../../../../consts';
 
 const useStyles = {
-	cardDesktop:{
-		backgroundColor:Consts.theme.secondary,
+	card:{
 		position:'relative',
-		width: '30%',
-		aspectRatio: 1,
-	},
-	cardMobile:{
-		backgroundColor:Consts.theme.secondary,
-		position:'relative',
-		width: '20em',
-		display:'flex',
+		width:'100%',
+		aspectRatio:'4 / 3',
 		borderRadius:'1em',
-		boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.3)',		
+		overflow:'hidden',
+		backgroundColor:Consts.theme.secondary,
+		boxShadow:'0 4px 12px rgba(0, 0, 0, 0.35)',
 	},
 	img:{
 		width:'100%',
 		height:'100%',
-		opacity:0.7,
-		borderRadius:'1em',
-		objectFit: 'cover',
-		backgroundColor:Consts.theme.secondary,
-		border: 'solid 2px transparent',
+		objectFit:'cover',
+		display:'block',
+		filter:'brightness(0.7)',
+		transition:'transform 0.3s ease',
 	},
-	txt:{
-		display:'flex',
-		left:'50%',
-		right:'50%',
-		top:'50%',
-		bottom: '50%',
+	overlay:{
 		position:'absolute',
-		justifyContent:'center',
-		color: Consts.theme.primary
+		left:0,
+		right:0,
+		bottom:0,
+		padding:'1em',
+		display:'flex',
+		flexDirection:'column',
+		gap:'0.2em',
+		background:'linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))',
 	},
-	
-	
+	title:{
+		color:Consts.theme.primary,
+		margin:0,
+	},
+	meta:{
+		color:Consts.theme.accent,
+	},
 };
 
 export default useStyles;
