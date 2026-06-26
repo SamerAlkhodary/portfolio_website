@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 
 
 import classes from './style.js';
-const ServiceCard = ({img,srcSet,title,description,reverse,width,height})=> {
+const ServiceCard = ({img,srcSet,title,description,reverse,width,height,highlights})=> {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	var cardStyle={
@@ -33,6 +33,17 @@ const ServiceCard = ({img,srcSet,title,description,reverse,width,height})=> {
 				<Typography style={classes.txt} variant='body3' paragraph fontFamily={'Merriweather'}>
 					{description}
 				</Typography>
+				{highlights?.length > 0 &&
+					<ul style={classes.highlightList}>
+						{highlights.map(item =>
+							<li key={item} style={classes.highlightItem}>
+								<Typography component='span' style={classes.highlightText} variant='body2' fontFamily={'Merriweather'}>
+									{item}
+								</Typography>
+							</li>
+						)}
+					</ul>
+				}
 			</div>
 			
 			

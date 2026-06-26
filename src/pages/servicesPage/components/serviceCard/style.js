@@ -51,8 +51,19 @@ const useStyles = {
 	txt:{
 		color: Consts.theme.primary
 	},
-	
-	
+	highlightList:{
+		margin:0,
+		paddingLeft:'1.2em',
+		display:'flex',
+		flexDirection:'column',
+		gap:'0.4em',
+	},
+	highlightItem:{
+		color: Consts.theme.accent,
+	},
+	highlightText:{
+		color: Consts.theme.primary,
+	},
 };
 
 export default useStyles;
