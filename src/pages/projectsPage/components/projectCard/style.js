@@ -29,6 +29,17 @@ const useStyles = {
 		gap:'0.2em',
 		background:'linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))',
 	},
+	overlayMobile:{
+		position:'absolute',
+		left:0,
+		right:0,
+		bottom:0,
+		padding:'0.6em',
+		display:'flex',
+		flexDirection:'column',
+		gap:'0.1em',
+		background:'linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))',
+	},
 	title:{
 		color:Consts.theme.primary,
 		margin:0,

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Typography } from '@mui/material';
+import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
 import { ProjectCard } from './components';
 import classes from './style.js';
@@ -11,6 +12,7 @@ const ProjectsPage = (props,ref)=> {
 	const {sendEvent} = useAnalytics();
 	const translate = useTranslate();
 	const navigate = useNavigate();
+	const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 900px)' });
 	const featured = projects.filter(p => p.featured);
 
 	return (
@@ -18,7 +20,7 @@ const ProjectsPage = (props,ref)=> {
 			<Typography  component='h2' style={classes.title} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 				{translate('projects')}
 			</Typography>
-			<div style={classes.grid}>
+			<div style={{...classes.grid, gridTemplateColumns:`repeat(${isDesktopOrLaptop ? 3 : 2}, 1fr)`}}>
 				{featured.map(p => (
 					<ProjectCard
 						key={p.id}

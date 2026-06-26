@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Button, Typography } from '@mui/material';
+import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
 import classes from './style.js';
 import Consts from '../../consts.js';
@@ -17,6 +18,7 @@ const ProjectsListPage = ()=> {
 	const navigate = useNavigate();
 	const { sendEvent } = useAnalytics();
 	const nullRef = useRef(null);
+	const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 900px)' });
 	const [category, setCategory] = useState('all');
 
 	useEffect(()=>{ window.scrollTo({ top: 0, behavior: 'instant' }); }, []);
@@ -51,7 +53,7 @@ const ProjectsListPage = ()=> {
 						{translate('noProjectsInCategory')}
 					</Typography>
 					:
-					<div style={classes.grid}>
+					<div style={{...classes.grid, gridTemplateColumns:`repeat(${isDesktopOrLaptop ? 3 : 2}, 1fr)`}}>
 						{visible.map(p => (
 							<ProjectCard
 								key={p.id}
