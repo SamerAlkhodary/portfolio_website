@@ -67,7 +67,7 @@ const Strings={
 		message: 'Message',
 		noProjectsInCategory: 'No projects in this category yet.',
 		pageNotFound: 'Page not found',
-		projectNotFound: 'Project not found!',
+		projectNotFound: 'Project not found',
 		projects: 'Projects',
 		projectsInfo:{
 			barbershopDescription: 'A complete barbershop renovation in Budapest, rebuilt and fitted out.',
@@ -151,7 +151,7 @@ const Strings={
 		message: 'Üzenet',
 		noProjectsInCategory: 'Ebben a kategóriában még nincs projekt.',
 		pageNotFound: 'Az oldal nem található.',
-		projectNotFound: 'A projekt nem található!',
+		projectNotFound: 'A projekt nem található.',
 		projects: 'Projektek',
 		projectsInfo:{
 			barbershopDescription: 'Egy budapesti borbélyüzlet teljes felújítása és kialakítása.',
