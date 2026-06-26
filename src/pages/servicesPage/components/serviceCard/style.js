@@ -12,11 +12,13 @@ const useStyles = {
 	},
 	imgMobile:{
 		width:'80%',
+		height:'auto',
 		borderRadius:'0.5em',
 
 	},
 	imgDesktop:{
 		width:'30em',
+		height:'auto',
 		borderRadius:'0.8em',
 	},
 	textColumnDesktop:{
