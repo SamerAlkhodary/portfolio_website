@@ -13,7 +13,7 @@ const ImageSection = ({project})=> {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});	
 	const Image = React.memo(function Image({style, src,folder,id }) {
-		return <img style={style} src={src} className="hero" onClick={()=>{
+		return <img style={style} src={src} loading='lazy' className="hero" onClick={()=>{
 			navigate(`
 				#f=${folder}&id=${id}`
 			);

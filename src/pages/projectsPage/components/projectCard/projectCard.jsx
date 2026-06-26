@@ -9,7 +9,7 @@ const ProjectCard = ({img,srcSet,title,onclick})=> {
 		query: '(min-width: 900px)'});	
 	return (
 		<div style={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile} onClick={onclick}>
-			<img srcSet={srcSet} style={classes.img} src={img} alt={title}/>
+			<img srcSet={srcSet} style={classes.img} src={img} loading='lazy' alt={title}/>
 			<Typography component='h3' style={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 				{title}
 			</Typography>
