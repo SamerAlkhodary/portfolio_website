@@ -15,7 +15,7 @@ const HeroPage = ({aboutRef},ref)=> {
 	return (
 		<div ref={ref} style={classes.container} >
 			<div style={isDesktopOrLaptop?classes.textsDesktop:classes.textsMobile}>
-				<Typography variant={isDesktopOrLaptop?'h4':'h5'} paragraph fontFamily={'Merriweather'} style={classes.h1}>
+				<Typography component='h1' variant={isDesktopOrLaptop?'h4':'h5'} paragraph fontFamily={'Merriweather'} style={classes.h1}>
 					{translate('heroTextTitle')}
 				</Typography>
 				<Typography  variant={isDesktopOrLaptop?'h5':'h6'} paragraph style={classes.h2} fontFamily={'Merriweather'}>

@@ -2,8 +2,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import { AppBar } from '@mui/material';
-import Slide from '@mui/material/Slide';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Logo from '../../res/images/vertical_logo.svg';
 import classes from './style';
@@ -81,19 +80,6 @@ function CustomAppBar({refs,heroRef}) {
 		ref.current.scrollIntoView();
     
 	};
-	const [scrollPosition, setScrollPosition] = useState(0);
-	const handleScroll = () => {
-		const position = window.scrollY;
-		setScrollPosition(position);
-	};
-	useEffect(() => {
-		window.addEventListener('scroll', handleScroll);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, [window]);
-
 	const appBarItems= useCallback(()=>{
 		if(isDesktopOrLaptop){
 			return(
@@ -130,19 +116,14 @@ function CustomAppBar({refs,heroRef}) {
 				</div>
 			);
 		}
-	},[isDesktopOrLaptop,scrollPosition,shouldShowMenu,language,setLanguage]);
+	},[isDesktopOrLaptop,shouldShowMenu,language,setLanguage]);
 
 	return (
-		<>
-			<Slide apear={'false'} direction="down" in={scrollPosition >= 0 }>
-				<AppBar position="fixed" style={classes.appBarHero} elevation={0}>
-					<Toolbar style={{padding:0}}>
-						{appBarItems()}
-					</Toolbar>
-				</AppBar>
-			</Slide>
-
-		</>
+		<AppBar position="fixed" style={classes.appBarHero} elevation={0}>
+			<Toolbar style={{padding:0}}>
+				{appBarItems()}
+			</Toolbar>
+		</AppBar>
 	);
 }
 export default CustomAppBar;

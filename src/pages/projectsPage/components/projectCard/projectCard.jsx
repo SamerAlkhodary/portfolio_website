@@ -10,7 +10,7 @@ const ProjectCard = ({img,srcSet,title,onclick})=> {
 	return (
 		<div style={isDesktopOrLaptop? classes.cardDesktop:classes.cardMobile} onClick={onclick}>
 			<img srcSet={srcSet} style={classes.img} src={img} alt={title}/>
-			<Typography style={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
+			<Typography component='h3' style={classes.txt} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 				{title}
 			</Typography>
 			

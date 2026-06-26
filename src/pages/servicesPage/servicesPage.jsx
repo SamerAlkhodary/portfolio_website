@@ -13,7 +13,7 @@ const ServicesPage = (props,ref)=> {
 		<div ref={ref} style={classes.servicesPage}>
 			<div style={classes.container}>
 
-				<Typography  style={classes.title} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
+				<Typography  component='h2' style={classes.title} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 					{translate('services')}
 				</Typography>
 				<div style={isDesktopOrLaptop?classes.serviceList:classes.serviceListMobile}>
