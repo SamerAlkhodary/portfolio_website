@@ -1,12 +1,17 @@
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import React from 'react';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
 import classes from './style.js';
 import { useMediaQuery } from 'react-responsive';
-//import StyledTextField from '../../components/styledTextField.js/styledTextField.js';
-//import Consts from '../../consts.js';
+import Consts from '../../consts.js';
+import info from '../../res/strings/info.js';
 import translate from '../../res/strings/strings.js';
+import useAnalytics from '../../utils/analytics.js';
+
 const ContactPage = (props,ref)=> {
-	
+	const {sendEvent} = useAnalytics();
+
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
@@ -14,60 +19,36 @@ const ContactPage = (props,ref)=> {
 			<Typography  component='h2' fontWeight='bold' style={classes.title}variant='h5' fontFamily={'Merriweather'}>
 				{translate('contactPageTitle')}
 			</Typography>
-			<div  style={isDesktopOrLaptop?classes.containerDesktop:classes.containerMobile} >
-				{
-					/*
-					<div style= {isDesktopOrLaptop?classes.formDesktop:classes.formMobile}>
-					
-						<StyledTextField
-							InputProps={{
-								style:{
-									color:'white'
-								}
-							}}
-							variant='standard'
-							placeholder={translate('yourName')}
-							margin='dense'
-						/>
-
-						<StyledTextField
-							InputProps={{
-								style:{
-									color:'white',
-								}
-							}}
-						
-							variant='standard'
-							placeholder={translate('yourEmail')}
-							margin='dense'
-
-						/>
-						<StyledTextField
-							InputProps={{
-								style:{
-									color:'white',
-								}
-							}}
-							variant='standard'
-							placeholder={translate('message')}
-							multiline={true}
-							margin='dense'
-
-							rows={4}
-						/>
-						<Button variant='filled' 
-							style={{backgroundColor:'#EEC283'}}>
-							<Typography fontFamily={'Merriweather'} fontSize={15} fontWeight={'bold'} color={Consts.theme.secondary}>
-								{translate('send')}
-							</Typography>
-						</Button>
-					</div> */
-				}
-	
+			<Typography style={classes.prompt} variant='body1' fontFamily={'Merriweather'}>
+				{translate('contactPrompt')}
+			</Typography>
+			<div style={isDesktopOrLaptop?classes.ctaRow:classes.ctaColumn}>
+				<Button
+					aria-label={`${translate('emailUs')}: ${info.email}`}
+					startIcon={<EmailIcon/>}
+					style={classes.primaryCta}
+					onClick={()=>{
+						window.open(`mailto:${info.email}`);
+						sendEvent({category:'contacts',action:'click',label:'email'});
+					}}>
+					<Typography fontFamily={'Merriweather'} fontWeight={'bold'} fontSize={'1em'} color={Consts.theme.secondary}>
+						{translate('emailUs')}
+					</Typography>
+				</Button>
+				<Button
+					aria-label={`${translate('callUs')}: ${info.number}`}
+					startIcon={<PhoneIcon/>}
+					style={classes.secondaryCta}
+					onClick={()=>{
+						window.open(`tel:${info.number}`);
+						sendEvent({category:'contacts',action:'click',label:'phone'});
+					}}>
+					<Typography fontFamily={'Merriweather'} fontWeight={'bold'} fontSize={'1em'} color={Consts.theme.primary}>
+						{translate('callUs')}
+					</Typography>
+				</Button>
 			</div>
 		</div>
-     
-
 	);
 };
 export default React.forwardRef(ContactPage);
