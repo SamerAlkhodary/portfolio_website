@@ -78,8 +78,8 @@ function CustomAppBar({refs,heroRef}) {
 	];
 
 	const itemPressed =(ref)=>{
-		ref.current.scrollIntoView();
-    
+		ref.current.scrollIntoView({ behavior: 'smooth' });
+
 	};
 	const appBarItems= useCallback(()=>{
 		if(isDesktopOrLaptop){
