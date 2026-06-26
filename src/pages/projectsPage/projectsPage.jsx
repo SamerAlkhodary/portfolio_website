@@ -6,7 +6,7 @@ import { ProjectCard } from './components';
 import classes from './style.js';
 import Consts from '../../consts.js';
 import useTranslate from '../../res/strings/strings.js';
-import projects, { CATEGORY_LABEL } from './expandedProjectPage/projects.js';
+import projects from './expandedProjectPage/projects.js';
 import useAnalytics from '../../utils/analytics.js';
 const ProjectsPage = (props,ref)=> {
 	const {sendEvent} = useAnalytics();
@@ -27,7 +27,8 @@ const ProjectsPage = (props,ref)=> {
 						img={`/assets/images/projects/${p.id}/hero_desktop.webp`}
 						srcSet={`/assets/images/projects/${p.id}/hero_mobile.webp 1500w, /assets/images/projects/${p.id}/hero_desktop.webp 1700w`}
 						title={translate(p.name, 'projectsInfo')}
-						meta={`${translate(CATEGORY_LABEL[p.category])} · ${p.location} · ${p.year}`}
+						meta={`${translate(p.type, 'projectsInfo')} · ${p.location} · ${p.year}`}
+						teaser={translate(p.description, 'projectsInfo')}
 						onclick={()=>{
 							sendEvent({ category: 'projects', action: 'click', label: p.type });
 							navigate(`/projects/${p.id}/`);
