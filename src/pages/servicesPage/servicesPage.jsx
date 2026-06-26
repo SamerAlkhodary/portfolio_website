@@ -3,10 +3,11 @@ import { Typography } from '@mui/material';
 import {  ServiceCard } from './components/index.js';
 import classes from './style.js';
 import { useMediaQuery } from 'react-responsive';
-import translate from '../../res/strings/strings.js';
+import useTranslate from '../../res/strings/strings.js';
 
 const ServicesPage = (props,ref)=> {
-	
+	const translate = useTranslate();
+
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (

@@ -8,12 +8,13 @@ import { useAtom } from 'jotai';
 import {  useSpring } from '@react-spring/web';
 import { languageAtom, showMenuAtom } from '../../atoms';
 import { Typography } from '@mui/material';
-import translate from '../../res/strings/strings';
+import useTranslate from '../../res/strings/strings';
 import useAnalytics from '../../utils/analytics';
 // eslint-disable-next-line react/prop-types
 function Menu({ customRefs}) {
 	const [language,setLanguage] = useAtom(languageAtom);
 	const {sendEvent} = useAnalytics();
+	const translate = useTranslate();
 
 	const itemPressed =(ref)=>{
 		ref.current.scrollIntoView();

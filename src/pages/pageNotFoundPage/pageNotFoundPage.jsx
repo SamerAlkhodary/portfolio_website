@@ -1,10 +1,11 @@
 import React from 'react';
 import  Typography  from '@mui/material/Typography';
 import classes from './style.js';
-import translate from '../../res/strings/strings.js';
+import useTranslate from '../../res/strings/strings.js';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 
 const PageNotFoundPage =()=> {
+	const translate = useTranslate();
 
 
 	return (
