@@ -6,6 +6,17 @@ import { FormControlLabel, FormGroup, Switch, Typography, alpha, styled,Link } f
 import { useNavigate } from 'react-router-dom';
 import useAnalytics from '../../utils/analytics';
 
+const AccentSwitch = styled(Switch)(({ theme }) => ({
+	'& .MuiSwitch-switchBase.Mui-checked': {
+		color: Consts.theme.accent,
+		'&:hover': {
+			backgroundColor: alpha( Consts.theme.accent, theme.palette.action.hoverOpacity),
+		},
+	},
+	'& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+		backgroundColor:Consts.theme.accent,
+	},
+}));
 
 // eslint-disable-next-line react/prop-types
 function CookieConsentModal() {
@@ -29,18 +40,6 @@ function CookieConsentModal() {
 			{label}
 		</Typography>;
 	};
-	const AccentSwitch = styled(Switch)(({ theme }) => ({
-		'& .MuiSwitch-switchBase.Mui-checked': {
-			color: Consts.theme.accent,
-			'&:hover': {
-				backgroundColor: alpha( Consts.theme.accent, theme.palette.action.hoverOpacity),
-			},
-		},
-		'& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
-			backgroundColor:Consts.theme.accent,
-		},
-	}));
-	
 	return (
 		<CookieConsent
 			style={classes.cookie}

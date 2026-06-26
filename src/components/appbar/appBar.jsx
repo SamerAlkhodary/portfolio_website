@@ -107,7 +107,7 @@ function CustomAppBar({refs,heroRef}) {
 		}else{
 			return(
 				<div style={classes.row}>
-					<IconButton aria-label={'Click this open hamburger menu'} onClick={()=>{itemPressed(heroRef);setShowMenu(false);}} style={{paddingLeft:0}}>
+					<IconButton aria-label={'Scroll to top'} onClick={()=>{itemPressed(heroRef);setShowMenu(false);}} style={{paddingLeft:0}}>
 						<img style={{ width:'9em',height:'2em' }} src={Logo}alt={'logo'}/>	
 					</IconButton>
 					<div style={{padding:'1em',backgroundColor:Consts.theme.secondary}}>

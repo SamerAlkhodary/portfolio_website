@@ -21,7 +21,7 @@ const ExpandedProjectPage = ()=> {
 		});
 		
 
-	}, [window]);
+	}, []);
 	const params = useParams();
 	const project = projects.find(p=>p.id==params.id);
 	return (

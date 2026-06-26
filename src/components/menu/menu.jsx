@@ -56,7 +56,13 @@ function Menu({ customRefs}) {
 
 	const renderItem=(text,Icon,onClick)=>{
 		return (
-			<li onClick={onClick} style={classes.menuItem} key={text}>
+			<li
+				onClick={onClick}
+				onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); onClick(); } }}
+				role='button'
+				tabIndex={0}
+				style={classes.menuItem}
+				key={text}>
 				<Typography style={classes.txt} variant='h6' fontFamily={'Merriweather'} fontWeight='bold'>
 					{text}
 				</Typography>
