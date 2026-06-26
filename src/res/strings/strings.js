@@ -4,7 +4,7 @@ import { languageAtom } from '../../atoms';
 const Strings={
 	'en-US':{
 		about: 'About',
-		aboutText: 'Palmyra-Építő Kft. is a Budapest-based general contractor. We take on house builds, apartment renovations, and commercial projects, and see each one through from the first plans to handover. Clear scope, realistic timelines, and work we stand behind.',
+		aboutText: 'We\'re Palmyra-Építő Kft., a general contracting firm in Budapest. We take on house builds, apartment renovations, and commercial projects, and see each one through from the first plans to handover. Clear scope, realistic timelines, and work we stand behind.',
 		after: 'After:',
 		apartments: 'Apartments',
 		baAfter: 'After',
@@ -88,7 +88,7 @@ const Strings={
 	},
 	'hu-HU': {
 		about: 'Rólunk',
-		aboutText: 'A Palmyra-Építő Kft. budapesti generálkivitelező. Házépítést, lakásfelújítást és üzleti beruházásokat vállalunk, és mindegyiket az első tervektől a kulcsrakész átadásig visszük végig. Átlátható feltételek, tartható határidők, és munka, amit utána is felvállalunk.',
+		aboutText: 'A Palmyra-Építő Kft. budapesti generálkivitelező cég. Házépítést, lakásfelújítást és üzleti beruházásokat vállalunk, és mindegyiket az első tervektől a kulcsrakész átadásig visszük végig. Átlátható feltételek, tartható határidők, és munka, amit utána is felvállalunk.',
 		after: 'Utána:',
 		apartments: 'Lakások',
 		baAfter: 'Utána',
