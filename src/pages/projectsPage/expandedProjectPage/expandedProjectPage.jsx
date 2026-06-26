@@ -7,7 +7,7 @@ import ImageSection from './components/ImagesSection.jsx';
 import { TitleSection, BeforeAfterSlider, MetaStrip, RelatedProjects, QuoteCta } from './components/index.js';
 import useTranslate from '../../../res/strings/strings.js';
 import FullScreenImage from './components/FullscreenImage.jsx';
-import { Footer } from '../../../components/index.js';
+import { Footer, StickyCallButton } from '../../../components/index.js';
 import CookieConsentModal from '../../../components/cookieConsentModal/CookieConsentModal.jsx';
 import PageNotFoundPage from '../../pageNotFoundPage/pageNotFoundPage.jsx';
 
@@ -61,6 +61,7 @@ const ExpandedProjectPage = ()=> {
 				</div>
 				<Footer edge></Footer>
 			</div>
+			<StickyCallButton/>
 		</>
 
 	);

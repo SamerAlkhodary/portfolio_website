@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
 import classes from './style.js';
 import Consts from '../../consts.js';
-import { CustomAppBar, Footer, Menu } from '../../components/index.js';
+import { CustomAppBar, Footer, Menu, StickyCallButton } from '../../components/index.js';
 import CookieConsentModal from '../../components/cookieConsentModal/CookieConsentModal.jsx';
 import { ProjectCard } from '../projectsPage/components';
 import projects, { CATEGORY_LABEL } from '../projectsPage/expandedProjectPage/projects.js';
@@ -69,6 +69,7 @@ const ProjectsListPage = ()=> {
 				}
 			</div>
 			<Footer edge/>
+			<StickyCallButton/>
 		</>
 	);
 };
