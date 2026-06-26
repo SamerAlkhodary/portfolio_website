@@ -57,7 +57,7 @@ const ExpandedProjectPage = ()=> {
 					}
 					<ImageSection project={project}/>
 					<RelatedProjects project={project}/>
-					<QuoteCta/>
+					<QuoteCta project={project}/>
 				</div>
 				<Footer edge></Footer>
 			</div>

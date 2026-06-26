@@ -100,7 +100,7 @@ const useStyles={
 		justifyContent:'center',
 		gap:'1.5em',
 		padding:'1.5em 1em',
-		borderBottom:`1px solid rgba(238, 194, 131, 0.25)`,
+		borderBottom:'1px solid rgba(238, 194, 131, 0.25)',
 	},
 	metaItem:{
 		display:'flex',
@@ -180,14 +180,20 @@ const useStyles={
 	},
 	ctaSection:{
 		display:'flex',
-		justifyContent:'center',
-		padding:'2em 1em 3em',
+		flexDirection:'column',
+		gap:'0.6em',
+		alignItems:'center',
+		textAlign:'center',
+		padding:'2.5em 1.5em 3.5em',
+		borderTop:'1px solid rgba(238, 194, 131, 0.25)',
 	},
-	ctaButton:{
-		backgroundColor:Consts.theme.accent,
-		padding:'0.8em 2em',
-		borderRadius:'2em',
-		textTransform:'none',
+	ctaTitle:{
+		color:'white',
+	},
+	ctaText:{
+		color:'white',
+		opacity:0.8,
+		maxWidth:'34em',
 	},
 };
 export default useStyles;

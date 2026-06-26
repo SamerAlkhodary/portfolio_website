@@ -1,30 +1,27 @@
 import React from 'react';
-import { Button, Typography } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import Consts from '../../../../consts.js';
+import { Typography } from '@mui/material';
+import { ContactActions } from '../../../../components/index.js';
 import useTranslate from '../../../../res/strings/strings.js';
-import useAnalytics from '../../../../utils/analytics.js';
 import classes from './style.js';
 
-// Converts a browsing visitor into a lead — sends them to the contact section
-// on the home page (which is a scroll target, not its own route).
-const QuoteCta = ()=> {
+// Closing call-to-action on a project page. Reuses the shared contact buttons,
+// pre-addressing the email with this project's name so enquiries have context.
+const QuoteCta = ({ project })=> {
 	const translate = useTranslate();
-	const navigate = useNavigate();
-	const { sendEvent } = useAnalytics();
+	const projectName = translate(project.name, 'projectsInfo');
 	return (
-		<div style={classes.ctaSection}>
-			<Button
-				style={classes.ctaButton}
-				onClick={()=>{
-					sendEvent({ category: 'projects', action: 'click', label: 'quote_cta' });
-					navigate('/#contact');
-				}}>
-				<Typography fontFamily={'Merriweather'} fontWeight='bold' fontSize={'1em'} color={Consts.theme.secondary}>
-					{translate('getQuoteLikeThis')}
-				</Typography>
-			</Button>
-		</div>
+		<section style={classes.ctaSection}>
+			<Typography component='h2' style={classes.ctaTitle} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
+				{translate('quoteCtaTitle')}
+			</Typography>
+			<Typography style={classes.ctaText} variant='body1' fontFamily={'Merriweather'}>
+				{translate('quoteCtaText')}
+			</Typography>
+			<ContactActions
+				subject={`${translate('quoteEmailSubject')} — ${projectName}`}
+				analytics={{ category: 'projects', emailLabel: 'quote_email', callLabel: 'quote_call' }}
+			/>
+		</section>
 	);
 };
 export default QuoteCta;
