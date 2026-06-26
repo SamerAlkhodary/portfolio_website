@@ -3,6 +3,7 @@ import AboutPage from './aboutPage/aboutPage';
 import ContactPage from './contactPage/contactPage';
 import ServicesPage from './servicesPage/servicesPage';
 import ProjectsPage from './projectsPage/projectsPage';
+import ProjectsListPage from './projectsListPage/projectsListPage';
 import ExtendedProjectPage from './projectsPage/expandedProjectPage/expandedProjectPage';
 import CookiePolicyPage from './cookiePage/cookiePolicyPage';
 import PageNotFoundPage from './pageNotFoundPage/pageNotFoundPage';
@@ -13,6 +14,7 @@ export {
 	ContactPage,
 	ServicesPage,
 	ProjectsPage,
+	ProjectsListPage,
 	ExtendedProjectPage,
 	CookiePolicyPage,
 	PageNotFoundPage,

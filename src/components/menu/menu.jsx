@@ -5,6 +5,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import CodeIcon from '@mui/icons-material/Code';
 import { animated } from 'react-spring';
 import { useAtom } from 'jotai';
+import { useNavigate } from 'react-router-dom';
 import {  useSpring } from '@react-spring/web';
 import { languageAtom, showMenuAtom } from '../../atoms';
 import { Typography } from '@mui/material';
@@ -15,9 +16,14 @@ function Menu({ customRefs}) {
 	const [language,setLanguage] = useAtom(languageAtom);
 	const {sendEvent} = useAnalytics();
 	const translate = useTranslate();
+	const navigate = useNavigate();
 
 	const itemPressed =(ref)=>{
-		ref.current.scrollIntoView({ behavior: 'smooth' });
+		if(ref && ref.current){
+			ref.current.scrollIntoView({ behavior: 'smooth' });
+		}else{
+			navigate('/');
+		}
 	};
 	const [showMenu,setShow] = useAtom(
 		showMenuAtom,

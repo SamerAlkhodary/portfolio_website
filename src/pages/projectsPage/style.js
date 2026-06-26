@@ -9,35 +9,29 @@ const useStyles ={
 		paddingRight:'1em',
 		display:'flex',
 		flexDirection:'column',
-		gap:'5em'
+		gap:'2em'
 	},
-	container:{
-		overflow: 'scroll',
-		overflowY: 'hidden',
+	grid:{
+		maxWidth:'1100px',
+		width:'100%',
+		alignSelf:'center',
+		display:'grid',
+		gridTemplateColumns:'repeat(auto-fill, minmax(260px, 1fr))',
+		gap:'1.5em',
 	},
-	projectList:{
-		display: 'flex',
-		flexDirection:'row',
-		justifyContent: 'space-around',
-		flex:1,
-		height:'100%'
-	},
-	projectListMobile:{
-		width:'40em',
-		display: 'flex',
-		flexDirection:'row',
-		flex:1,
-		gap:'20px',
-		height:'100%'
+	viewAll:{
+		alignSelf:'center',
+		backgroundColor:'transparent',
+		border:`2px solid ${Consts.theme.accent}`,
+		padding:'0.6em 2em',
 	},
 	title:{
 		alignSelf:'center',
-		paddingBottom: '1em',
 		color: Consts.theme.primary,
 		textAlign:'center',
 	}
 
-	
+
 };
 
 export default useStyles;
