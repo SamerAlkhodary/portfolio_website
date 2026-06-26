@@ -1,11 +1,12 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import translate from '../../../../res/strings/strings.js';
+import useTranslate from '../../../../res/strings/strings.js';
 import classes from './style.js';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonthOutlined';
 import PlaceIcon from '@mui/icons-material/PlaceOutlined';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 const TitleSection = ({project})=> {
+	const translate = useTranslate();
 	const Image = React.memo(function Image({style,srcSet, src }) {
 		return <img style={style}srcSet={srcSet} src={src} className="hero" />;
 	});

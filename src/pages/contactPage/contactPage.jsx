@@ -6,11 +6,12 @@ import classes from './style.js';
 import { useMediaQuery } from 'react-responsive';
 import Consts from '../../consts.js';
 import info from '../../res/strings/info.js';
-import translate from '../../res/strings/strings.js';
+import useTranslate from '../../res/strings/strings.js';
 import useAnalytics from '../../utils/analytics.js';
 
 const ContactPage = (props,ref)=> {
 	const {sendEvent} = useAnalytics();
+	const translate = useTranslate();
 
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});

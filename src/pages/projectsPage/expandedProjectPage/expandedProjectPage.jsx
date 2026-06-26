@@ -4,7 +4,7 @@ import classes from './style.js';
 import {useParams} from 'react-router-dom';
 import ImageSection from './components/ImagesSection.jsx';
 import { TitleSection } from './components/index.js';
-import translate from '../../../res/strings/strings.js';
+import useTranslate from '../../../res/strings/strings.js';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import { Typography } from '@mui/material';
 import FullScreenImage from './components/FullscreenImage.jsx';
@@ -12,6 +12,7 @@ import { Footer } from '../../../components/index.js';
 import CookieConsentModal from '../../../components/cookieConsentModal/CookieConsentModal.jsx';
 
 const ExpandedProjectPage = ()=> {
+	const translate = useTranslate();
 
 	useEffect(() => {
 		window.scrollTo({

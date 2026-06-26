@@ -4,7 +4,7 @@ import Logo from '../../res/images/vertical_logo.svg';
 import { IconButton, Link, Typography } from '@mui/material';
 import info from '../../res/strings/info';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import translate from '../../res/strings/strings';
+import useTranslate from '../../res/strings/strings';
 import { useMediaQuery } from 'react-responsive';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import useAnalytics from '../../utils/analytics';
@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 function Footer({edge}) {
 	const {sendEvent} = useAnalytics();
 	const navigate = useNavigate();
+	const translate = useTranslate();
 
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});

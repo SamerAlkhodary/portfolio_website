@@ -2,9 +2,10 @@ import React from 'react';
 import  Typography  from '@mui/material/Typography';
 import classes from './style.js';
 import { useMediaQuery } from 'react-responsive';
-import translate from '../../res/strings/strings.js';
+import useTranslate from '../../res/strings/strings.js';
 
 const AboutPage =(props,ref)=> {
+	const translate = useTranslate();
 
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});

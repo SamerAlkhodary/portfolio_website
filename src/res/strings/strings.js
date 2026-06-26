@@ -94,9 +94,11 @@ const Strings={
 	}
 };
 Object.freeze(Strings);
-function translate(value,section){
+function useTranslate(){
 	const [language,] = useAtom(languageAtom);
-	const result = section? Strings[language][section][value]:  Strings[language][value];
-	return result??value;
+	return (value,section)=>{
+		const result = section? Strings[language][section][value]:  Strings[language][value];
+		return result??value;
+	};
 }
-export default translate;
+export default useTranslate;

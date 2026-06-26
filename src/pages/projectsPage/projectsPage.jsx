@@ -4,11 +4,12 @@ import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
 import { ProjectCard } from './components';
 import classes from './style.js';
-import translate from '../../res/strings/strings.js';
+import useTranslate from '../../res/strings/strings.js';
 import projects from './expandedProjectPage/projects.js';
 import useAnalytics from '../../utils/analytics.js';
 const ProjectsPage = (props,ref)=> {
 	const {sendEvent} = useAnalytics();
+	const translate = useTranslate();
 
 	const navigate = useNavigate();
 	const projectCards = projects.map(p=>{

@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import React, { useCallback }  from 'react';
 import { useMediaQuery } from 'react-responsive';
-import translate from '../../../../res/strings/strings';
+import useTranslate from '../../../../res/strings/strings';
 import classes from './style.js';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const ImageSection = ({project})=> {
 
 	const navigate = useNavigate();
+	const translate = useTranslate();
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});	
 	const Image = React.memo(function Image({style, src,folder,id }) {
