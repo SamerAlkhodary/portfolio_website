@@ -9,6 +9,11 @@ const useStyles = {
 		overflow:'hidden',
 		backgroundColor:Consts.theme.secondary,
 		boxShadow:'0 4px 12px rgba(0, 0, 0, 0.35)',
+		transition:'transform 0.3s ease, box-shadow 0.3s ease',
+	},
+	cardActive:{
+		transform:'translateY(-4px)',
+		boxShadow:'0 10px 24px rgba(0, 0, 0, 0.45)',
 	},
 	img:{
 		width:'100%',
@@ -17,6 +22,9 @@ const useStyles = {
 		display:'block',
 		filter:'brightness(0.7)',
 		transition:'transform 0.3s ease',
+	},
+	imgActive:{
+		transform:'scale(1.05)',
 	},
 	overlay:{
 		position:'absolute',
@@ -35,6 +43,14 @@ const useStyles = {
 	},
 	meta:{
 		color:Consts.theme.accent,
+	},
+	teaser:{
+		color:Consts.theme.primary,
+		opacity:0.85,
+		display:'-webkit-box',
+		WebkitLineClamp:1,
+		WebkitBoxOrient:'vertical',
+		overflow:'hidden',
 	},
 };
 

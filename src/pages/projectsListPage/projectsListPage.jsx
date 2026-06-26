@@ -60,7 +60,8 @@ const ProjectsListPage = ()=> {
 								img={`/assets/images/projects/${p.id}/hero_desktop.webp`}
 								srcSet={`/assets/images/projects/${p.id}/hero_mobile.webp 1500w, /assets/images/projects/${p.id}/hero_desktop.webp 1700w`}
 								title={translate(p.name, 'projectsInfo')}
-								meta={`${translate(CATEGORY_LABEL[p.category])} · ${p.location} · ${p.year}`}
+								meta={`${translate(p.type, 'projectsInfo')} · ${p.location} · ${p.year}`}
+								teaser={translate(p.description, 'projectsInfo')}
 								onclick={()=>{ sendEvent({ category: 'projects', action: 'click', label: p.type }); navigate(`/projects/${p.id}/`); }}
 							/>
 						))}
