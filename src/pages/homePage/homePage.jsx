@@ -1,7 +1,7 @@
 import React,{useRef} from 'react';
 import classes from './style.js';
 import CookieConsentModal from '../../components/cookieConsentModal/CookieConsentModal.jsx';
-import { CustomAppBar, Footer, Menu } from '../../components/index.js';
+import { CustomAppBar, Footer, Menu, StickyCallButton } from '../../components/index.js';
 import HeroPage from '../heroPage/heroPage.jsx';
 import AboutPage from '../aboutPage/aboutPage.jsx';
 import ServicesPage from '../servicesPage/servicesPage.jsx';
@@ -29,7 +29,8 @@ const HomePage =()=> {
 				<ProjectsPage ref={projectsRef} />
 				<ContactPage ref={contactRef} />
 				<Footer></Footer>
-			</div>	
+			</div>
+			<StickyCallButton hideRefs={[contactRef]}/>
 		</div>
 	);
 
