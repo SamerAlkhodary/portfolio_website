@@ -31,7 +31,7 @@ const HomePage =()=> {
 				<ContactPage ref={contactRef} />
 				<Footer></Footer>
 			</div>
-			<StickyCallButton hideRef={contactRef}/>
+			<StickyCallButton hideRefs={[contactRef]}/>
 		</div>
 	);
 

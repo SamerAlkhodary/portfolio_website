@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Typography } from '@mui/material';
 import projects from './projects.js';
 import classes from './style.js';
@@ -13,6 +13,8 @@ import PageNotFoundPage from '../../pageNotFoundPage/pageNotFoundPage.jsx';
 
 const ExpandedProjectPage = ()=> {
 	const translate = useTranslate();
+	const ctaRef = useRef(null);
+	const footerRef = useRef(null);
 
 	useEffect(() => {
 		window.scrollTo({
@@ -57,11 +59,15 @@ const ExpandedProjectPage = ()=> {
 					}
 					<ImageSection project={project}/>
 					<RelatedProjects project={project}/>
-					<QuoteCta project={project}/>
+					<div ref={ctaRef}>
+						<QuoteCta project={project}/>
+					</div>
 				</div>
-				<Footer edge></Footer>
+				<div ref={footerRef}>
+					<Footer edge></Footer>
+				</div>
 			</div>
-			<StickyCallButton/>
+			<StickyCallButton hideRefs={[ctaRef, footerRef]}/>
 		</>
 
 	);

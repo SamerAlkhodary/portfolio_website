@@ -18,6 +18,7 @@ const ProjectsListPage = ()=> {
 	const navigate = useNavigate();
 	const { sendEvent } = useAnalytics();
 	const nullRef = useRef(null);
+	const footerRef = useRef(null);
 	const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 900px)' });
 	const [category, setCategory] = useState('all');
 
@@ -68,8 +69,10 @@ const ProjectsListPage = ()=> {
 					</div>
 				}
 			</div>
-			<Footer edge/>
-			<StickyCallButton/>
+			<div ref={footerRef}>
+				<Footer edge/>
+			</div>
+			<StickyCallButton hideRefs={[footerRef]}/>
 		</>
 	);
 };

@@ -7,25 +7,29 @@ import useTranslate from '../../res/strings/strings.js';
 import useAnalytics from '../../utils/analytics.js';
 import classes from './style.js';
 
-// Floating call button for mobile. When `hideRef` is given (the contact section),
-// it disappears while that section is on screen so it doesn't duplicate the
-// contact CTAs sitting right there.
-const StickyCallButton = ({ hideRef })=> {
+// Floating call button for mobile. Given `hideRefs` (contact section, footer,
+// or an on-page contact CTA), it disappears while any of them is on screen so it
+// doesn't duplicate the contact options sitting right there.
+const StickyCallButton = ({ hideRefs = [] })=> {
 	const translate = useTranslate();
 	const { sendEvent } = useAnalytics();
 	const isMobile = useMediaQuery({ query: '(max-width: 899px)' });
 	const [nearContact, setNearContact] = useState(false);
 
 	useEffect(()=>{
-		const el = hideRef?.current;
-		if(!el) return;
+		const els = hideRefs.map(r => r?.current).filter(Boolean);
+		if(els.length === 0) return;
+		const visible = new Set();
 		const observer = new IntersectionObserver(
-			([entry]) => setNearContact(entry.isIntersecting),
+			(entries)=>{
+				entries.forEach(e => e.isIntersecting ? visible.add(e.target) : visible.delete(e.target));
+				setNearContact(visible.size > 0);
+			},
 			{ rootMargin: '0px 0px -15% 0px' }
 		);
-		observer.observe(el);
+		els.forEach(el => observer.observe(el));
 		return ()=> observer.disconnect();
-	}, [hideRef]);
+	}, [hideRefs]);
 
 	if(!isMobile || nearContact) return null;
 
