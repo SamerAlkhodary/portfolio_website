@@ -1,7 +1,7 @@
 import React,{useRef} from 'react';
 import classes from './style.js';
 import CookieConsentModal from '../../components/cookieConsentModal/CookieConsentModal.jsx';
-import { CustomAppBar, Footer, Menu, SectionCta, StickyCallButton } from '../../components/index.js';
+import { CustomAppBar, Footer, Menu, StickyCallButton } from '../../components/index.js';
 import HeroPage from '../heroPage/heroPage.jsx';
 import AboutPage from '../aboutPage/aboutPage.jsx';
 import ServicesPage from '../servicesPage/servicesPage.jsx';
@@ -26,7 +26,6 @@ const HomePage =()=> {
 				<HeroPage ref={heroRef} aboutRef={aboutRef}/>
 				<AboutPage ref={aboutRef} />
 				<ServicesPage ref={servicesRef}/>
-				<SectionCta/>
 				<ProjectsPage ref={projectsRef} />
 				<ContactPage ref={contactRef} />
 				<Footer></Footer>
