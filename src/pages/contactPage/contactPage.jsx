@@ -16,7 +16,7 @@ const ContactPage = (props,ref)=> {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
-		<div ref={ref} style={classes.contactPage}>
+		<div ref={ref} id='contact' style={classes.contactPage}>
 			<Typography  component='h2' fontWeight='bold' style={classes.title}variant='h5' fontFamily={'Merriweather'}>
 				{translate('contactPageTitle')}
 			</Typography>

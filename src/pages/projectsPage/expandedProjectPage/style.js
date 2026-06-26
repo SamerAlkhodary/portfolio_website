@@ -10,6 +10,12 @@ const useStyles = {
 		textAlign: 'center',
 		color: 'white',
 	},
+	sectionTitle: {
+		color: 'white',
+		paddingLeft: '0.7em',
+		paddingTop: '1em',
+		paddingBottom: '0.3em',
+	},
 	pageNotfound:{
 		flex:1,
 		justifyContent:'center',

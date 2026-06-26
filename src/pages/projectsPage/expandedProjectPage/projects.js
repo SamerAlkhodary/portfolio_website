@@ -6,6 +6,7 @@ const projects =[
 		featured: true,
 		year: '2024',
 		startDate: '2024',
+		duration: '', // optional, e.g. '3 months' — shown in the detail metadata strip when set
 		location: 'Budapest',
 		type: 'midoType',
 		beforeImageCount:4,
@@ -19,6 +20,7 @@ const projects =[
 		featured: true,
 		year: '2024',
 		startDate: '2024',
+		duration: '',
 		location: 'Budapest',
 		type: 'barbershopType',
 		beforeImageCount:0,
