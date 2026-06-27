@@ -22,6 +22,8 @@ const RevealImage = ({ projectId, area })=> {
 	const posRef = useRef(50);
 	const pendingRef = useRef(50);
 	const frameRef = useRef(0);
+	const startRef = useRef({ x: 0, y: 0 });
+	const activeRef = useRef(false); // true once we've decided this gesture is a seam drag
 	const [ariaPos, setAriaPos] = useState(50);
 
 	const src = (slot)=> areaImage(projectId, area, slot);
@@ -48,16 +50,39 @@ const RevealImage = ({ projectId, area })=> {
 
 	const onPointerDown = (e)=>{
 		e.currentTarget.setPointerCapture(e.pointerId);
-		figureRef.current?.classList.add('dragging');
-		scheduleFromClientX(e.clientX);
+		startRef.current = { x: e.clientX, y: e.clientY };
+		// Mouse can't scroll the page by dragging, so start comparing immediately
+		// (preserves click-to-set on desktop). Touch waits to see the intent.
+		if (e.pointerType === 'mouse') {
+			activeRef.current = true;
+			figureRef.current?.classList.add('dragging');
+			scheduleFromClientX(e.clientX);
+		} else {
+			activeRef.current = false;
+		}
 	};
 	const onPointerMove = (e)=>{
 		if(e.buttons !== 1) return;
+		if (!activeRef.current) {
+			// Decide once: a mostly-horizontal drag controls the seam; a mostly-
+			// vertical one is a page scroll, so we bow out and let touch-action: pan-y
+			// scroll the page. This is why touching the image no longer hijacks scroll.
+			const dx = Math.abs(e.clientX - startRef.current.x);
+			const dy = Math.abs(e.clientY - startRef.current.y);
+			if (dx < 8 && dy < 8) return;     // not enough movement to tell yet
+			if (dy > dx) {                     // vertical → let the page scroll
+				try { e.currentTarget.releasePointerCapture(e.pointerId); } catch { /* not captured */ }
+				return;
+			}
+			activeRef.current = true;          // horizontal → start dragging the seam
+			figureRef.current?.classList.add('dragging');
+		}
 		scheduleFromClientX(e.clientX);
 	};
 	const endDrag = ()=>{
+		if (activeRef.current) setAriaPos(Math.round(posRef.current)); // sync aria once
+		activeRef.current = false;
 		figureRef.current?.classList.remove('dragging');
-		setAriaPos(Math.round(posRef.current)); // sync aria once, after the gesture
 	};
 	const onKeyDown = (e)=>{
 		if(e.key === 'ArrowLeft'){ e.preventDefault(); const p = Math.max(0, posRef.current - 5); paint(p); setAriaPos(Math.round(p)); }
