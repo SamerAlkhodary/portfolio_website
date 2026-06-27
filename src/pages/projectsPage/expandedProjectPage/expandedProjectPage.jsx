@@ -1,10 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { Typography } from '@mui/material';
 import projects from './projects.js';
 import classes from './style.js';
-import {useParams} from 'react-router-dom';
-import ImageSection from './components/ImagesSection.jsx';
-import { TitleSection, BeforeAfterSlider, MetaStrip, RelatedProjects, QuoteCta } from './components/index.js';
+import { useParams } from 'react-router-dom';
+import { TitleSection, WorkSection, Gallery, RelatedProjects, QuoteCta } from './components/index.js';
 import useTranslate from '../../../res/strings/strings.js';
 import FullScreenImage from './components/FullscreenImage.jsx';
 import { Footer, StickyCallButton } from '../../../components/index.js';
@@ -17,16 +15,11 @@ const ExpandedProjectPage = ()=> {
 	const footerRef = useRef(null);
 
 	useEffect(() => {
-		window.scrollTo({
-			top:0,
-			behavior:'instant'
-		});
-		
-
+		window.scrollTo({ top: 0, behavior: 'instant' });
 	}, []);
+
 	const params = useParams();
 	const project = projects.find(p=>p.id==params.id);
-	const hasBeforeAfter = project && project.beforeImageCount > 0 && project.afterImageCount > 0;
 
 	if(!project){
 		return (
@@ -45,19 +38,8 @@ const ExpandedProjectPage = ()=> {
 				<div style={{position:'relative'}}>
 					<FullScreenImage/>
 					<TitleSection project={project}/>
-					<MetaStrip project={project}/>
-					{hasBeforeAfter &&
-						<>
-							<Typography variant={'h5'} fontFamily={'Merriweather'} style={classes.sectionTitle}>
-								{translate('beforeAfterTitle')}
-							</Typography>
-							<BeforeAfterSlider
-								beforeSrc={`/assets/images/projects/${project.id}/before/1.webp`}
-								afterSrc={`/assets/images/projects/${project.id}/after/1.webp`}
-							/>
-						</>
-					}
-					<ImageSection project={project}/>
+					<WorkSection project={project}/>
+					<Gallery project={project}/>
 					<RelatedProjects project={project}/>
 					<div ref={ctaRef}>
 						<QuoteCta project={project}/>

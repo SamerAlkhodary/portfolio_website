@@ -1,58 +1,50 @@
 import { Typography } from '@mui/material';
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import useTranslate from '../../../../res/strings/strings.js';
-import classes from './style.js';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonthOutlined';
-import PlaceIcon from '@mui/icons-material/PlaceOutlined';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-const TitleSection = ({project})=> {
+import classes from '../style.js';
+
+// Full-bleed hero: the strongest finished shot fills the frame, the name and a
+// single Space Grotesk spec line sit on a bottom scrim. The eyebrow carries the
+// facts that used to live in a separate meta strip (type · location · year).
+const TitleSection = ({ project })=> {
 	const translate = useTranslate();
-	const Image = React.memo(function Image({style,srcSet, src }) {
-		return <img style={style}srcSet={srcSet} src={src} className="hero" />;
-	});
+	const isDesktop = useMediaQuery({ query: '(min-width: 900px)' });
+
+	const facts = [
+		translate(project.type, 'projectsInfo'),
+		project.location,
+		project.duration || project.year,
+	].filter(Boolean);
+
 	return (
-		<div  style={classes.container} >
-			<Image style={classes.hero} 
+		<header style={classes.hero}>
+			<img
+				style={classes.heroImg}
 				src={`/assets/images/projects/${project.id}/hero_desktop.webp`}
 				srcSet={`/assets/images/projects/${project.id}/hero_mobile.webp 1500w, /assets/images/projects/${project.id}/hero_desktop.webp 1700w`}
-
-			/>
-			<div style={classes.info}>
-				<div style={classes.texts}>
-					<Typography variant={'h5'}  fontFamily={'Merriweather'} fontWeight='bold' style={classes.h1}>
-						{translate(project.name,'projectsInfo')}
+				alt={translate(project.name, 'projectsInfo')}/>
+			<div style={classes.heroScrim}/>
+			<div style={classes.heroContent}>
+				<div style={classes.heroInner}>
+					<Typography style={classes.heroEyebrow} component='p'>
+						{facts.join('  ·  ')}
 					</Typography>
-					<Typography  variant={'h6'} paragraph style={classes.h2} fontFamily={'Merriweather'}>
-						{translate(project.description,'projectsInfo')}
+					<Typography
+						style={classes.heroTitle}
+						variant={isDesktop ? 'h2' : 'h3'}
+						fontFamily={'Merriweather'}
+						fontWeight='bold'
+						component='h1'>
+						{translate(project.name, 'projectsInfo')}
+					</Typography>
+					<Typography style={classes.heroDesc} variant='body1' fontFamily={'Merriweather'}>
+						{translate(project.description, 'projectsInfo')}
 					</Typography>
 				</div>
-				<div style={classes.iconRow}>
-					<div style={classes.iconItem}>
-						<InfoOutlinedIcon  sx={{ fontSize: 30,color:'white',alignSelf:'center' }}></InfoOutlinedIcon>
-						<Typography variant={'h7'}  fontFamily={'Merriweather'}  style={classes.h1}>
-							{translate(project.type,'projectsInfo')}
-						</Typography>
-					</div>
-					<div style={classes.iconItem}>
-						<PlaceIcon  sx={{ fontSize: 30,color:'white',alignSelf:'center' }}></PlaceIcon>
-						<Typography variant={'h7'}  fontFamily={'Merriweather'}  style={classes.h1}>
-							{translate(project.location,'projectsInfo')}
-						</Typography>
-					</div>
-					<div style={classes.iconItem}>
-						<CalendarMonthIcon  sx={{ fontSize: 30,color:'white',alignSelf:'center' }}></CalendarMonthIcon>
-						<Typography variant={'h7'}  fontFamily={'Merriweather'}  style={classes.h1}>
-							{translate(project.startDate,'projectsInfo')}
-						</Typography>
-					</div>
-					
-				</div>
-					
 			</div>
-			
-		</div>
-			
+		</header>
 	);
-
 };
+
 export default TitleSection;

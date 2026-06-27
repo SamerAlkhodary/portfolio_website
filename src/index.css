@@ -32,6 +32,40 @@ code {
   cursor: pointer;
 }
 
+/* --- Project detail "Reveal" --- */
+/* The before/after seam animates on keyboard step; drag stays instant. */
+.reveal-clip,
+.reveal-seam {
+  transition: clip-path 0.18s ease, left 0.18s ease;
+}
+/* While dragging we drive clip-path/left straight from JS, one paint per frame,
+   so kill the transition (:active is unreliable on touch) and hint the GPU. */
+.reveal-figure.dragging .reveal-clip,
+.reveal-figure.dragging .reveal-seam {
+  transition: none;
+  will-change: clip-path, left;
+}
+/* Gallery / work images lift slightly on hover as an affordance. */
+.detail-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+.detail-img-zoom:hover .detail-img {
+  transform: scale(1.03);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-clip,
+  .reveal-seam,
+  .detail-img {
+    transition: none;
+  }
+  .detail-img-zoom:hover .detail-img {
+    transform: none;
+  }
+}
+
 /* Visible keyboard focus for all interactive elements */
 button:focus-visible,
 a:focus-visible,
