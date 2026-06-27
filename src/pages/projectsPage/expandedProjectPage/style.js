@@ -1,9 +1,12 @@
+import Consts from '../../../consts.js';
+
 // Design tokens for the project detail page ("The Reveal").
-// Warm near-black so the gold reads as brass, not neon.
+// Background matches the site theme so the page reads as one surface; the gold
+// still carries the brass feel against it.
 const T = {
-	bg: '#1b1a18',
+	bg: Consts.theme.secondary,
 	panel: '#262421',
-	gold: '#EEC283',
+	gold: Consts.theme.accent,
 	light: '#F4F1EA',
 	muted: '#9a958c',
 	line: 'rgba(244,241,234,0.14)',
@@ -55,7 +58,7 @@ const useStyles = {
 		position: 'absolute',
 		inset: 0,
 		background:
-			'linear-gradient(180deg, rgba(27,26,24,0.10) 0%, rgba(27,26,24,0.04) 36%, rgba(27,26,24,0.80) 84%, rgba(27,26,24,0.97) 100%)',
+			'linear-gradient(180deg, rgba(36,36,36,0.10) 0%, rgba(36,36,36,0.04) 36%, rgba(36,36,36,0.80) 84%, rgba(36,36,36,0.97) 100%)',
 	},
 	heroContent: {
 		position: 'absolute',
