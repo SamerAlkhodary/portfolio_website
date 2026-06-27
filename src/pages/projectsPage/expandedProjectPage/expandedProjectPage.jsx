@@ -14,12 +14,16 @@ const ExpandedProjectPage = ()=> {
 	const ctaRef = useRef(null);
 	const footerRef = useRef(null);
 
-	useEffect(() => {
-		window.scrollTo({ top: 0, behavior: 'instant' });
-	}, []);
-
 	const params = useParams();
 	const project = projects.find(p=>p.id==params.id);
+
+	// Scroll to top whenever the project changes. Navigating between projects
+	// reuses this component (only :id changes), so this must depend on params.id
+	// — an empty-deps effect fires only on first mount and leaves you at the
+	// bottom after tapping a related project.
+	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: 'instant' });
+	}, [params.id]);
 
 	if(!project){
 		return (
