@@ -159,7 +159,7 @@ const useStyles = {
 		background: T.panel,
 		cursor: 'ew-resize',
 		userSelect: 'none',
-		touchAction: 'none',
+		touchAction: 'pan-y', // allow vertical page scroll; horizontal drag moves the seam
 		boxShadow: '0 26px 60px -30px rgba(0,0,0,0.75)',
 	},
 	revealImg: {
