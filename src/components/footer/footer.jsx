@@ -19,7 +19,7 @@ function Footer({edge}) {
 	const isDesktopOrLaptop = useMediaQuery({
 		query: '(min-width: 900px)'});
 	return (
-		<div style={{...isDesktopOrLaptop?classes.footerDesktop:classes.footerMobile,borderTop: edge?'3px solid black':'',		}}>
+		<div style={{...isDesktopOrLaptop?classes.footerDesktop:classes.footerMobile,borderTop: edge?'1px solid rgba(238, 194, 131, 0.25)':'',		}}>
 			<img style={{ height: 70, width: 200 }} width={200} height={70} loading='lazy' src={Logo} alt={'logo'}/>
 			<div style={classes.contact}>
 				<Typography variant={'h6'} fontFamily={'Merriweather'}  style={classes.h1}>
