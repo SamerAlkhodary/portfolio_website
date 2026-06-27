@@ -53,6 +53,11 @@ function Footer({edge}) {
 						info.number
 					}
 				</Link>
+				{info.address && (
+					<Typography variant='body1' style={classes.link}>
+						{info.address}
+					</Typography>
+				)}
 			</div>
 			<div style={classes.socialMedia}>
 				<Typography variant={'h6'} fontFamily={'Merriweather'}  style={classes.h1}>

@@ -3,6 +3,7 @@ import { Typography } from '@mui/material';
 import classes from './style.js';
 import { ContactActions } from '../../components/index.js';
 import useTranslate from '../../res/strings/strings.js';
+import info from '../../res/strings/info.js';
 
 const ContactPage = (props,ref)=> {
 	const translate = useTranslate();
@@ -15,6 +16,11 @@ const ContactPage = (props,ref)=> {
 			<Typography style={classes.prompt} variant='body1' fontFamily={'Merriweather'}>
 				{translate('contactPrompt')}
 			</Typography>
+			{info.address && (
+				<Typography style={classes.prompt} variant='body1' fontFamily={'Merriweather'}>
+					{info.address}
+				</Typography>
+			)}
 			<ContactActions/>
 		</div>
 	);
