@@ -42,6 +42,9 @@ const WorkSection = ({ project })=> {
 							style={{
 								...classes.storyRow,
 								flexDirection: isDesktop ? (i % 2 ? 'row-reverse' : 'row') : 'column',
+								// Center the text beside the image on desktop; left-align it
+								// under the image on mobile so it lines up with everything else.
+								alignItems: isDesktop ? 'center' : 'stretch',
 							}}>
 							<div style={classes.revealHold}>
 								<RevealImage projectId={project.id} area={area.name}/>
