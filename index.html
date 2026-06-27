@@ -10,6 +10,11 @@
     />
     <link rel="canonical" href="https://palmyraepito.com/" />
 
+    <!-- hreflang: one SPA URL serves both languages (toggled client-side) -->
+    <link rel="alternate" hreflang="hu" href="https://palmyraepito.com/" />
+    <link rel="alternate" hreflang="en" href="https://palmyraepito.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://palmyraepito.com/" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Palmyra-Építő Kft." />
@@ -55,6 +60,26 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Palmyra-Építő Kft. – Generál kivitelezés Budapesten</title>
+
+    <!-- Structured data: identifies the business to Google + AI search. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+        "name": "Palmyra-Építő Kft.",
+        "description": "Budapest-based general contractor — house builds, apartment and commercial renovation, and technical consultation, from planning to handover.",
+        "url": "https://palmyraepito.com/",
+        "image": "https://palmyraepito.com/assets/images/og-image.jpg",
+        "email": "info@palmyraepito.com",
+        "telephone": "+36306951211",
+        "priceRange": "$$",
+        "areaServed": { "@type": "City", "name": "Budapest" },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61560474534629",
+          "https://www.instagram.com/palmyra_epito"
+        ]
+      }
+    </script>
   </head>
   <script type="module" src="/src/index.jsx"></script>
   <body>

@@ -1,6 +1,8 @@
 import React, { useEffect} from 'react';
+import { useAtom } from 'jotai';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
+import { languageAtom } from './atoms';
 import Consts from './consts.js';
 import useAnalytics from './utils/analytics.js';
 import PageNotFoundPage from './pages/pageNotFoundPage/pageNotFoundPage.jsx';
@@ -8,6 +10,15 @@ import {HomePage,CookiePolicyPage,ExtendedProjectPage,ProjectsListPage} from './
 
 function App() {
 	const {getConsentObject,enableTracking,clearTracking} = useAnalytics();
+	const [language] = useAtom(languageAtom);
+
+	// Keep <html lang> in sync with the chosen language so screen readers pick
+	// the right voice and crawlers read the correct content language. index.html
+	// ships lang="hu"; this updates it when the user switches to English.
+	useEffect(()=>{
+		document.documentElement.lang = language === 'en-US' ? 'en' : 'hu';
+	},[language]);
+
 	useEffect(()=>{
 		if(Consts.config.enableAnalytics === true){
 			const consentObject= getConsentObject();
