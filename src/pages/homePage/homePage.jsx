@@ -4,6 +4,7 @@ import CookieConsentModal from '../../components/cookieConsentModal/CookieConsen
 import { CustomAppBar, Footer, Menu, StickyCallButton } from '../../components/index.js';
 import HeroPage from '../heroPage/heroPage.jsx';
 import AboutPage from '../aboutPage/aboutPage.jsx';
+import StatsBandPage from '../statsBandPage/statsBandPage.jsx';
 import ServicesPage from '../servicesPage/servicesPage.jsx';
 import ProjectsPage from '../projectsPage/projectsPage.jsx';
 import ContactPage from '../contactPage/contactPage.jsx';
@@ -25,6 +26,7 @@ const HomePage =()=> {
 			<div style={classes.body}>
 				<HeroPage ref={heroRef} aboutRef={aboutRef}/>
 				<AboutPage ref={aboutRef} />
+				<StatsBandPage/>
 				<ServicesPage ref={servicesRef}/>
 				<ProjectsPage ref={projectsRef} />
 				<ContactPage ref={contactRef} />

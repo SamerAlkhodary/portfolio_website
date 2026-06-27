@@ -29,6 +29,7 @@ const projects = [
 		startDate: '2024',
 		duration: '', // optional, e.g. '3 months' — shown in the hero eyebrow when set
 		location: 'Budapest',
+		area: 170, // m² — shown in the hero eyebrow. TODO(owner): confirm real figure.
 		type: 'midoType',
 		areas: [
 			{ name: 'counter', caption: 'counterCaption', before: true },
@@ -48,6 +49,7 @@ const projects = [
 		startDate: '2024',
 		duration: '',
 		location: 'Budapest',
+		area: 120, // m² — shown in the hero eyebrow. TODO(owner): confirm real figure.
 		type: 'barbershopType',
 		stages: [
 			{ caption: 'stageEmptyCaption', folder: 'progress', id: 1 },
