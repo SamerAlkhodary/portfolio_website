@@ -15,6 +15,7 @@ const TitleSection = ({ project })=> {
 		translate(project.type, 'projectsInfo'),
 		project.location,
 		project.duration || project.year,
+		project.area ? `${project.area} m²` : null,
 	].filter(Boolean);
 
 	return (
