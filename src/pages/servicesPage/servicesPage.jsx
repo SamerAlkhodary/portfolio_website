@@ -1,35 +1,50 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import {  ServiceCard, ServiceProcess } from './components/index.js';
+import ApartmentIcon from '@mui/icons-material/Apartment';
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
+import HouseIcon from '@mui/icons-material/House';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import { ServiceProcess } from './components/index.js';
+import ServiceItem from './components/serviceItem/serviceItem.jsx';
 import classes from './style.js';
 import { useMediaQuery } from 'react-responsive';
 import useTranslate from '../../res/strings/strings.js';
 
-const ServicesPage = (props,ref)=> {
-	const translate = useTranslate();
-	const highlightsFor = (prefix)=> [1,2,3].map(n => translate(`${prefix}Highlight${n}`));
+// Services as lean icon cards. The stock photos were generic filler (not the
+// firm's own work); real visual proof lives in the Projects section instead.
+const SERVICES = [
+	{ Icon: ApartmentIcon, title: 'construction', desc: 'constructionDescription', highlights: 'construction' },
+	{ Icon: HomeRepairServiceIcon, title: 'renovation', desc: 'renovationDescription', highlights: 'renovation' },
+	{ Icon: HouseIcon, title: 'houseConstruction', desc: 'houseConstructionDescription', highlights: 'house' },
+	{ Icon: EngineeringIcon, title: 'consultation', desc: 'consultationDescription', highlights: 'consultation' },
+];
 
-	const isDesktopOrLaptop = useMediaQuery({
-		query: '(min-width: 900px)'});
+const ServicesPage = (props, ref)=> {
+	const translate = useTranslate();
+	const highlightsFor = (prefix)=> [1, 2, 3].map(n => translate(`${prefix}Highlight${n}`));
+	const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 900px)' });
+
 	return (
 		<div ref={ref} style={classes.servicesPage}>
 			<div style={classes.container}>
-
-				<Typography  component='h2' style={classes.title} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
+				<Typography component='h2' style={classes.title} variant='h5' fontFamily={'Merriweather'} fontWeight='bold'>
 					{translate('services')}
 				</Typography>
-				<div style={isDesktopOrLaptop?classes.serviceList:classes.serviceListMobile}>
-					<ServiceCard width={3730} height={2487} srcSet={'/assets/images/construction_mobile.webp 1500w, /assets/images/construction_desktop.webp 1700w '} img={'/assets/images/construction_desktop.webp'} title={translate('construction')} description= {translate('constructionDescription')} highlights={highlightsFor('construction')}/>
-					<ServiceCard width={4288} height={2848} srcSet={'/assets/images/renovation.webp 1500w, /assets/images/renovation.webp 1700w '} img={'/assets/images/renovation.webp'}reverse title={translate('renovation')} description= {translate('renovationDescription')} highlights={highlightsFor('renovation')}/>
-					<ServiceCard width={2380} height={1785} srcSet={'/assets/images/extension_mobile.webp 1500w, /assets/images/extension_desktop.webp 1700w '} img={'/assets/images/extension_desktop.webp'} title={translate('houseConstruction')} description= {translate('houseConstructionDescription')} highlights={highlightsFor('house')}/>
-					<ServiceCard width={3220} height={2147} srcSet={'/assets/images/consultation_mobile.webp 1500w, /assets/images/consultation_desktop.webp 1700w '} img={'/assets/images/consultation_desktop.webp'}reverse title={translate('consultation')} description= {translate('consultationDescription')} highlights={highlightsFor('consultation')}/>
-
+				<div style={isDesktopOrLaptop ? classes.grid : classes.gridMobile}>
+					{SERVICES.map(s=> (
+						<ServiceItem
+							key={s.title}
+							Icon={s.Icon}
+							title={translate(s.title)}
+							description={translate(s.desc)}
+							highlights={highlightsFor(s.highlights)}
+						/>
+					))}
 				</div>
 				<ServiceProcess/>
 			</div>
 		</div>
-
-
 	);
 };
+
 export default React.forwardRef(ServicesPage);
