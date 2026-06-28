@@ -1,17 +1,20 @@
 import React from 'react';
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useAtom } from 'jotai';
 import Consts from '../../consts.js';
 import useTranslate from '../../res/strings/strings.js';
+import { languageAtom } from '../../atoms';
+import faq from '../../res/faq.js';
 import classes, { accordionSx } from './style.js';
 
-// Common questions, drafted by the contractor-expert skill. Company-specific
-// facts are marked [owner to confirm: …] in the strings until the owner supplies
-// the real values. Each answer is short and honest.
-const QUESTIONS = [1, 2, 3, 4, 5, 6];
-
+// Renders the FAQ list from src/res/faq.js (one place, both languages). Adding a
+// question there shows up here automatically. Company-specific answers carry
+// [owner to confirm: …] markers until the owner fills them in.
 const FaqPage = (props, ref)=> {
 	const translate = useTranslate();
+	const [language] = useAtom(languageAtom);
+
 	return (
 		<section ref={ref} style={classes.section} aria-label={translate('faqTitle')}>
 			<div style={classes.inner}>
@@ -19,16 +22,16 @@ const FaqPage = (props, ref)=> {
 					{translate('faqTitle')}
 				</Typography>
 				<div style={classes.list}>
-					{QUESTIONS.map(n=> (
-						<Accordion key={n} sx={accordionSx} disableGutters>
+					{faq.map((item, i)=> (
+						<Accordion key={i} sx={accordionSx} disableGutters>
 							<AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: Consts.theme.accent }}/>}>
 								<Typography fontFamily={'Merriweather'} fontWeight='bold' style={classes.q}>
-									{translate(`faqQ${n}`)}
+									{item.q[language]}
 								</Typography>
 							</AccordionSummary>
 							<AccordionDetails>
 								<Typography fontFamily={'Merriweather'} style={classes.a}>
-									{translate(`faqA${n}`)}
+									{item.a[language]}
 								</Typography>
 							</AccordionDetails>
 						</Accordion>
