@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import {  ServiceCard, ServiceProcess } from './components/index.js';
+import {  ServiceCard } from './components/index.js';
 import classes from './style.js';
 import { useMediaQuery } from 'react-responsive';
 import useTranslate from '../../res/strings/strings.js';
@@ -25,7 +25,6 @@ const ServicesPage = (props,ref)=> {
 					<ServiceCard width={3220} height={2147} srcSet={'/assets/images/consultation_mobile.webp 1500w, /assets/images/consultation_desktop.webp 1700w '} img={'/assets/images/consultation_desktop.webp'}reverse title={translate('consultation')} description= {translate('consultationDescription')} highlights={highlightsFor('consultation')}/>
 
 				</div>
-				<ServiceProcess/>
 			</div>
 		</div>
 

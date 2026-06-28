@@ -8,6 +8,8 @@ import ExtendedProjectPage from './projectsPage/expandedProjectPage/expandedProj
 import CookiePolicyPage from './cookiePage/cookiePolicyPage';
 import PageNotFoundPage from './pageNotFoundPage/pageNotFoundPage';
 import HomePage from './homePage/homePage';
+import HowWeWorkPage from './howWeWorkPage/howWeWorkPage';
+import FaqRoutePage from './faqRoutePage/faqRoutePage';
 export {
 	HeroPage,
 	AboutPage,
@@ -19,5 +21,6 @@ export {
 	CookiePolicyPage,
 	PageNotFoundPage,
 	HomePage,
-	
+	HowWeWorkPage,
+	FaqRoutePage,
 };

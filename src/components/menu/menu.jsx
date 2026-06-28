@@ -86,6 +86,12 @@ function Menu({ customRefs}) {
 			title: translate('projects'),icon:EmailIcon,onClick:()=>{itemPressed(customRefs[2]);setShow(false);}
 		},
 		{
+			title: translate('howWeWorkTitle'),icon:CodeIcon,onClick:()=>{navigate('/how-we-work');setShow(false);}
+		},
+		{
+			title: translate('faqShort'),icon:CodeIcon,onClick:()=>{navigate('/faq');setShow(false);}
+		},
+		{
 			title: translate('contact'),icon:EmailIcon,onClick:()=>{itemPressed(customRefs[3]);setShow(false);}
 		},
 		
