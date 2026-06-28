@@ -50,7 +50,7 @@ function CustomAppBar({refs,heroRef}) {
 			}
 		},
 		{
-			title:translate('pricingTitle'),
+			title:translate('howWeWorkTitle'),
 			onClick:()=>{
 				navigate('/how-we-work');
 			}

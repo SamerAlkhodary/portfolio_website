@@ -94,7 +94,7 @@ function Footer({edge}) {
 					{translate('projects')}
 				</Link>
 				<Link underline='none' variant='body1' style={classes.link} onClick={()=>{ navigate('/how-we-work'); }}>
-					{translate('pricingTitle')}
+					{translate('howWeWorkTitle')}
 				</Link>
 				<Link underline='none' variant='body1' style={classes.link} onClick={()=>{ navigate('/faq'); }}>
 					{translate('faqShort')}

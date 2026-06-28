@@ -14,7 +14,7 @@ const ExploreTeaser = ()=> {
 	const isDesktop = useMediaQuery({ query: '(min-width: 700px)' });
 
 	const cards = [
-		{ title: 'pricingTitle', desc: 'teaserPricingDesc', to: '/how-we-work' },
+		{ title: 'howWeWorkTitle', desc: 'teaserPricingDesc', to: '/how-we-work' },
 		{ title: 'faqTitle', desc: 'teaserFaqDesc', to: '/faq' },
 	];
 
