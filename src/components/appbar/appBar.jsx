@@ -50,6 +50,18 @@ function CustomAppBar({refs,heroRef}) {
 			}
 		},
 		{
+			title:translate('pricingTitle'),
+			onClick:()=>{
+				navigate('/how-we-work');
+			}
+		},
+		{
+			title:translate('faqShort'),
+			onClick:()=>{
+				navigate('/faq');
+			}
+		},
+		{
 			title:translate('contact'),
 			onClick:()=>{
 				itemPressed(refs[3]);

@@ -6,7 +6,7 @@ import { languageAtom } from './atoms';
 import Consts from './consts.js';
 import useAnalytics from './utils/analytics.js';
 import PageNotFoundPage from './pages/pageNotFoundPage/pageNotFoundPage.jsx';
-import {HomePage,CookiePolicyPage,ExtendedProjectPage,ProjectsListPage} from './pages';
+import {HomePage,CookiePolicyPage,ExtendedProjectPage,ProjectsListPage,HowWeWorkPage,FaqRoutePage} from './pages';
 
 function App() {
 	const {getConsentObject,enableTracking,clearTracking} = useAnalytics();
@@ -50,6 +50,8 @@ function App() {
 					<Route exact path='/' element= {<HomePage/>}/>
 					<Route exact path='/projects' element= {<ProjectsListPage/>}/>
 					<Route exact path='/projects/:id' element= {<ExtendedProjectPage/>}/>
+					<Route exact path='/how-we-work' element= {<HowWeWorkPage/>}/>
+					<Route exact path='/faq' element= {<FaqRoutePage/>}/>
 					<Route exact path='*' element= {<PageNotFoundPage/>}/>
 				</Routes>
 			</Router>
