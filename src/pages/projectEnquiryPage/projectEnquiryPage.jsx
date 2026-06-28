@@ -1,0 +1,110 @@
+import React, { useState } from 'react';
+import { Button, MenuItem, TextField, Typography } from '@mui/material';
+import { useMediaQuery } from 'react-responsive';
+import useTranslate from '../../res/strings/strings.js';
+import useAnalytics from '../../utils/analytics.js';
+import classes, { fieldSx } from './style.js';
+
+// PROTOTYPE — the "request a quote" scoping form (issue #85), the lead-capture
+// alternative to a public price calculator. It collects what someone would feed
+// an estimator (type, area, scope, budget, timeline) but hands it to a human
+// instead of returning a number.
+//
+// NOTE: real submission (Netlify Forms POST) is wired structurally below but not
+// fully hooked up yet — on submit it just shows the thank-you state for preview.
+const ProjectEnquiryPage = (props, ref)=> {
+	const translate = useTranslate();
+	const { sendEvent } = useAnalytics();
+	const isDesktop = useMediaQuery({ query: '(min-width: 700px)' });
+	const [submitted, setSubmitted] = useState(false);
+
+	const onSubmit = (e)=> {
+		e.preventDefault();
+		sendEvent({ category: 'enquiry', action: 'submit', label: 'project_enquiry' });
+		setSubmitted(true);
+	};
+
+	const types = [
+		['construction', translate('enquiryTypeConstruction')],
+		['renovation', translate('enquiryTypeRenovation')],
+		['house', translate('enquiryTypeHouse')],
+		['commercial', translate('enquiryTypeCommercial')],
+		['other', translate('enquiryTypeOther')],
+	];
+	const budgets = [
+		['unsure', translate('enquiryBudgetUnsure')],
+		['<5M', '< 5M HUF'],
+		['5-15M', '5–15M HUF'],
+		['15-40M', '15–40M HUF'],
+		['40M+', '40M+ HUF'],
+	];
+	const timelines = [
+		['asap', translate('enquiryTimelineAsap')],
+		['1-3m', translate('enquiryTimeline13')],
+		['3-6m', translate('enquiryTimeline36')],
+		['flexible', translate('enquiryTimelineFlexible')],
+	];
+
+	return (
+		<section ref={ref} style={classes.section} aria-label={translate('enquiryTitle')}>
+			<div style={classes.inner}>
+				{submitted ? (
+					<div style={classes.thanks}>
+						<Typography variant='h5' component='p' fontFamily={'Merriweather'} fontWeight='bold' style={classes.thanksTitle}>
+							{translate('enquiryThanksTitle')}
+						</Typography>
+						<Typography variant='body1' fontFamily={'Merriweather'} style={classes.thanksBody}>
+							{translate('enquiryThanksBody')}
+						</Typography>
+					</div>
+				) : (
+					<>
+						<Typography component='h2' variant='h5' fontFamily={'Merriweather'} fontWeight='bold' style={classes.title}>
+							{translate('enquiryTitle')}
+						</Typography>
+						<Typography variant='body1' fontFamily={'Merriweather'} style={classes.intro}>
+							{translate('enquiryIntro')}
+						</Typography>
+
+						<form
+							name='project-enquiry'
+							method='POST'
+							data-netlify='true'
+							onSubmit={onSubmit}
+							style={isDesktop ? classes.gridDesktop : classes.gridMobile}>
+							<input type='hidden' name='form-name' value='project-enquiry'/>
+
+							<TextField select name='type' label={translate('enquiryType')} defaultValue='' sx={fieldSx} fullWidth>
+								{types.map(([v, l])=> <MenuItem key={v} value={v}>{l}</MenuItem>)}
+							</TextField>
+							<TextField name='area' type='number' label={translate('enquiryArea')} sx={fieldSx} fullWidth inputProps={{ min: 0 }}/>
+
+							<TextField
+								name='scope' label={translate('enquiryScope')} placeholder={translate('enquiryScopePlaceholder')}
+								multiline minRows={3} sx={{ ...fieldSx, ...classes.full }} fullWidth/>
+
+							<TextField select name='budget' label={translate('enquiryBudget')} defaultValue='' sx={fieldSx} fullWidth>
+								{budgets.map(([v, l])=> <MenuItem key={v} value={v}>{l}</MenuItem>)}
+							</TextField>
+							<TextField select name='timeline' label={translate('enquiryTimeline')} defaultValue='' sx={fieldSx} fullWidth>
+								{timelines.map(([v, l])=> <MenuItem key={v} value={v}>{l}</MenuItem>)}
+							</TextField>
+
+							<TextField name='name' label={translate('yourName')} required sx={fieldSx} fullWidth/>
+							<TextField name='email' type='email' label={translate('yourEmail')} required sx={fieldSx} fullWidth/>
+							<TextField name='phone' label={translate('enquiryPhone')} sx={{ ...fieldSx, ...classes.full }} fullWidth/>
+
+							<div style={classes.submitRow}>
+								<Button type='submit' style={classes.submit} variant='contained' disableElevation>
+									{translate('enquirySubmit')}
+								</Button>
+							</div>
+						</form>
+					</>
+				)}
+			</div>
+		</section>
+	);
+};
+
+export default React.forwardRef(ProjectEnquiryPage);
