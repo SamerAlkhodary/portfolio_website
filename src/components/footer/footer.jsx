@@ -31,7 +31,7 @@ function Footer({edge}) {
 					window.open(`mailto:${info.email}`);
 					sendEvent({
 						category: 'contacts',
-						action: 'Click',
+						action: 'click',
 						label: 'email',
 					});
 
@@ -45,7 +45,7 @@ function Footer({edge}) {
 					window.open('tel:'+info.number);
 					sendEvent({
 						category: 'contacts',
-						action: 'Click',
+						action: 'click',
 						label: 'phone',
 					});
 				}} variant="body1"  style={classes.link}>
@@ -65,7 +65,7 @@ function Footer({edge}) {
 						window.open(info.instagramLink, '_blank', 'noreferrer');
 						sendEvent({
 							category: 'contacts',
-							action: 'Click',
+							action: 'click',
 							label: 'instagram',
 						});
 					}}>
@@ -75,7 +75,7 @@ function Footer({edge}) {
 						window.open(info.facebookLink, '_blank', 'noreferrer');
 						sendEvent({
 							category: 'contacts',
-							action: 'Click',
+							action: 'click',
 							label: 'facebook',
 						});
 					}}>
@@ -94,7 +94,7 @@ function Footer({edge}) {
 					navigate('/cookie-policy');
 					sendEvent({
 						category: 'legals',
-						action: 'Click',
+						action: 'click',
 						label: 'cookie_policy',
 					});
 				}}>
