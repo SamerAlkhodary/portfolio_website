@@ -2,18 +2,26 @@ import ReactGA from 'react-ga4';
 import Cookies from 'js-cookie';
 import Consts from '../consts';
 
+const CONSENT_COOKIE = 'analytics-consent';
+
+// Reads + parses the consent cookie. If the stored value isn't valid JSON (e.g.
+// a legacy "[object Object]" written by the js-cookie 3 regression), drop it so
+// the banner re-appears and a clean value is stored next time.
+const readConsent = () => {
+	const raw = Cookies.get(CONSENT_COOKIE);
+	if (raw === undefined) return undefined;
+	try {
+		return JSON.parse(raw);
+	} catch (e) {
+		Cookies.remove(CONSENT_COOKIE);
+		return undefined;
+	}
+};
+
 const useAnalytics = () => {
 	const sendEvent = (event) => {
-		if(Consts.config.enableAnalytics===true){
-			const consent = Cookies.get('analytics-consent');
-			try{
-				const consentObject =JSON.parse(consent);
-				if (consentObject?.analytics === true) {
-					ReactGA.event(event);
-				}
-			}catch(e){
-				return undefined;
-			}
+		if (Consts.config.enableAnalytics === true && readConsent()?.analytics === true) {
+			ReactGA.event(event);
 		}
 		return undefined;
 	};
@@ -29,13 +37,7 @@ const useAnalytics = () => {
 	};
 	const getConsentObject = ()=>{
 		if(Consts.config.enableAnalytics===true){
-			try{
-				const consent = Cookies.get('analytics-consent');
-				const consentObject =JSON.parse(consent);
-				return consentObject;
-			}catch(e){
-				return undefined;
-			}
+			return readConsent();
 		}
 		return undefined;
 	};

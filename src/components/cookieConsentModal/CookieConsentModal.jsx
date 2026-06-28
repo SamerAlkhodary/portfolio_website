@@ -47,15 +47,8 @@ function CookieConsentModal() {
 			cookieName="analytics-consent"
 			onAccept={acceptCookie}
 			onDecline={declineCookies}
-			declineCookieValue={
-				switchValue
-			}
-			cookieValue={
-				{
-					essentials: true,
-					analytics: true,
-				}
-			}
+			declineCookieValue={JSON.stringify(switchValue)}
+			cookieValue={JSON.stringify({ essentials: true, analytics: true })}
 
 			buttonText="Allow all"
 			buttonStyle={{ backgroundColor: Consts.theme.accent, color:  Consts.theme.secondary,fontSize:'0.8em',fontWeight:'bold',fontFamily:Consts.theme.fontFamily}}
