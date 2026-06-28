@@ -3,7 +3,7 @@
 Marketing site for a Budapest-based general contractor. Single-page React app
 with a public projects gallery, services overview, and contact section.
 
-- **Live site:** https://sameralkhodary.github.io/portfolio_website
+- **Live site:** https://palmyraepito.com (hosted on Netlify)
 - **Languages:** Hungarian (`hu-HU`, default) and English (`en-US`)
 
 ---
@@ -19,7 +19,7 @@ with a public projects gallery, services overview, and contact section.
 | State       | Jotai atoms (language, menu, lightbox) |
 | i18n        | Custom dictionary in `src/res/strings/strings.js` |
 | Analytics   | Google Analytics 4 (`react-ga4`) |
-| Hosting     | GitHub Pages (manual) + Netlify (PR previews) |
+| Hosting     | Netlify — https://palmyraepito.com |
 
 There is **no backend**. Contact actions open the visitor's email/phone app via
 `mailto:` / `tel:`.
@@ -47,7 +47,7 @@ The dev server opens the browser automatically and hot-reloads on save.
 | `yarn preview` | Serve the built `dist/` locally |
 | `yarn lint`    | ESLint over `src` (`.js`, `.jsx`) |
 | `yarn format`  | Prettier-format `src` |
-| `yarn deploy`  | Build, then publish `dist/` to the `gh-pages` branch |
+| `yarn deploy`  | (legacy) build + publish `dist/` to `gh-pages` — Netlify is the live host, not this |
 
 > Run `yarn lint && yarn build` before opening a PR — both must pass.
 
@@ -216,26 +216,21 @@ Contact details (email, phone, social links) live in `src/res/strings/info.js`.
 
 ## Deployment
 
-There is **no automatic production deploy** on push/merge.
+The live site is hosted on **Netlify** at **https://palmyraepito.com**. We do
+**not** use GitHub Pages.
 
-### GitHub Pages (the live site)
+Netlify is connected to this repo and builds with `yarn build`:
 
-Published from the `gh-pages` branch, updated manually:
+- **Production** is deployed from the `main` branch.
+- **Deploy previews** are built for PRs targeting `main` (the
+  `netlify/palmyraepito/deploy-preview` check on the PR). PRs targeting a feature
+  branch get no preview.
 
-```bash
-yarn deploy        # builds, then pushes dist/ to gh-pages
-```
+`netlify.toml` holds the SPA fallback redirect so client-side routes work on
+refresh.
 
-### Netlify
-
-Netlify builds a **Deploy Preview only for PRs that target the `main` branch**
-(it posts a `netlify/palmyraepito/deploy-preview` check on the PR). PRs that
-target a feature branch get no preview. `netlify.toml` holds the SPA redirect
-rule.
-
-> Note: `dist/` is committed to the repo because the `gh-pages` deploy publishes
-> it. A local `yarn build` will modify `dist/` — discard those changes
-> (`git checkout -- dist/`) unless you're actually deploying.
+> A legacy `yarn deploy` (gh-pages) script still exists in `package.json` from an
+> earlier GitHub Pages setup, but it is **not** the live host — Netlify is.
 
 ---
 
