@@ -53,6 +53,16 @@ const useStyles = {
 		borderRadius: 4,
 		textTransform: 'none',
 	},
+	orContact: {
+		marginTop: 'clamp(1.75rem, 4vw, 2.75rem)',
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		gap: '0.85rem',
+	},
+	orLabel: {
+		color: 'rgba(255,255,255,0.6)',
+	},
 	thanks: {
 		textAlign: 'center',
 		padding: 'clamp(2rem, 6vw, 4rem) 0',

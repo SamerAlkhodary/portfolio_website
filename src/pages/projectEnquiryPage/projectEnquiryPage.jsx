@@ -3,6 +3,7 @@ import { Button, MenuItem, TextField, Typography } from '@mui/material';
 import { useMediaQuery } from 'react-responsive';
 import useTranslate from '../../res/strings/strings.js';
 import useAnalytics from '../../utils/analytics.js';
+import { ContactActions } from '../../components/index.js';
 import classes, { fieldSx } from './style.js';
 
 // Project enquiry form (issue #85): a conversation starter, not a price
@@ -105,6 +106,14 @@ const ProjectEnquiryPage = (props, ref)=> {
 								</Button>
 							</div>
 						</form>
+
+						{/* Secondary path for people who'd rather not fill a form. */}
+						<div style={classes.orContact}>
+							<Typography variant='body2' fontFamily={'Merriweather'} style={classes.orLabel}>
+								{translate('enquiryOrContact')}
+							</Typography>
+							<ContactActions/>
+						</div>
 					</>
 				)}
 			</div>

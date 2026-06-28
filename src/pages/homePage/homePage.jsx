@@ -8,7 +8,6 @@ import StatsBandPage from '../statsBandPage/statsBandPage.jsx';
 import ServicesPage from '../servicesPage/servicesPage.jsx';
 import ProjectsPage from '../projectsPage/projectsPage.jsx';
 import ProjectEnquiryPage from '../projectEnquiryPage/projectEnquiryPage.jsx';
-import ContactPage from '../contactPage/contactPage.jsx';
 
 const HomePage =()=> {
 	const heroRef= useRef(null);
@@ -30,8 +29,7 @@ const HomePage =()=> {
 				<StatsBandPage/>
 				<ServicesPage ref={servicesRef}/>
 				<ProjectsPage ref={projectsRef} />
-				<ProjectEnquiryPage/>
-				<ContactPage ref={contactRef} />
+				<ProjectEnquiryPage ref={contactRef} />
 				<Footer></Footer>
 			</div>
 			<StickyCallButton hideRefs={[contactRef]}/>
