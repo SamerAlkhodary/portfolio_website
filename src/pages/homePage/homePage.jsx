@@ -7,6 +7,8 @@ import AboutPage from '../aboutPage/aboutPage.jsx';
 import StatsBandPage from '../statsBandPage/statsBandPage.jsx';
 import ServicesPage from '../servicesPage/servicesPage.jsx';
 import ProjectsPage from '../projectsPage/projectsPage.jsx';
+import PricingPage from '../pricingPage/pricingPage.jsx';
+import FaqPage from '../faqPage/faqPage.jsx';
 import ProjectEnquiryPage from '../projectEnquiryPage/projectEnquiryPage.jsx';
 
 const HomePage =()=> {
@@ -29,6 +31,8 @@ const HomePage =()=> {
 				<StatsBandPage/>
 				<ServicesPage ref={servicesRef}/>
 				<ProjectsPage ref={projectsRef} />
+				<PricingPage/>
+				<FaqPage/>
 				<ProjectEnquiryPage ref={contactRef} />
 				<Footer></Footer>
 			</div>
