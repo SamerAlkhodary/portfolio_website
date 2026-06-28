@@ -1,26 +1,31 @@
 import Consts from '../../../../consts';
 
-// Lean service card: a gold icon + title + description + concrete highlight
-// bullets. No large stock photo — the real visual proof lives in Projects.
+// Editorial service row: no boxes, no generic icons. A gold hairline divider, the
+// service name in the display serif, a short line, and the highlights as a clean
+// list with gold diamond markers. Uses the site's own language (hairlines +
+// Merriweather + gold) so it reads as bespoke, not a templated feature grid.
 const useStyles = {
-	card: {
-		backgroundColor: 'rgba(255,255,255,0.04)',
-		border: '1px solid rgba(255,255,255,0.08)',
-		borderRadius: 8,
-		padding: 'clamp(1.6rem, 3vw, 2.2rem)',
+	row: {
+		display: 'grid',
+		gridTemplateColumns: '1.15fr 1fr',
+		gap: 'clamp(1.5rem, 5vw, 4rem)',
+		alignItems: 'start',
+		padding: 'clamp(2rem, 4vw, 2.75rem) 0',
+		borderTop: '1px solid rgba(238, 194, 131, 0.22)',
+	},
+	rowMobile: {
 		display: 'flex',
 		flexDirection: 'column',
-		gap: '0.7em',
-		height: '100%',
-		boxSizing: 'border-box',
+		gap: '1em',
+		padding: '1.75rem 0',
+		borderTop: '1px solid rgba(238, 194, 131, 0.22)',
 	},
-	icon: { fontSize: 44, color: Consts.theme.accent },
-	title: { color: Consts.theme.primary, marginTop: '0.2em' },
-	desc: { color: 'rgba(255,255,255,0.72)', lineHeight: 1.55 },
-	list: { listStyle: 'none', margin: '0.5em 0 0', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.5em' },
-	item: { display: 'flex', gap: '0.6em', alignItems: 'flex-start' },
-	marker: { flex: '0 0 auto', width: 6, height: 6, marginTop: '0.5em', backgroundColor: Consts.theme.accent, transform: 'rotate(45deg)' },
-	itemText: { color: 'rgba(255,255,255,0.85)' },
+	title: { color: Consts.theme.primary, margin: 0, lineHeight: 1.15 },
+	desc: { color: 'rgba(255,255,255,0.66)', margin: '0.55em 0 0', lineHeight: 1.55 },
+	list: { listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.55em' },
+	item: { display: 'flex', gap: '0.7em', alignItems: 'flex-start' },
+	marker: { flex: '0 0 auto', width: 7, height: 7, marginTop: '0.5em', backgroundColor: Consts.theme.accent, transform: 'rotate(45deg)' },
+	itemText: { color: 'rgba(255,255,255,0.88)' },
 };
 
 export default useStyles;
