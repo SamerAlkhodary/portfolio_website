@@ -87,6 +87,22 @@ function Footer({edge}) {
 			<div style={classes.contact}>
 				<Typography variant={'h6'} fontFamily={'Merriweather'}  style={classes.h1}>
 					{
+						translate('footerPages')
+					}
+				</Typography>
+				<Link underline='none' variant='body1' style={classes.link} onClick={()=>{ navigate('/projects'); }}>
+					{translate('projects')}
+				</Link>
+				<Link underline='none' variant='body1' style={classes.link} onClick={()=>{ navigate('/how-we-work'); }}>
+					{translate('pricingTitle')}
+				</Link>
+				<Link underline='none' variant='body1' style={classes.link} onClick={()=>{ navigate('/faq'); }}>
+					{translate('faqShort')}
+				</Link>
+			</div>
+			<div style={classes.contact}>
+				<Typography variant={'h6'} fontFamily={'Merriweather'}  style={classes.h1}>
+					{
 						translate('legal')
 					}
 				</Typography>
@@ -100,9 +116,9 @@ function Footer({edge}) {
 				}}>
 					{translate('cookiePolicy')}
 				</Link>
-				
+
 			</div>
-			
+
 		</div>
 	);
 }
