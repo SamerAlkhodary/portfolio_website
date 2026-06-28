@@ -126,6 +126,7 @@ const Strings={
 		send: 'Send',
 		services: 'Services',
 		viewAllProjects: 'View all projects',
+		viewProject: 'View project',
 		yourEmail: 'Your email address',
 		yourName: 'Your name',
 	},
@@ -253,6 +254,7 @@ const Strings={
 		send: 'Küldés',
 		services: 'Szolgáltatások',
 		viewAllProjects: 'Összes projekt megtekintése',
+		viewProject: 'Projekt megtekintése',
 		yourEmail: 'Az Ön e-mail címe',
 		yourName: 'Az Ön neve',
 	}
