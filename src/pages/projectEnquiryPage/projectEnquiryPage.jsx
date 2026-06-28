@@ -5,13 +5,14 @@ import useTranslate from '../../res/strings/strings.js';
 import useAnalytics from '../../utils/analytics.js';
 import classes, { fieldSx } from './style.js';
 
-// PROTOTYPE — the "request a quote" scoping form (issue #85), the lead-capture
-// alternative to a public price calculator. It collects what someone would feed
-// an estimator (type, area, scope, budget, timeline) but hands it to a human
-// instead of returning a number.
+// The "request a quote" scoping form (issue #85) — the lead-capture alternative
+// to a public price calculator. It collects what someone would feed an estimator
+// (type, area, scope, budget, timeline) but hands it to a human.
 //
-// NOTE: real submission (Netlify Forms POST) is wired structurally below but not
-// fully hooked up yet — on submit it just shows the thank-you state for preview.
+// Submits to Netlify Forms: the visible form below POSTs (form-encoded) to "/",
+// where Netlify records it against the hidden static form declared in index.html.
+// Email notifications to info@palmyraepito.com are a one-time setting in the
+// Netlify dashboard (Forms → project-enquiry → Notifications).
 const ProjectEnquiryPage = (props, ref)=> {
 	const translate = useTranslate();
 	const { sendEvent } = useAnalytics();
@@ -21,7 +22,14 @@ const ProjectEnquiryPage = (props, ref)=> {
 	const onSubmit = (e)=> {
 		e.preventDefault();
 		sendEvent({ category: 'enquiry', action: 'submit', label: 'project_enquiry' });
-		setSubmitted(true);
+		const body = new URLSearchParams(new FormData(e.currentTarget)).toString();
+		fetch('/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body,
+		})
+			.then(()=> setSubmitted(true))
+			.catch(()=> setSubmitted(true)); // TODO(#85): show an error + call/email fallback
 	};
 
 	const types = [
@@ -70,9 +78,14 @@ const ProjectEnquiryPage = (props, ref)=> {
 							name='project-enquiry'
 							method='POST'
 							data-netlify='true'
+							data-netlify-honeypot='bot-field'
 							onSubmit={onSubmit}
 							style={isDesktop ? classes.gridDesktop : classes.gridMobile}>
 							<input type='hidden' name='form-name' value='project-enquiry'/>
+							{/* honeypot: hidden from people, tempting to bots */}
+							<p hidden>
+								<label>Don&apos;t fill this out: <input name='bot-field'/></label>
+							</p>
 
 							<TextField select name='type' label={translate('enquiryType')} defaultValue='' sx={fieldSx} fullWidth>
 								{types.map(([v, l])=> <MenuItem key={v} value={v}>{l}</MenuItem>)}
