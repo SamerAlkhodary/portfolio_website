@@ -5,11 +5,15 @@ import ServiceItem from './components/serviceItem/serviceItem.jsx';
 import classes from './style.js';
 import useTranslate from '../../res/strings/strings.js';
 
-// Services as an editorial list (hairline-divided rows), not a stock-photo
-// zig-zag or a templated icon-card grid. Real visual proof lives in Projects.
+// Services as an editorial list (hairline-divided rows). Rows that map to a real
+// project carry a small clickable thumbnail linking to it (proof, right-sized);
+// the rest stay text-only. The full gallery stays in Projects.
+// NOTE: image -> service mapping is illustrative — swap to the best real shot per
+// service once more projects are shot. Both current projects are commercial
+// renovations, so they're attached to the two closest service rows.
 const SERVICES = [
-	{ title: 'construction', desc: 'constructionDescription', highlights: 'construction' },
-	{ title: 'renovation', desc: 'renovationDescription', highlights: 'renovation' },
+	{ title: 'construction', desc: 'constructionDescription', highlights: 'construction', image: '/assets/images/projects/1/hero_mobile.webp', to: '/projects/1/' },
+	{ title: 'renovation', desc: 'renovationDescription', highlights: 'renovation', image: '/assets/images/projects/2/hero_mobile.webp', to: '/projects/2/' },
 	{ title: 'houseConstruction', desc: 'houseConstructionDescription', highlights: 'house' },
 	{ title: 'consultation', desc: 'consultationDescription', highlights: 'consultation' },
 ];
@@ -31,6 +35,8 @@ const ServicesPage = (props, ref)=> {
 							title={translate(s.title)}
 							description={translate(s.desc)}
 							highlights={highlightsFor(s.highlights)}
+							image={s.image}
+							to={s.to}
 						/>
 					))}
 				</div>
