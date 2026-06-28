@@ -5,9 +5,10 @@ import useTranslate from '../../res/strings/strings.js';
 import useAnalytics from '../../utils/analytics.js';
 import classes, { fieldSx } from './style.js';
 
-// The "request a quote" scoping form (issue #85) — the lead-capture alternative
-// to a public price calculator. It collects what someone would feed an estimator
-// (type, area, scope, budget, timeline) but hands it to a human.
+// Project enquiry form (issue #85): a conversation starter, not a price
+// calculator. It opens with "what do you have in mind" and gathers light context
+// (type, area, timeline) so the first call is informed — pricing only comes after
+// a site visit. No budget field, so no one expects an instant price.
 //
 // Submits to Netlify Forms: the visible form below POSTs (form-encoded) to "/",
 // where Netlify records it against the hidden static form declared in index.html.
@@ -38,13 +39,6 @@ const ProjectEnquiryPage = (props, ref)=> {
 		['house', translate('enquiryTypeHouse')],
 		['commercial', translate('enquiryTypeCommercial')],
 		['other', translate('enquiryTypeOther')],
-	];
-	const budgets = [
-		['unsure', translate('enquiryBudgetUnsure')],
-		['<5M', '< 5M HUF'],
-		['5-15M', '5–15M HUF'],
-		['15-40M', '15–40M HUF'],
-		['40M+', '40M+ HUF'],
 	];
 	const timelines = [
 		['asap', translate('enquiryTimelineAsap')],
@@ -87,25 +81,23 @@ const ProjectEnquiryPage = (props, ref)=> {
 								<label>Don&apos;t fill this out: <input name='bot-field'/></label>
 							</p>
 
+							{/* Lead with the open question so it reads as a conversation, not a calculator. */}
+							<TextField
+								name='scope' label={translate('enquiryScope')} placeholder={translate('enquiryScopePlaceholder')}
+								multiline minRows={3} sx={{ ...fieldSx, ...classes.full }} fullWidth/>
+
 							<TextField select name='type' label={translate('enquiryType')} defaultValue='' sx={fieldSx} fullWidth>
 								{types.map(([v, l])=> <MenuItem key={v} value={v}>{l}</MenuItem>)}
 							</TextField>
 							<TextField name='area' type='number' label={translate('enquiryArea')} sx={fieldSx} fullWidth inputProps={{ min: 0 }}/>
 
-							<TextField
-								name='scope' label={translate('enquiryScope')} placeholder={translate('enquiryScopePlaceholder')}
-								multiline minRows={3} sx={{ ...fieldSx, ...classes.full }} fullWidth/>
+							<TextField name='name' label={translate('yourName')} required sx={fieldSx} fullWidth/>
+							<TextField name='email' type='email' label={translate('yourEmail')} required sx={fieldSx} fullWidth/>
 
-							<TextField select name='budget' label={translate('enquiryBudget')} defaultValue='' sx={fieldSx} fullWidth>
-								{budgets.map(([v, l])=> <MenuItem key={v} value={v}>{l}</MenuItem>)}
-							</TextField>
 							<TextField select name='timeline' label={translate('enquiryTimeline')} defaultValue='' sx={fieldSx} fullWidth>
 								{timelines.map(([v, l])=> <MenuItem key={v} value={v}>{l}</MenuItem>)}
 							</TextField>
-
-							<TextField name='name' label={translate('yourName')} required sx={fieldSx} fullWidth/>
-							<TextField name='email' type='email' label={translate('yourEmail')} required sx={fieldSx} fullWidth/>
-							<TextField name='phone' label={translate('enquiryPhone')} sx={{ ...fieldSx, ...classes.full }} fullWidth/>
+							<TextField name='phone' label={translate('enquiryPhone')} sx={fieldSx} fullWidth/>
 
 							<div style={classes.submitRow}>
 								<Button type='submit' style={classes.submit} variant='contained' disableElevation>
